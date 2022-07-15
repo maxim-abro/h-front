@@ -1,0 +1,147 @@
+<template>
+  <div
+    class="bg-[#00000050] w-full h-full fixed left-0 top-0 overflow-auto p-8"
+    @click.self="$store.state.popup.openPopup = false"
+    v-if="$store.state.popup.openPopup"
+  >
+<!--    <div-->
+<!--      class="absolute left-1/2 w-full lg:w-9/12 xl:w-auto xl:max-w-[750px] -translate-x-1/2 -translate-y-1/2 top-1/2 bg-white p-5 shadow shadow-2xl"-->
+<!--    >-->
+    <div
+      class="bg-white mx-auto w-full md:translate-y-1/2 lg:w-9/12 xl:w-auto xl:max-w-[750px]"
+    >
+      <!-------------Топ----------------------------->
+      <div class="flex items-center justify-between mb-5 relative p-4">
+        <div class="flex items-center w-full sm:justify-start justify-center flex-col md:flex-row">
+          <img
+            class="md:mr-3  h-[59px]"
+            v-if="$store.state.popup.popupData.shop"
+            :src="
+              'http://za-halyavoi.ru/api/static/' +
+              $store.state.popup.popupData.shop.image
+            "
+            alt=""
+            @click="$router.push(`/to/${$store.state.popup.popupData.uin}`)"
+          />
+
+          <div class="md:mr-3 w-full md:w-auto">
+            <div class="text-xl text-center font-bold mb-1 sm:mr-6">
+              {{ $store.state.popup.popupData.title }}
+            </div>
+            <div class="text-xs text-zinc-500">
+              {{ `Действует до ${$calendar($store.state.popup.popupData.endDate)}` }}
+            </div>
+          </div>
+        </div>
+
+        <button
+          class="self-start text-3xl px-2 hover:text-red-700 hover:bg-zinc-200 flex justify-center absolute right-4 top-4 items-center transition-all duration-300"
+          @click="$store.commit('popup/closePopup')"
+        >
+          <fa icon="xmark" />
+        </button>
+      </div>
+      <!-------------Топ-конец----------------------->
+
+
+      <!-------------Центр--------------------------->
+      <div class="bg-zinc-100 p-3 sm:px-5 sm:py-5 ">
+        <div
+          class="text-zinc-700 text-center mb-5"
+          v-if="$store.state.popup.popupData.shop"
+        >
+          Перейдите на сайт
+          <a
+            target="_blank"
+            class="text-primary hover:text-second transition-all duration-300"
+            :href="$store.state.popup.popupData.url"
+          >{{ $store.state.popup.popupData.shop.title }}</a
+          >
+          и используйте промокод
+        </div>
+
+        <div class="relative mb-5" v-if="$store.state.popup.popupData.type === 'promoCode'">
+          <div class="bg-white text-center py-2 font-bold text-2xl">
+            {{ $store.state.popup.popupData.code }}
+          </div>
+          <button
+            @click="copyBuffer"
+            class="bg-second text-primary px-4 h-full absolute right-0 top-0 text-xl w-14"
+          >
+            <transition
+              enter-active-class="transition-all duration-300 ease-in"
+              leave-active-class="transition-all duration-300 ease-out"
+              enter-class="opacity-0 -translate-y-full"
+              enter-to-class="opacity-100 translate-y-0"
+              leave-class="opacity-100 translate-y-0"
+              leave-to-class="opacity-0 -translate-y-full"
+            >
+              <fa icon="clone" v-if="!copied" />
+            </transition>
+
+            <transition
+              enter-active-class="transition-all duration-300 ease-in"
+              leave-active-class="transition-all duration-300 ease-out"
+              enter-class="opacity-0 -translate-y-full"
+              enter-to-class="opacity-100 translate-y-0"
+              leave-class="opacity-100 translate-y-0"
+              leave-to-class="opacity-0 -translate-y-full"
+            >
+              <fa icon="check" v-if="copied" />
+            </transition>
+          </button>
+        </div>
+
+        <div class="sm:px-10 text-zinc-700 mb-8 text-sm sm:text-base">
+          {{ $store.state.popup.popupData.description }}
+        </div>
+
+        <a
+          :href="$store.state.popup.popupData.url"
+          target="_blank"
+          class="w-full sm:w-1/2 text-center bg-primary text-second font-medium block mx-auto py-3 hover:shadow hover:shadow-xl transition-all duration-300 mb-5"
+        >
+          <fa icon="check" class="mr-2" />
+          {{
+            $store.state.popup.popupData.type === "promoCode"
+              ? "Использовать код"
+              : "Перейти к акции"
+          }}
+        </a>
+
+        <div class="text-zinc-700 mx-auto w-max flex items-center cursor-pointer"><fa icon="share" class="text-primary mr-2"/> <span class="text-xs">Поделиться</span></div>
+      </div>
+      <!-------------Центр-конец--------------------->
+
+
+      <!-------------Низ----------------------------->
+
+      <!-------------Низ-конец----------------------->
+    </div>
+  </div>
+</template>
+
+<script lang="ts">
+
+export default {
+  data() {
+    return {
+      copied: false as boolean
+    }
+  },
+  methods: {
+    copyBuffer():void {
+
+      // @ts-ignore
+      navigator.clipboard.writeText(this.$store.state.popup.popupData.code)
+      // @ts-ignore
+      this.copied = true
+
+      setTimeout(() => {
+        // @ts-ignore
+        this.copied = false
+      }, 3000)
+    }
+  }
+}
+</script>

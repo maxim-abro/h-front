@@ -1,0 +1,56 @@
+<template>
+<div class="shadow shadow-md shadow-[#00000070] flex flex-col sm:flex-row px-8 shadow-md justify-between w-full py-4 border border-2 mb-10">
+  <div class="flex items-center flex-col sm:flex-row">
+    <div class="mr-8">
+      <img :src="`https://za-halyavoi.ru/api/static/${post.shop.image}`" alt="" class="mx-auto h-[59px] cursor-pointer" @click="openLink">
+      <div class="mx-auto text-xl w-max px-3 bg-zinc-100 mb-3">
+        <button class="group p-0.5">
+          <fa
+            class="group-hover:text-primary transition-all duration-300 hover:transition-all hover:duration-300"
+            icon="heart"
+          />
+        </button>
+
+        {{ post.rating || 0 }}
+      </div>
+    </div>
+
+    <div class="">
+      <h2 class="mx-auto mt-1 text-center text-xl h-[112px] font-medium hover:text-primary cursor-pointer" @click="openLink">{{ post.title }}</h2>
+      <button class="text-zinc-400 hover:text-primary transition-all duration-300 hover:transition-all hover:duration-300">
+        <fa icon="share-alt" class="text-primary text-base"/> Поделиться
+      </button>
+    </div>
+  </div>
+
+  <div class="flex flex-col justify-center">
+    <button rel="nofollow" target="_blank" @click="openLink"
+       class="text-second block text-center mb-3 bg-primary w-full text-second font-medium text-xl hover:-translate-y-0.5 hover:shadow hover:shadow-md hover:shadow-[#00000070]"
+    >
+      {{ post.type === "promoCode" ? "Показать код" : "открыть купон" }}
+    </button>
+
+    <div class="text-sm text-zinc-400" v-if="post.endDate">
+      Действителен до: {{ $calendar(post.endDate) }}
+    </div>
+  </div>
+</div>
+</template>
+
+<script lang="ts">
+import {PostModel} from "~/models/post.model";
+
+export default {
+  props: {
+    post: [] as PostModel[],
+  },
+  methods: {
+    openLink() {
+      // @ts-ignore
+      window.open(`https://za-halyavoi.ru/?coupon=${this.post.uin}`)
+      // @ts-ignore
+      window.location.href = this.post.url
+    }
+  }
+}
+</script>
