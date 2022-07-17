@@ -99,7 +99,7 @@
 
         <button
           type="submit"
-          class="h-full px-3 text-xl py-1 bg-primary hover:bg-primary-600 transition-all duration-300 hover:transition-all hover:duration-300"
+          class="h-full px-3 text-xl py-1 bg-primary hover:bg-primary-600"
         >
           Добавить
         </button>
