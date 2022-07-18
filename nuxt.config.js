@@ -50,6 +50,7 @@ export default {
       '~/components/aside',
       '~/components/popups',
       '~/components/ad',
+      '~/components/_core',
     ]
   },
 
@@ -103,15 +104,6 @@ export default {
       '/admin/**',
       '/go',
     ],
-    routes: [
-      '/',
-      '/privacy',
-      '/shop/',
-      '/alphabet',
-      '/categories',
-      '/categories/',
-      '/user_agreement',
-    ]
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
