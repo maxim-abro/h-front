@@ -2,7 +2,7 @@
   <div class="relative">
     <header class="mb-3 py-2 shadow shadow-xl sm:shadow-none">
       <div class="container flex justify-between items-center">
-        <button class="text-primary bg-zinc-100 w-10 h-10 block sm:hidden" @click="$store.commit('popup/toggleMenu')"><fa icon="bars"/></button>
+        <button class="text-primary bg-zinc-100 w-10 h-10 block sm:hidden" @click="$store.commit('popup/toggleMenu', true)"><fa icon="bars"/></button>
         <nuxt-link
           to="/"
           class="text-2xl font-black flex items-center text-primary drop-shadow"
