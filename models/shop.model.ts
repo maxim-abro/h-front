@@ -9,6 +9,7 @@ type ShopModel = {
   dostavka: string;
   tags: string;
   categories: string;
+  counter: number;
 };
 
 export type { ShopModel };

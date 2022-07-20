@@ -1,0 +1,17 @@
+<template>
+  <div class="bg-white absolute left-0 w-full shadow shadow-md shadow-[#00000070]">
+    <nuxt-link :to="`/shop/${shop.uin}`" class="border-b flex items-center px-3 py-2 border-b-2 hover:bg-gray-100" v-for="shop of shops" :key="shop.uin">
+      <img :src="`https://za-halyavoi.ru/api/static/${shop.image}`" alt="" class="mr-2 h-16 w-auto">
+      <div class="uppercase">{{ shop.title }}</div>
+    </nuxt-link>
+  </div>
+</template>
+
+<script lang="ts">
+
+export default {
+  props: {
+    shops: Array,
+  }
+}
+</script>
