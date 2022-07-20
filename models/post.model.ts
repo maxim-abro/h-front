@@ -15,6 +15,7 @@ type PostModel = {
   category: string;
   shop?: ShopModel;
   recomended: number | boolean;
+  counter: number;
 };
 
 export type { PostModel };
