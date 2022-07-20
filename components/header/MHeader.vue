@@ -11,13 +11,13 @@
           za-halyavoi
         </nuxt-link>
         <button class="text-primary bg-zinc-100 w-10 h-10 block sm:hidden"><fa icon="magnifying-glass"/></button>
-        <form @submit="$router.push(`/search?q=${searchQuery}`)" class="w-5/12 relative hidden sm:block">
+        <form @submit.prevent="submitSearch" class="w-5/12 relative hidden sm:block">
           <input
             type="search"
             placeholder="поиск товара или сайт"
             class="focus:outline-0 bg-gray-200 p-2 w-full"
             v-model="searchQuery"
-            @blur="searchShops = []"
+            @blur="blurInput"
           />
           <button
             type="submit"
@@ -79,6 +79,18 @@ export default {
     return {
       searchQuery: '',
       searchShops: []
+    }
+  },
+  methods: {
+    blurInput() {
+      setTimeout(() => {
+        this.searchShops = []
+      }, 500)
+    },
+    submitSearch() {
+      this.$router.push(`/search?q=${this.searchQuery}`)
+      this.searchShops = []
+      this.searchQuery = ''
     }
   },
   watch: {
