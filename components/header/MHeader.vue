@@ -1,6 +1,6 @@
 <template>
   <div class="relative">
-    <header class="mb-3 py-2 shadow shadow-xl sm:shadow-none">
+    <header class="mb-3 py-2 shadow shadow-xl relative sm:shadow-none">
       <div class="container flex justify-between items-center">
         <button class="text-primary bg-zinc-100 w-10 h-10 block sm:hidden" @click="$store.commit('popup/toggleMenu', true)"><fa icon="bars"/></button>
         <nuxt-link
@@ -11,18 +11,22 @@
           za-halyavoi
         </nuxt-link>
         <button class="text-primary bg-zinc-100 w-10 h-10 block sm:hidden"><fa icon="magnifying-glass"/></button>
-        <div class="w-5/12 relative hidden sm:block">
+        <form @submit="$router.push(`/search?q=${searchQuery}`)" class="w-5/12 relative hidden sm:block">
           <input
             type="search"
             placeholder="поиск товара или сайт"
             class="focus:outline-0 bg-gray-200 p-2 w-full"
+            v-model="searchQuery"
+            @blur="searchShops = []"
           />
           <button
+            type="submit"
             class="absolute right-0 top-0 h-full px-3 bg-primary hover:bg-yellow-500 transition-all duration-300 hover:transition-all hover:duration-300"
           >
             <fa icon="magnifying-glass" />
           </button>
-        </div>
+          <m-header-search v-if="searchShops.length" :shops="searchShops"/>
+        </form>
       </div>
       <mobile-menu />
     </header>
@@ -68,12 +72,23 @@
 </template>
 
 <script>
+import _ from "lodash";
 
 export default {
   data() {
     return {
-
+      searchQuery: '',
+      searchShops: []
     }
   },
+  watch: {
+    searchQuery: _.debounce(async function() {
+      if (this.searchQuery.length > 2) {
+        const response = await this.$api.get(`/search?q=${this.searchQuery.toLowerCase()}`)
+
+        this.searchShops = response.data
+      }
+    }, 1000)
+  }
 }
 </script>
