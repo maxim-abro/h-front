@@ -1,17 +1,17 @@
 <template>
   <div class="relative">
-    <header class="mb-3 py-2 shadow shadow-xl relative sm:shadow-none">
+    <header class="mb-3 py-2 shadow shadow-xl relative md:shadow-none">
       <div class="container flex justify-between items-center">
-        <button class="text-primary bg-zinc-100 w-10 h-10 block sm:hidden" @click="$store.commit('popup/toggleMenu', true)"><fa icon="bars"/></button>
+        <button class="text-primary bg-zinc-100 w-10 h-10 block md:hidden" @click="$store.commit('popup/toggleMenu', true)"><fa icon="bars"/></button>
         <nuxt-link
           to="/"
           class="text-2xl font-black flex items-center text-primary drop-shadow"
         >
-          <img src="/za-halyavoi.png" class="h-16 mr-1 xs:h-20 w-auto" alt="">
+          <img src="/za-halyavoi.png" class="h-16 mr-1 xs:h-20 w-auto" alt="логотип">
           za-halyavoi
         </nuxt-link>
-        <button class="text-primary bg-zinc-100 w-10 h-10 block sm:hidden"><fa icon="magnifying-glass"/></button>
-        <form @submit.prevent="submitSearch" class="w-5/12 relative hidden sm:block">
+        <button class="text-primary bg-zinc-100 w-10 h-10 block md:hidden"><fa icon="magnifying-glass"/></button>
+        <form @submit.prevent="submitSearch" class="w-5/12 relative hidden md:block">
           <input
             type="search"
             placeholder="поиск товара или сайт"
@@ -31,7 +31,7 @@
       <mobile-menu />
     </header>
 
-    <nav class="bg-second text-primary hidden sm:block">
+    <nav class="bg-second text-primary hidden md:block">
       <div class="container">
         <ul class="flex justify-center items-center">
           <li>
@@ -67,6 +67,7 @@
         </ul>
       </div>
     </nav>
+
     <m-header-categories />
   </div>
 </template>
@@ -96,7 +97,7 @@ export default {
   watch: {
     searchQuery: _.debounce(async function() {
       if (this.searchQuery.length > 2) {
-        const response = await this.$api.get(`/search?q=${this.searchQuery.toLowerCase()}`)
+        const response = await this.$api.get(`/search?q=${encodeURI(this.searchQuery.toLowerCase())}`)
 
         this.searchShops = response.data
       }
