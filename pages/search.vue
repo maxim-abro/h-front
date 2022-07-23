@@ -1,11 +1,11 @@
 <template>
   <div class="">
-    <h1 class="text-3xl font-bold my-8">
+    <h1 class="text-lg xl:text-3xl font-bold my-8">
       <fa icon="magnifying-glass" class="text-primary"/>
       Результаты поиска по запросу: "{{ dataq }}"
     </h1>
 
-    <div class="grid grid-cols-5 gap-3" v-if="searchData.length">
+    <div class="grid grid-cols-2 sm:grid-cols-3 xl:grid-cols-5 gap-3" v-if="searchData.length">
       <nuxt-link :to="`/shop/${shop.uin}`" class="" v-for="shop of searchData" :key="shop.uin">
         <img :src="`https://za-halyavoi.ru/api/static/${shop.image}`" :alt="shop.title" class="w-full h-auto">
         <h2 class="text-center">{{ shop.title }}</h2>

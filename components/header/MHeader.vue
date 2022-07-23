@@ -10,7 +10,7 @@
           <img src="/za-halyavoi.png" class="h-16 mr-1 xs:h-20 w-auto" alt="логотип">
           za-halyavoi
         </nuxt-link>
-        <button class="text-primary bg-zinc-100 w-10 h-10 block md:hidden"><fa icon="magnifying-glass"/></button>
+        <button class="text-primary bg-zinc-100 w-10 h-10 block md:hidden" @click="openSearchMobile = !openSearchMobile"><fa icon="magnifying-glass"/></button>
         <form @submit.prevent="submitSearch" class="w-5/12 relative hidden md:block">
           <input
             type="search"
@@ -28,6 +28,7 @@
           <m-header-search v-if="searchShops.length" :shops="searchShops"/>
         </form>
       </div>
+      <m-header-search-mobile v-if="openSearchMobile" @close="openSearchMobile = false"/>
       <mobile-menu />
     </header>
 
@@ -79,7 +80,8 @@ export default {
   data() {
     return {
       searchQuery: '',
-      searchShops: []
+      searchShops: [],
+      openSearchMobile: false,
     }
   },
   methods: {
