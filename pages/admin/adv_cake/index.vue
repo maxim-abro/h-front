@@ -53,7 +53,7 @@
             {{ shop.description }}
           </th>
           <th>
-            {{ shop.endDate }}
+            {{ shop.date_end }}
           </th>
           <th>
             <select
@@ -64,7 +64,7 @@
             </select>
           </th>
           <th class="break-all">
-            {{ shop.url }}
+            {{ shop.landings[0].link }}
           </th>
 
           <th>
@@ -113,24 +113,45 @@ export default {
   methods: {
     async getCoupons(idShop:string) {
       try {
-        //@ts-ignore
+        // @ts-ignore
         this.loadTable = true
-        //@ts-ignore
+        // @ts-ignore
         const coupons = await this.$api.get(`/adv_cake/coupon/${idShop}`)
-        //@ts-ignore
+        // @ts-ignore
         this.loadTable = false
-        //@ts-ignore
+        // @ts-ignore
         this.cakeCoupons = coupons.data
       } catch (e) {
         console.log(e)
-        //@ts-ignore
+        // @ts-ignore
         this.loadTable = false
+      }
+    },
+    async pushCoupons() {
+      try {
+        // @ts-ignore
+        for (const item of this.couponsToSite) {
+          // @ts-ignore
+          await this.$api.post('/post', {
+            title: item.title,
+            description: item.description,
+            type: item.promocodes.length ? 'promoCode' : 'sale',
+            shopUin: item.shopUin,
+            endDate: item.date_end,
+            url: item.landings[0].url,
+            code: item.promocodes.length ? item.promocodes[0].name : '',
+            category: item.category,
+            recomended: item.recomended,
+          })
+        }
+      } catch (e) {
+        console.log(e)
       }
     }
   },
   computed: {
     couponsToSite():object[] {
-      //@ts-ignores
+      // @ts-ignore
       return this.cakeCoupons.filter(i => i.toSite)
     }
   },
@@ -147,3 +168,30 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+.lds-dual-ring {
+  display: inline-block;
+  width: 80px;
+  height: 80px;
+}
+.lds-dual-ring:after {
+  content: " ";
+  display: block;
+  width: 64px;
+  height: 64px;
+  margin: 8px;
+  border-radius: 50%;
+  border: 6px solid #fdb13c;
+  border-color: #fdb13c transparent #fdb13c transparent;
+  animation: lds-dual-ring 1.2s linear infinite;
+}
+@keyframes lds-dual-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+</style>

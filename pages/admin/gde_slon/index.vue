@@ -123,27 +123,27 @@ export default {
   methods: {
     async getCoupons(idShop:string) {
       try {
-        //@ts-ignore
+        // @ts-ignore
         this.loadTable = true
-        //@ts-ignore
+        // @ts-ignore
         const coupons = await this.$api.get(`/slon/shop/${idShop}`)
 
-        //@ts-ignore
+        // @ts-ignore
         this.loadTable = false
 
-        //@ts-ignore
+        // @ts-ignore
         this.slonCoupons = coupons.data
       } catch (e) {
         console.log(e)
-        //@ts-ignore
+        // @ts-ignore
         this.loadTable = false
       }
     },
     async pushCoupons() {
       try {
-        //@ts-ignore
+        // @ts-ignore
         for (const item of this.couponsToSite) {
-          //@ts-ignore
+          // @ts-ignore
           await this.$api.post('/post', {
             title: item.title,
             description: item.description,
@@ -164,7 +164,7 @@ export default {
   },
   computed: {
     couponsToSite():object[] {
-      //@ts-ignores
+      // @ts-ignore
       return this.slonCoupons.filter(i => i.toSite)
     }
   }
