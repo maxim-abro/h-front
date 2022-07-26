@@ -64,12 +64,6 @@ export default {
     return { pagination, page, posts: postRes.data.rows, count: postRes.data.count }
   },
   methods: {
-    // paginationHandler():void {
-      //@ts-ignore
-      // this.$refs.hot.$el.scrollIntoView({block: 'start', behavior: 'smooth'})
-      //
-      // this.$router.push({query: { page: this.pagination.current_page.toString() }})
-    // },
     async fetchPosts(page=0 as number) {
       //@ts-ignore
       const postRes = await this.$api.get(`/post?page=${page}`)
@@ -82,6 +76,10 @@ export default {
         total_elements: postRes.data.count,
         total_pages: postRes.data.count / 15
       }
+    },
+    async likePost(uin:string) {
+      const likes = this.$cookies.get('likes')
+
     }
   },
   watch: {
