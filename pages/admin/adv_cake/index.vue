@@ -1,20 +1,19 @@
 <template>
-  <div class="container mt-10 shadow shadow-xl p-4">
+  <div class="container mt-10 shadow shadow-xl">
     <form @submit.prevent="getCoupons(inputShopId)" class="">
       <h2 class="mt-3 font-bold">Выберите магазин</h2>
       <select class="focus:outline-0 placeholder-zinc-800 bg-gray-200 p-2 mb-3 focus:outline-0 focus:ring focus:ring-primary" v-model="inputShopId">
-        <option v-for="shop in slonShops" :value="shop.id">{{ shop.title }}</option>
+        <option v-for="shop in cakeShops" :value="shop.id">{{ shop.title }}</option>
       </select>
       <m-button type="submit" :disabled="!inputShopId || loadTable">Найти купоны</m-button>
     </form>
-
 
     <div class="flex justify-center items-center" v-if="loadTable">
       <div class="lds-dual-ring"></div>
     </div>
 
     <div class="overflow-auto">
-      <table class="min-w-full text-center my-10" v-if="slonCoupons.length">
+      <table class="min-w-full text-center my-10" v-if="cakeCoupons.length">
         <thead class="border-b bg-gray-800 overflow-scroll">
         <tr>
 
@@ -43,7 +42,7 @@
         </thead>
 
         <tbody>
-        <tr v-for="shop in slonCoupons" :key="shop.id" class="py-2 border-y">
+        <tr v-for="shop in cakeCoupons" :key="shop.id" class="py-2 border-y">
           <th>
             <input type="checkbox" v-model="shop.toSite"/>
           </th>
@@ -54,7 +53,7 @@
             {{ shop.description }}
           </th>
           <th>
-            {{ shop.endDate }}
+            {{ shop.date_end }}
           </th>
           <th>
             <select
@@ -65,7 +64,7 @@
             </select>
           </th>
           <th class="break-all">
-            {{ shop.url }}
+            {{ shop.landings[0].link }}
           </th>
 
           <th>
@@ -85,11 +84,13 @@
 </template>
 
 <script lang="ts">
-import {PostModel} from "~/models/post.model";
-import {CategoryModel} from "~/models/category.model";
-import {ShopModel} from "~/models/shop.model";
 
-type SlonShopModel = {
+
+import {PostModel} from "~/models/post.model";
+import {ShopModel} from "~/models/shop.model";
+import {CategoryModel} from "~/models/category.model";
+
+type CakeShopModel = {
   id: string;
   title: string;
   description: string;
@@ -100,24 +101,13 @@ export default {
   layout: 'admin',
   data() {
     return {
-      slonShops: [] as SlonShopModel[],
-      slonCoupons: [] as object[],
+      cakeShops: [] as CakeShopModel[],
+      cakeCoupons: [] as object[],
       coupons: [] as PostModel[],
       inputShopId: '' as string,
       shops: [] as ShopModel[],
       categories: [] as CategoryModel[],
       loadTable: false as boolean,
-    }
-  },
-  async asyncData({ $api }:any) {
-    const slonShops = await $api.get('/slon/shop')
-    const shops = await $api.get('/shop')
-    const categories = await $api.get('/category')
-
-    return {
-      slonShops: slonShops.data,
-      categories: categories.data,
-      shops: shops.data,
     }
   },
   methods: {
@@ -126,13 +116,11 @@ export default {
         // @ts-ignore
         this.loadTable = true
         // @ts-ignore
-        const coupons = await this.$api.get(`/slon/shop/${idShop}`)
-
+        const coupons = await this.$api.get(`/adv_cake/coupon/${idShop}`)
         // @ts-ignore
         this.loadTable = false
-
         // @ts-ignore
-        this.slonCoupons = coupons.data
+        this.cakeCoupons = coupons.data
       } catch (e) {
         console.log(e)
         // @ts-ignore
@@ -147,15 +135,14 @@ export default {
           await this.$api.post('/post', {
             title: item.title,
             description: item.description,
-            type: 'sale',
+            type: item.promocodes.length ? 'promoCode' : 'sale',
             shopUin: item.shopUin,
-            endDate: item.endDate,
-            url: item.url,
-            code: '',
+            endDate: item.date_end,
+            url: item.landings[0].url,
+            code: item.promocodes.length ? item.promocodes[0].name : '',
             category: item.category,
             recomended: item.recomended,
           })
-
         }
       } catch (e) {
         console.log(e)
@@ -165,7 +152,18 @@ export default {
   computed: {
     couponsToSite():object[] {
       // @ts-ignore
-      return this.slonCoupons.filter(i => i.toSite)
+      return this.cakeCoupons.filter(i => i.toSite)
+    }
+  },
+  async asyncData({ $api }:any) {
+    const cakeShops = await $api.get('/adv_cake/shop')
+    const shops = await $api.get('/shop')
+    const categories = await $api.get('/category')
+
+    return {
+      cakeShops: cakeShops.data,
+      shops: shops.data,
+      categories: categories.data
     }
   }
 }

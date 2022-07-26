@@ -28,7 +28,15 @@
       <nuxt-link
         to="/admin/gde_slon"
         class="p-5 mb-5 hover:text-yellow-400 hover:bg-zinc-700 text-xs"
-      >Промокоды gde slon</nuxt-link>
+      >
+        Промокоды gde slon
+      </nuxt-link>
+      <nuxt-link
+        to="/admin/adv_cake"
+        class="p-5 mb-5 hover:text-yellow-400 hover:bg-zinc-700 text-xs"
+      >
+        Промокоды adv cake
+      </nuxt-link>
       <nuxt-link to="/" class="p-5 mb-5 hover:text-yellow-400 hover:bg-zinc-700 text-xs"
       >
         вернуться на сайт
