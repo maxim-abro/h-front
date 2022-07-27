@@ -14,6 +14,7 @@
       <aside class="w-full lg:w-3/12 mr-0 lg:ml-3">
         <m-aside class="mb-10"/>
         <m-popular-aside :popular="$store.state.aside.popular"  class="mb-10"/>
+        <m-popular-categories-aside :popularCategories="$store.state.aside.popularCategories"/>
 
         <aside-ad
           img="https://za-halyavoi.ru/api/static/aside.png"
