@@ -13,6 +13,7 @@
         <fa
           class="group-hover:text-primary transition-all duration-300 hover:transition-all hover:duration-300"
           icon="heart"
+          @click="$emit('like', post.uin)"
         />
       </button>
 

@@ -52,7 +52,7 @@ export default {
     }
   },
   async asyncData({$api, route}:any) {
-    const category = await $api.get(`/category/${route.params.uin}`)
+    const category = await $api.get(`/category/by/${route.params.uin}`)
     const shops = await $api.get(`/shop/category/${route.params.uin}`)
 
     const breadCrumbs = [

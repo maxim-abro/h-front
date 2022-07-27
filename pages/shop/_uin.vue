@@ -13,6 +13,7 @@
           v-for="post in posts"
           :key="post.uin"
           :post="post"
+          @like="likePost($event)"
         />
       </div>
     </main>
@@ -87,6 +88,39 @@ export default {
         description: shop.data.description
       },
       breadCrumbs
+    }
+  },
+  methods: {
+    async likePost(uin:string) {
+      // @ts-ignore
+      const likes = this.$cookies.get('likes')
+      if (!likes) {
+        // @ts-ignore
+        await this.$api.get(`/post/like/${uin}`)
+        // @ts-ignore
+        this.$cookies.set('likes', [uin])
+        // @ts-ignore
+        this.posts.forEach((i:any) => {
+          if (i.uin === uin) {
+            i.rating = i.rating + 1
+          }
+        })
+      } else {
+        const findLike = likes.find((i:any) => i === uin)
+        if (!findLike) {
+          likes.push(uin)
+          // @ts-ignore
+          await this.$api.get(`/post/like/${uin}`)
+          // @ts-ignore
+          this.$cookies.set('likes', likes)
+          // @ts-ignore
+          this.posts.forEach((i:any) => {
+            if (i.uin === uin) {
+              i.rating = i.rating + 1
+            }
+          })
+        }
+      }
     }
   }
 }

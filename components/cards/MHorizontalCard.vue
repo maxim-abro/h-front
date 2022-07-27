@@ -4,7 +4,7 @@
     <div class="mr-8">
       <img :src="`https://za-halyavoi.ru/api/static/${post.shop.image}`" alt="" class="mx-auto h-[59px] cursor-pointer" @click="openLink">
       <div class="mx-auto text-xl w-max px-3 bg-zinc-100 mb-3">
-        <button class="group p-0.5">
+        <button class="group p-0.5" @click="$emit('like', post.uin)">
           <fa
             class="group-hover:text-primary transition-all duration-300 hover:transition-all hover:duration-300"
             icon="heart"

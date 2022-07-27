@@ -10,6 +10,7 @@
         v-for="post in posts"
         :key="post.uin"
         :post="post"
+        @like="likePost($event)"
       />
     </div>
     <m-pagination
@@ -64,37 +65,62 @@ export default {
     return { pagination, page, posts: postRes.data.rows, count: postRes.data.count }
   },
   methods: {
-    // paginationHandler():void {
-      //@ts-ignore
-      // this.$refs.hot.$el.scrollIntoView({block: 'start', behavior: 'smooth'})
-      //
-      // this.$router.push({query: { page: this.pagination.current_page.toString() }})
-    // },
     async fetchPosts(page=0 as number) {
-      //@ts-ignore
+      // @ts-ignore
       const postRes = await this.$api.get(`/post?page=${page}`)
 
-      //@ts-ignore
+      // @ts-ignore
       this.posts = postRes.data.rows
-      //@ts-ignore
+      // @ts-ignore
       this.pagination = {
         current_page: page || 1,
         total_elements: postRes.data.count,
         total_pages: postRes.data.count / 15
       }
+    },
+    async likePost(uin:string) {
+      // @ts-ignore
+      const likes = this.$cookies.get('likes')
+      if (!likes) {
+        // @ts-ignore
+        await this.$api.get(`/post/like/${uin}`)
+        // @ts-ignore
+        this.$cookies.set('likes', [uin])
+        // @ts-ignore
+        this.posts.forEach((i:any) => {
+          if (i.uin === uin) {
+            i.rating = i.rating + 1
+          }
+        })
+      } else {
+        const findLike = likes.find((i:any) => i === uin)
+        if (!findLike) {
+          likes.push(uin)
+          // @ts-ignore
+          await this.$api.get(`/post/like/${uin}`)
+          // @ts-ignore
+          this.$cookies.set('likes', likes)
+          // @ts-ignore
+          this.posts.forEach((i:any) => {
+            if (i.uin === uin) {
+              i.rating = i.rating + 1
+            }
+          })
+        }
+      }
     }
   },
   watch: {
     async 'pagination.current_page'(query: string | number) {
-      //@ts-ignore
+      // @ts-ignore
       this.$router.push({query: { page: this.pagination.current_page.toString() }})
 
-      //@ts-ignore
+      // @ts-ignore
       const postRes = await this.$api.get(`/post?page=${query}`)
 
-      //@ts-ignore
+      // @ts-ignore
       this.posts = postRes.data.rows
-      //@ts-ignore
+      // @ts-ignore
       this.$refs.hot.scrollIntoView({block: 'start', behavior: 'smooth'})
     }
   }
