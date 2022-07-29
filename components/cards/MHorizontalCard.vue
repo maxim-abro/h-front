@@ -24,13 +24,13 @@
   </div>
 
   <div class="flex flex-col justify-center">
-    <button rel="nofollow" target="_blank" @click="openLink"
-       class="text-second block text-center mb-3 bg-primary w-full text-second font-medium text-xl hover:-translate-y-0.5 hover:shadow hover:shadow-md hover:shadow-[#00000070]"
+    <m-button rel="nofollow" target="_blank" @click="openLink"
+       class="w-max self-end"
     >
       {{ post.type === "promoCode" ? "Показать код" : "открыть купон" }}
-    </button>
+    </m-button>
 
-    <div class="text-sm text-zinc-400" v-if="post.endDate">
+    <div class="text-sm self-end text-zinc-400" v-if="post.endDate">
       Действителен до: {{ $calendar(post.endDate) }}
     </div>
   </div>

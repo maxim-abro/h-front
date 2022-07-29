@@ -16,7 +16,7 @@
     <m-pagination
       v-model="pagination.current_page"
       :pageCount="pagination.total_pages"
-       class="flex justify-center"
+       class="flex justify-center mb-10"
     />
   </div>
 </template>

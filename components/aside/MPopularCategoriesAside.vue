@@ -1,5 +1,5 @@
 <template>
-  <div class="shadow shadow-md shadow-[#00000070] border">
+  <div class="shadow shadow-md rounded shadow-[#00000070] border">
     <div class="p-4 text-second font-bold text-center bg-zinc-100">
       <fa icon="star" class="text-primary mr-2"/>
       Популярные Категории
