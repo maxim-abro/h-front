@@ -1,5 +1,5 @@
 <template>
-  <div class="shadow shadow-md shadow-[#00000070] w-full py-4 px-8 border border-2">
+  <div class="shadow shadow-md shadow-[#00000070] rounded w-full py-4 px-8 border border-2">
     <img
       v-if="post.shop"
       :src="`https://za-halyavoi.ru/api/static/${post.shop.image}`"
@@ -35,11 +35,11 @@
       {{ post.shop.title }}
     </router-link>
 
-    <button  @click="openLink"
-      class="text-second block text-center mb-3 bg-primary w-full text-second font-medium text-xl hover:-translate-y-0.5 hover:shadow hover:shadow-md hover:shadow-[#00000070]"
+    <m-button  @click="openLink"
+      class="block text-center mb-3 w-full font-medium text-xl py-1"
     >
       {{ post.type === "promoCode" ? "Показать код" : "открыть купон" }}
-    </button>
+    </m-button>
 
     <div class="text-sm" v-if="post.endDate">
       Действителен до: {{ $calendar(post.endDate) }}

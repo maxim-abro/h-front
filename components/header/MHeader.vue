@@ -12,19 +12,19 @@
         </nuxt-link>
         <button class="text-primary bg-zinc-100 w-10 h-10 block md:hidden" @click="openSearchMobile = !openSearchMobile"><fa icon="magnifying-glass"/></button>
         <form @submit.prevent="submitSearch" class="w-5/12 relative hidden md:block">
-          <input
+          <m-input
             type="search"
             placeholder="поиск товара или сайт"
-            class="focus:outline-0 bg-gray-200 p-2 w-full"
+            class="h-full w-full"
             v-model="searchQuery"
             @blur="blurInput"
           />
-          <button
+          <m-button
             type="submit"
             class="absolute right-0 top-0 h-full px-3 bg-primary hover:bg-yellow-500 transition-all duration-300 hover:transition-all hover:duration-300"
           >
             <fa icon="magnifying-glass" />
-          </button>
+          </m-button>
           <m-header-search v-if="searchShops.length" :shops="searchShops"/>
         </form>
       </div>
@@ -54,10 +54,10 @@
             </nuxt-link>
           </li>
           <li>
-            <a class="p-3 inline-block bg-second hover:bg-zinc-700" href="/blog">
+            <nuxt-link class="p-3 inline-block bg-second hover:bg-zinc-700" to="/blog">
               <fa icon="newspaper" />
               Блог
-            </a>
+            </nuxt-link>
           </li>
           <li v-if="$store.getters['auth/isAuth']">
             <nuxt-link to="/admin" class="p-3 inline-block bg-second hover:bg-zinc-700">админ панель</nuxt-link>

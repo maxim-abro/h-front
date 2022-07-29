@@ -3,12 +3,12 @@
       @submit.prevent="submitSearch"
       class="w-full absolute p-3 left-0 w-full bg-second">
     <div class="relative">
-      <input
-        class="focus:outline-0 bg-gray-200 p-2 w-full"
+      <m-input
+        class="p-2 w-full"
         placeholder="поиск товара или сайт"
         type="search"
         v-model="searchQuery"
-      >
+      />
 
       <m-header-search v-if="searchShops.length" :shops="searchShops"/>
     </div>

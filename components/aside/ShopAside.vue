@@ -9,14 +9,14 @@
     <a
       :href="data.url"
       target="_blank"
-      class="w-full border bg-white inline-block text-lg text-center border-primary text-primary py-1.5 hover:bg-primary hover:text-white transition-all duration-300 hover:transition-all hover:duration-300"
+      class="w-full rounded border bg-white inline-block text-lg text-center border-primary text-primary py-1.5 hover:bg-primary hover:text-white transition-all duration-300 hover:transition-all hover:duration-300"
     >
       <fa icon="up-right-from-square" />
       Перейти на сайт
     </a>
 
     <button
-      class="text-center w-full mt-3 py-1.5 bg-zinc-200 text-second hover:text-primary transition-all duration-300 hover:transition-all hover:duration-300"
+      class="text-center rounded w-full mt-3 py-1.5 bg-zinc-200 text-second hover:text-primary transition-all duration-300 hover:transition-all hover:duration-300"
     >
       <fa icon="circle-chevron-down" />
       Предложить купон
