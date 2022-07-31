@@ -49,7 +49,7 @@
   </div>
 </template>
 
-<script lang="ts">
+<script>
 import * as yup from 'yup'
 
 // todo - add popup
@@ -61,12 +61,12 @@ export default {
         email: '',
         name: ''
       },
-      error: '' as string,
-      disabledForm: false as boolean
+      error: '',
+      disabledForm: false
     }
   },
   methods: {
-    async validateForm():Promise<boolean> {
+    async validateForm() {
       const schema = yup.object().shape({
         email: yup.string().required().email(),
         name: yup.string().required().min(2),
