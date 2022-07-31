@@ -35,7 +35,7 @@ export default {
   head():any {
     return {
       //@ts-ignore
-      title: `Промокоды акции и скидки из магазина ${this.seo.title}`,
+      title: `Промокоды акции и скидки из магазина ${this.seo.title} на ${this.$store.state.seo.month} ${this.$store.state.seo.year} год.`,
       meta: [
         {
           hid: 'description',
@@ -47,7 +47,7 @@ export default {
           hid: 'keywords',
           name: 'keywords',
           //@ts-ignore
-          content: `сайты, алфавит, промокоды, скидки, акции, магазины, акция, промокод, скидка, ${this.seo.title}`
+          content: `сайты, алфавит, промокоды, скидки, акции, магазины, акция, промокод, скидка, ${this.seo.title}, ${this.$store.state.seo.month}, ${this.$store.state.seo.year}`
         }
       ],
     }

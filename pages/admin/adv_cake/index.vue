@@ -138,7 +138,7 @@ export default {
             type: item.promocodes.length ? 'promoCode' : 'sale',
             shopUin: item.shopUin,
             endDate: item.date_end,
-            url: item.landings[0].url,
+            url: item.landings[0].link,
             code: item.promocodes.length ? item.promocodes[0].name : '',
             category: item.category,
             recomended: item.recomended,

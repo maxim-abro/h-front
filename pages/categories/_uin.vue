@@ -34,7 +34,7 @@ export default {
   head():any {
     return {
       //@ts-ignore
-      title: `${this.category.title} по скидкам с купонами и промокодами.`,
+      title: `${this.category.title} по скидкам с купонами и промокодами на ${this.$store.state.seo.month} ${this.$store.state.seo.year} год`,
       meta: [
         {
           hid: 'description',
@@ -46,7 +46,7 @@ export default {
           hid: 'keywords',
           name: 'keywords',
           //@ts-ignore
-          content: `сайты, категории, промокоды, скидки, акции, магазины, акция, промокод, скидка, ${this.category.title}`
+          content: `сайты, категории, промокоды, скидки, акции, магазины, акция, промокод, скидка, ${this.category.title}, ${this.$store.state.seo.month}`
         }
       ]
     }

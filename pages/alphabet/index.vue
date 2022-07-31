@@ -101,14 +101,16 @@ export default {
       ]
     }
   },
-  head() {
+  head():any {
     return {
-      title: 'Все магазины по алфавиту. Промокоды, скидки акции на июль 2022 год',
+      // @ts-ignore
+      title: `Все магазины по алфавиту. Промокоды, скидки акции на ${this.$store.state.seo.month} ${this.$store.state.seo.year} год`,
       meta: [
         {
           hid: 'description',
           name: 'description',
-          content: 'Свежие промокоды, скидки и акции на июль 2022 год, а также эксклюзивные купоны. го za халявой!'
+          // @ts-ignore
+          content: `Свежие промокоды, скидки и акции на ${this.$store.state.seo.month} ${this.$store.state.seo.year} год, а также эксклюзивные купоны. го za халявой!`
         },
         {
           hid: 'keywords',

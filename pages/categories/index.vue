@@ -31,14 +31,16 @@ export default {
       ]
     }
   },
-  head() {
+  head():any {
     return {
-      title: 'Промокоды, скидки акции по категориям.',
+      // @ts-ignore
+      title: `Промокоды, скидки акции по категориям на ${this.$store.state.seo.month} ${this.$store.state.seo.month} год.`,
       meta: [
         {
           hid: 'description',
           name: 'description',
-          content: 'Промокоды и скидки по категориям - Свежие промокоды, скидки и акции на июль 2022 год, а также эксклюзивные купоны. го za халявой!',
+          // @ts-ignore
+          content: `Промокоды и скидки по категориям - Свежие промокоды, скидки и акции на ${this.$store.state.seo.month} ${this.$store.state.seo.year} год, а также эксклюзивные купоны. го za халявой!`,
         },
         {
           hid: 'keywords',
