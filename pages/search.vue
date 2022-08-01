@@ -30,12 +30,13 @@ export default {
   head():object {
     return {
       //@ts-ignore
-      title: `Промокоды, скидки и акции для сайтов и интернет-магазинов на июль 2022 год поиск по магазинам ${this.dataq}`,
+      title: `Промокоды, скидки и акции для сайтов и интернет-магазинов на ${this.$store.state.seo.month} ${this.$store.state.seo.year} год поиск по магазинам ${this.dataq}`,
       meta: [
         {
           hid: 'description',
           name: 'description',
-          content: 'Свежие промокоды, скидки и акции на июль 2022 год, а также эксклюзивные купоны. го za халявой!'
+          // @ts-ignore
+          content: `Свежие промокоды, скидки и акции на ${this.$store.state.seo.month} ${this.$store.state.seo.year} год, а также эксклюзивные купоны. го za халявой!`
         },
         {
           hid: 'keywords',

@@ -5,14 +5,16 @@
 <script lang="ts">
 
 export default {
-  head() {
+  head():any {
     return {
-      title: 'Блог про шоппинг, промокоды, акции, купоны ',
+      // @ts-ignore
+      title: `Блог про шоппинг, промокоды, акции, купоны на ${this.$store.state.seo.month} ${this.$store.state.seo.year} год.`,
       meta: [
         {
           hid: 'description',
           name: 'description',
-          content: 'Блог про шоппинг, промокоды, акции, купоны - Свежие промокоды, скидки и акции на июль 2022 год, а также эксклюзивные купоны. го za халявой!',
+          // @ts-ignore
+          content: `Блог про шоппинг, промокоды, акции, купоны - Свежие промокоды, скидки и акции на ${this.$store.state.seo.month} ${this.$store.state.seo.year} год, а также эксклюзивные купоны. го za халявой!`,
         },
         {
           hid: 'keywords',

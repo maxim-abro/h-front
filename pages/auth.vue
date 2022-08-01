@@ -2,8 +2,7 @@
   <div class="flex w-[100vw] h-[100vh] justify-center items-center">
     <div class="w-[700px] h-1/2 border">
       <h1 class="text-5xl mx-auto text-center font-bold flex items-center uppercase">
-        <img src="/za-halyavoi.png" alt="" class="h-16 w-auto">
-        za-halyavoi
+        <img src="/logo.png" alt="" class="h-16 w-auto">
       </h1>
 
       <form class="px-3 sm:px-32" @submit.prevent="fetchForm">
