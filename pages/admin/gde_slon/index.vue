@@ -31,13 +31,17 @@
             дата окончания
           </th>
           <th scope="col" class="text-sm font-medium text-white px-6 py-4">
-            категория
+            <select v-model="categoryActive" class="focus:outline-0 placeholder-zinc-800 bg-gray-200 p-2 mb-3 focus:outline-0 focus:ring focus:ring-primary" style="color: #000000;">
+              <option v-for="category in categories" :value="category.uin">{{ category.title }}</option>
+            </select>
           </th>
           <th scope="col" class="text-sm font-medium text-white px-6 py-4">
             ссылка
           </th>
           <th scope="col" class="text-sm font-medium text-white px-6 py-4">
-            Магазин
+            <select v-model="shopActive" class="focus:outline-0 placeholder-zinc-800 bg-gray-200 p-2 mb-3 focus:outline-0 focus:ring focus:ring-primary" style="color: #000000;">
+              <option v-for="shop in shops" :value="shop.uin">{{ shop.title }}</option>
+            </select>
           </th>
         </tr>
         </thead>
@@ -57,24 +61,27 @@
             {{ shop.endDate }}
           </th>
           <th>
-            <select
-              class="focus:outline-0 placeholder-zinc-800 bg-gray-200 p-2 mb-3 focus:outline-0 focus:ring focus:ring-primary"
-              v-model="shop.category"
-            >
-              <option v-for="category in categories" :value="category.uin">{{ category.title }}</option>
-            </select>
+<!--            <select-->
+<!--              class="focus:outline-0 placeholder-zinc-800 bg-gray-200 p-2 mb-3 focus:outline-0 focus:ring focus:ring-primary"-->
+<!--              v-model="shop.category"-->
+<!--            >-->
+<!--              <option v-for="category in categories" :value="category.uin">{{ category.title }}</option>-->
+<!--            </select>-->
+            {{ categoryActive || 'Выберите категорию' }}
           </th>
           <th class="break-all">
             {{ shop.url }}
           </th>
 
           <th>
-            <select
-              class="focus:outline-0 placeholder-zinc-800 bg-gray-200 p-2 mb-3 focus:outline-0 focus:ring focus:ring-primary"
-              v-model="shop.shopUin"
-            >
-              <option :value="i.uin" v-for="i in shops">{{ i.title }}</option>
-            </select>
+<!--            <select-->
+<!--              class="focus:outline-0 placeholder-zinc-800 bg-gray-200 p-2 mb-3 focus:outline-0 focus:ring focus:ring-primary"-->
+<!--              v-model="shop.shopUin"-->
+<!--            >-->
+<!--              <option :value="i.uin" v-for="i in shops">{{ i.title }}</option>-->
+<!--            </select>-->
+
+            {{ shopActive || 'Выберите магазин' }}
           </th>
         </tr>
         </tbody>
@@ -107,6 +114,8 @@ export default {
       shops: [] as ShopModel[],
       categories: [] as CategoryModel[],
       loadTable: false as boolean,
+      categoryActive: '' as string,
+      shopActive: '' as string,
     }
   },
   async asyncData({ $api }:any) {
@@ -148,11 +157,13 @@ export default {
             title: item.title,
             description: item.description,
             type: 'sale',
-            shopUin: item.shopUin,
-            endDate: item.endDate,
+            // @ts-ignore
+            shopUin: this.shopActive,
+            endDate: item.endDate || '2022-08-31',
             url: item.url,
             code: '',
-            category: item.category,
+            // @ts-ignore
+            category: this.categoryActive,
             recomended: item.recomended,
           })
 
