@@ -105,6 +105,17 @@ type CakeShopModel = {
 
 export default {
   layout: 'admin',
+  middleware({app ,redirect, $api}:any) {
+    // @ts-ignore
+    app.store.getters['auth/isAuth'] ? null : redirect('/')
+
+    $api.post('/auth/check', {token: app.store.state.auth.token}).catch(() => {
+      if (app.store.state.auth.token) {
+        app.store.commit('auth/logout')
+      }
+      redirect('/?isAuth=false')
+    })
+  },
   data() {
     return {
       cakeShops: [] as CakeShopModel[],
