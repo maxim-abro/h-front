@@ -28,6 +28,10 @@ export default {
       {
         src: '/js/yndx.js',
         body: true,
+      },
+      {
+        src: '/js/google.js',
+        body: true,
       }
     ]
   },
