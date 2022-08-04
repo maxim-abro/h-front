@@ -37,6 +37,12 @@
       >
         Промокоды adv cake
       </nuxt-link>
+      <button
+        class="p-5 mb-5 hover:text-primary hover:-zinc-700 text-xs"
+        @click="addPostVk"
+      >
+        Добавить пост vk
+      </button>
       <nuxt-link to="/" class="p-5 mb-5 hover:text-yellow-400 hover:bg-zinc-700 text-xs"
       >
         вернуться на сайт
@@ -58,6 +64,12 @@ export default {
   data() {
     return {
       openMenu: false as boolean
+    }
+  },
+  methods: {
+    async addPostVk() {
+      // @ts-ignore
+      await this.$api.get('/cron/post_vk')
     }
   }
 }

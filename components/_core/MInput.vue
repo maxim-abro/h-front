@@ -3,6 +3,7 @@
     v-model="inputData"
     @input="$emit('input', $event.target.value)"
     @blur="$emit('blur')"
+    @change="$emit('change', $event)"
     :type="type"
     :placeholder="placeholder"
     :name="name"
