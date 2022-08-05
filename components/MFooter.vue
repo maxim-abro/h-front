@@ -82,7 +82,7 @@
 
           <ul class="list-none mb-0">
             <li>
-            <a href="#" class="text-zinc-300 hover:text-primary hover:underline">Контакты</a>
+            <a href="/contacts" class="text-zinc-300 hover:text-primary hover:underline">Контакты</a>
             </li>
             <li>
             <a href="#" class="text-zinc-300 hover:text-primary hover:underline">Инструкция по сайту</a>

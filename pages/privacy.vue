@@ -1,5 +1,8 @@
 <template>
   <div>
+    <m-bread-crumbs
+      :crumbs="breadCrumbs"
+    />
     <h1 class="font-bold text-3xl">
       Политика в отношении обработки персональных данных
     </h1>
@@ -503,6 +506,17 @@
 <script lang="ts">
 
 export default {
+  components: {},
+
+  data() {
+    return {
+      breadCrumbs: [
+        {
+          title: 'Политика конфиденциальности'
+        }
+      ]
+    }
+  },
   head():any {
     return {
       title: 'Политика в отношении обработки персональных данных',

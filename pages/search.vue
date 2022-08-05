@@ -1,5 +1,8 @@
 <template>
   <div class="">
+    <m-bread-crumbs
+      :crumbs="breadCrumbs"
+    />
     <h1 class="text-lg xl:text-3xl font-bold my-8">
       <fa icon="magnifying-glass" class="text-primary"/>
       Результаты поиска по запросу: "{{ dataq }}"
@@ -20,11 +23,19 @@
 <script lang="ts">
 
 export default {
+  components: {},
+
   layout: 'default',
-  data() {
+  data():any {
     return {
       searchData: [] as string[],
-      dataq: ''
+      dataq: '',
+      breadCrumbs: [
+        {
+          // @ts-ignore
+          title: `Результаты поиска "${this.$route.query.q}"`
+        }
+      ]
     }
   },
   head():object {
@@ -47,7 +58,7 @@ export default {
     }
   },
   async asyncData({ $api, route }:any) {
-    const response = await $api.get(`/search?q=${route.query.q}`)
+    const response = await $api.get(`/search?q=${encodeURI(route.query.q)}`)
 
     return {
       searchData: response.data,
