@@ -1,5 +1,8 @@
 <template>
   <div class="">
+    <m-bread-crumbs
+      :crumbs="breadCrumbs"
+    />
     <h1 class="font-medium text-3xl mb-3">Пользовательское Соглашение</h1>
 
     <p class="mb-3">
@@ -77,15 +80,26 @@
 <script lang="ts">
 
 export default {
+  components: {},
+
+  data():any {
+    return {
+      breadCrumbs: [
+        {
+          title: 'Пользовательское соглашение'
+        }
+      ]
+    }
+  },
   head():any {
     return {
-      title: 'Политика в отношении обработки персональных данных',
+      title: 'Пользовательское Соглашение',
       meta: [
         {
           hid: 'description',
           name: 'description',
           // @ts-ignore
-          content: `Свежие промокоды, скидки и акции на ${this.$store.state.seo.month} ${this.$store.state.seo.year} год, а также эксклюзивные купоны. го za халявой!`
+          content: `Пользовательское Соглашение. Свежие промокоды, скидки и акции на ${this.$store.state.seo.month} ${this.$store.state.seo.year} год, а также эксклюзивные купоны. го za халявой!`
         },
         {
           hid: 'keywords',

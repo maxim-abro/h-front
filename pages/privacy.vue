@@ -1,5 +1,8 @@
 <template>
   <div>
+    <m-bread-crumbs
+      :crumbs="breadCrumbs"
+    />
     <h1 class="font-bold text-3xl">
       Политика в отношении обработки персональных данных
     </h1>
@@ -503,6 +506,17 @@
 <script lang="ts">
 
 export default {
+  components: {},
+
+  data() {
+    return {
+      breadCrumbs: [
+        {
+          title: 'Политика конфиденциальности'
+        }
+      ]
+    }
+  },
   head():any {
     return {
       title: 'Политика в отношении обработки персональных данных',
@@ -511,7 +525,7 @@ export default {
           hid: 'description',
           name: 'description',
           // @ts-ignore
-          content: `Свежие промокоды, скидки и акции на ${this.$store.state.seo.month} 2022 год, а также эксклюзивные купоны. го za халявой!`
+          content: `Политика в отношении обработки персональных данных. Свежие промокоды, скидки и акции на ${this.$store.state.seo.month} 2022 год, а также эксклюзивные купоны. го za халявой!`
         },
         {
           hid: 'keywords',

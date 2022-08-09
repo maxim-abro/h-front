@@ -28,6 +28,10 @@ export default {
       {
         src: '/js/yndx.js',
         body: true,
+      },
+      {
+        src: '/js/google.js',
+        body: true,
       }
     ]
   },
@@ -109,6 +113,6 @@ export default {
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {},
   router: {
-    middleware: ['checkAuth', 'openPopup']
+    middleware: ['openPopup']
   }
 }

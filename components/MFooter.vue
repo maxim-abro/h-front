@@ -82,7 +82,7 @@
 
           <ul class="list-none mb-0">
             <li>
-            <a href="#" class="text-zinc-300 hover:text-primary hover:underline">Контакты</a>
+            <a href="/contacts" class="text-zinc-300 hover:text-primary hover:underline">Контакты</a>
             </li>
             <li>
             <a href="#" class="text-zinc-300 hover:text-primary hover:underline">Инструкция по сайту</a>
@@ -102,5 +102,19 @@
       © 2022 Copyright:
       <a class="text-white underline hover:text-primary hover:no-underline" href="mailto:support@za-halyavoi.ru">support@za-halyavoi.ru</a>
     </div>
+    <div class="" v-html="code">
+
+    </div>
   </footer>
 </template>
+
+<script>
+
+export default {
+  data() {
+    return {
+      code: '<!--3a9f6b4e--> <!--3a9f6b4e-->'
+    }
+  }
+}
+</script>
