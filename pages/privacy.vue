@@ -525,7 +525,7 @@ export default {
           hid: 'description',
           name: 'description',
           // @ts-ignore
-          content: `Свежие промокоды, скидки и акции на ${this.$store.state.seo.month} 2022 год, а также эксклюзивные купоны. го za халявой!`
+          content: `Политика в отношении обработки персональных данных. Свежие промокоды, скидки и акции на ${this.$store.state.seo.month} 2022 год, а также эксклюзивные купоны. го za халявой!`
         },
         {
           hid: 'keywords',

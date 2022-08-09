@@ -59,8 +59,25 @@
 import * as yup from 'yup'
 
 export default {
-  components: {},
-
+  head() {
+    return {
+      // @ts-ignore
+      title: `Обратная связь. Промокоды, скидки акции на ${this.$store.state.seo.month} ${this.$store.state.seo.year} год`,
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          // @ts-ignore
+          content: `Обратная связь. Свежие промокоды, скидки и акции на ${this.$store.state.seo.month} ${this.$store.state.seo.year} год, а также эксклюзивные купоны. го za халявой!`
+        },
+        {
+          hid: 'keywords',
+          name: 'keywords',
+          content: 'обратная, связь, сайты, алфавит, промокоды, скидки, акции, магазины, акция, промокод, скидка'
+        }
+      ]
+    }
+  },
   data() {
     return {
       breadCrumbs: [

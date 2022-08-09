@@ -93,13 +93,13 @@ export default {
   },
   head():any {
     return {
-      title: 'Политика в отношении обработки персональных данных',
+      title: 'Пользовательское Соглашение',
       meta: [
         {
           hid: 'description',
           name: 'description',
           // @ts-ignore
-          content: `Свежие промокоды, скидки и акции на ${this.$store.state.seo.month} ${this.$store.state.seo.year} год, а также эксклюзивные купоны. го za халявой!`
+          content: `Пользовательское Соглашение. Свежие промокоды, скидки и акции на ${this.$store.state.seo.month} ${this.$store.state.seo.year} год, а также эксклюзивные купоны. го za халявой!`
         },
         {
           hid: 'keywords',
