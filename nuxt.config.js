@@ -104,6 +104,11 @@ export default {
     hostname: 'https://za-halyavoi.ru',
     path: '/sitemap.xml',
     gzip: true,
+    defaults: {
+      changefreq: 'daily',
+      priority: 1,
+      lastmod: new Date()
+    },
     routes: async () => {
       const result = []
       const postData = await axios.get("https://za-halyavoi.ru/api/admin/sitemap/post")
