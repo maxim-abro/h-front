@@ -1,3 +1,5 @@
+const axios = require("axios")
+
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
@@ -102,11 +104,24 @@ export default {
     hostname: 'https://za-halyavoi.ru',
     path: '/sitemap.xml',
     gzip: true,
+    defaults: {
+      changefreq: 'daily',
+      priority: 1,
+      lastmod: new Date()
+    },
+    routes: async () => {
+      const result = []
+      const categoryData = await axios.get("https://za-halyavoi.ru/api/admin/sitemap/category")
+      const shopData = await axios.get("https://za-halyavoi.ru/api/admin/sitemap/shop")
+
+      categoryData.data.forEach(i => result.push(`/categories/${i.uin}`))
+      shopData.data.forEach(i => result.push(`/shop/${i.uin}`))
+
+      return result
+    },
     exclude: [
-      '/auth',
-      '/admin',
-      '/admin/**',
       '/go',
+      '/search',
     ],
   },
 
