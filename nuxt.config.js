@@ -28,6 +28,13 @@ export default {
     ],
     script: [
       {
+        src: "/js/yacontext.js",
+      },
+      {
+        src: "https://yandex.ru/ads/system/context.js",
+        async: true
+      },
+      {
         src: '/js/yndx.js',
         body: true,
       },
