@@ -25,6 +25,7 @@
         <m-popular-aside :popular="$store.state.aside.popular"  class="mb-8"/>
         <m-popular-categories-aside :popularCategories="$store.state.aside.popularCategories" class="mb-8"/>
 
+<<<<<<< HEAD
 <!--        <aside-ad-->
 <!--          img="https://za-halyavoi.ru/api/static/aside.png"-->
 <!--          url="/shop/22a4cc24-f0b1-4334-8181-c206a4180c96"-->
@@ -38,6 +39,23 @@
             blockId: 'R-A-1753947-1'
           })
         })</script>
+=======
+        <aside-ad
+          img="https://za-halyavoi.ru/api/static/aside.png"
+          url="/shop/22a4cc24-f0b1-4334-8181-c206a4180c96"
+        />
+
+        <!-- Yandex.RTB R-A-1753947-1 -->
+        <div id="yandex_rtb_R-A-1753947-1"></div>
+        <script>
+          window.yaContextCb.push(function() {
+          return Ya.Context.AdvManager.render({
+            renderTo: 'yandex_rtb_R-A-1753947-1',
+            blockId: 'R-A-1753947-1'
+          })
+        })
+        </script>
+>>>>>>> a1ec3b2172558afa8adac0c1c2438251e02ffb19
       </aside>
     </div>
 
