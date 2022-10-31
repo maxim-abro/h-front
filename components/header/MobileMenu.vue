@@ -1,5 +1,5 @@
 <template>
-  <div class="flex fixed top-0 left-0 w-full h-full" v-if="$store.state.popup.openMobileMenu">
+  <div class="flex fixed top-0 left-0 w-full h-full z-50" v-if="$store.state.popup.openMobileMenu">
     <div class="w-9/12 h-full bg-white overflow-auto z-50 p-3">
       <ul>
         <li>
