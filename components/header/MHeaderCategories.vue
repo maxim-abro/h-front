@@ -7,7 +7,7 @@
     leave-class="opacity-100 translate-y-0"
     leave-to-class="opacity-0 -translate-y-full"
   >
-    <div class="bg-zinc-50 shadow shadow-xl p-8 absolute top-full left-1/2 -translate-x-1/2" v-if="$store.state.popup.openCats">
+    <div class="bg-zinc-50 shadow shadow-xl p-8 absolute top-full left-1/2 -translate-x-1/2 z-50" v-if="$store.state.popup.openCats">
       <div class="grid grid-cols-3">
         <nuxt-link class="w-full pl-1 text-xl font-light py-1 hover:bg-zinc-700 hover:text-primary duration-75 whitespace-nowrap
         overflow-ellipsis overflow-hidden" v-for="cat in getCategories" :to="`/categories/${cat.uin}`" :key="cat.uin" @click="clickCat(`/${cat.uin}`)"><fa :icon="cat.icon" class="mr-3 w-4"/>{{ cat.title }}</nuxt-link>

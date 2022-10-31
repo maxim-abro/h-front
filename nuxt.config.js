@@ -28,14 +28,21 @@ export default {
     ],
     script: [
       {
+        src: "/js/yacontext.js",
+      },
+      {
+        src: "https://yandex.ru/ads/system/context.js",
+        async: true
+      },
+      {
         src: '/js/yndx.js',
         body: true,
       },
       {
         src: '/js/google.js',
         body: true,
-      }
-    ]
+      },
+    ],
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
