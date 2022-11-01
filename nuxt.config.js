@@ -41,8 +41,8 @@ export default {
       {
         src: '/js/google.js',
         body: true,
-      }
-    ]
+      },
+    ],
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css

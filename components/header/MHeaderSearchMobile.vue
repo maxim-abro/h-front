@@ -1,7 +1,7 @@
 <template>
   <form
       @submit.prevent="submitSearch"
-      class="w-full absolute p-3 left-0 w-full bg-second">
+      class="w-full absolute p-3 left-0 w-full bg-second z-50">
     <div class="relative">
       <m-input
         class="p-2 w-full"
