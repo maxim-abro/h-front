@@ -1,6 +1,6 @@
 <template>
   <div
-    class="bg-[#00000050] w-full h-full fixed left-0 top-0 overflow-auto p-8"
+    class="bg-[#00000050] w-full h-full fixed left-0 top-0 overflow-auto p-8 z-50"
     @click.self="$store.state.popup.openPopup = false"
     v-if="$store.state.popup.openPopup"
   >
