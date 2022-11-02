@@ -1,5 +1,5 @@
 
 export const state = () => ({
   year: '2022',
-  month: 'октябрь'
+  month: 'Ноябрь'
 })
