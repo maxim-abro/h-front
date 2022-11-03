@@ -9,22 +9,22 @@ export default {
       lang: 'ru',
     },
     meta: [
-      { charset: 'utf-8' },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: '' },
-      { name: 'format-detection', content: 'telephone=no' },
-      { name: 'yandex-verification', content: '8f923e168571864e' },
-      { name: 'google-site-verification', content: 'Ugejcci0-aD7mxPeHzRUrHpRoHx0C7C7AEOzXftcTVI' },
-      { name: 'verify-admitad', content: '7f699afdb8' },
-      { name: 'wmail-verification', content: 'a1ef8b92c390d31de577d80ab6860da6' }
+      {charset: 'utf-8'},
+      {name: 'viewport', content: 'width=device-width, initial-scale=1'},
+      {hid: 'description', name: 'description', content: ''},
+      {name: 'format-detection', content: 'telephone=no'},
+      {name: 'yandex-verification', content: '8f923e168571864e'},
+      {name: 'google-site-verification', content: 'Ugejcci0-aD7mxPeHzRUrHpRoHx0C7C7AEOzXftcTVI'},
+      {name: 'verify-admitad', content: '7f699afdb8'},
+      {name: 'wmail-verification', content: 'a1ef8b92c390d31de577d80ab6860da6'}
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-      { rel: 'apple-touch-icon', type: 'image/png', sizes: '60x60', href: '/apple-touch-icon.png' },
-      { rel: 'icon', type: 'image/png', sizes: '16x16', href: '/favicon-16x16.png' },
-      { rel: 'icon', type: 'image/png', sizes: '32x32', href: '/favicon-32x32.png' },
-      { rel: 'icon', type: 'image/png', sizes: '32x32', href: '/favicon-32x32.png' },
-      { rel: 'icon', type: 'image/x-icon', sizes: '120x120', href: '/favicon-120x120.ico' }
+      {rel: 'icon', type: 'image/x-icon', href: '/favicon.ico'},
+      {rel: 'apple-touch-icon', type: 'image/png', sizes: '60x60', href: '/apple-touch-icon.png'},
+      {rel: 'icon', type: 'image/png', sizes: '16x16', href: '/favicon-16x16.png'},
+      {rel: 'icon', type: 'image/png', sizes: '32x32', href: '/favicon-32x32.png'},
+      {rel: 'icon', type: 'image/png', sizes: '32x32', href: '/favicon-32x32.png'},
+      {rel: 'icon', type: 'image/x-icon', sizes: '120x120', href: '/favicon-120x120.ico'}
     ],
     script: [
       {
@@ -33,6 +33,9 @@ export default {
       {
         src: "https://yandex.ru/ads/system/context.js",
         async: true
+      },
+      {
+        src: "/js/mobileAd.js",
       },
       {
         src: '/js/yndx.js',
@@ -50,8 +53,8 @@ export default {
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
-    { src: '~/plugins/axios.js' },
-    { src: '~/plugins/calendar.ts' }
+    {src: '~/plugins/axios.js'},
+    {src: '~/plugins/calendar.ts'}
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -94,10 +97,10 @@ export default {
   ],
 
   fontawesome: {
-    component:'fa',
-    icons:{
+    component: 'fa',
+    icons: {
       regular: true,
-      solid:true,
+      solid: true,
     }
   },
 
