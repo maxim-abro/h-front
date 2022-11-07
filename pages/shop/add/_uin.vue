@@ -5,7 +5,7 @@
   />
   <h1 class="text-2xl font-bold mb-8">Добавление вашего купона для "{{ seo.title }}"</h1>
 
-  <img :src="`https://za-halyavoi.ru/api/static/${shop.image}`" alt="">
+  <img :src="`https://za-halyavoi.ru/api/static/${shop.image}`" :alt="seo.title">
 
   <form action="">
     <div class="grid grid-cols-2 gap-8 mb-8">
@@ -26,6 +26,7 @@
     <small>Минимум 10 символов</small>
 
     <div
+      style="height: 100px"
       id="captcha-container"
       class="smart-captcha"
       data-sitekey="d8jFIYYKucfxlyJcqWWOshC5fOjXZkDfZyweKSTf"
@@ -40,17 +41,17 @@
 export default {
   head() {
     return {
-      title: ``,
+      title: `Промокоды акции и скидки из магазина ${this.seo.title} на ${this.$store.state.seo.month} ${this.$store.state.seo.year} год.`,
       meta: [
         {
           hid: "description",
           name: "description",
-          content: ""
+          content: this.seo.description,
         },
         {
           hid: "keywords",
           name: "keywords",
-          content: `сайты, алфавит, промокоды, скидки, акции, магазины, акция, промокод, скидка, `
+          content: `сайты, алфавит, промокоды, скидки, акции, магазины, акция, промокод, скидка, ${this.seo.title}, ${this.$store.state.seo.month}, ${this.$store.state.seo.year}`,
         },
       ],
       script: [
