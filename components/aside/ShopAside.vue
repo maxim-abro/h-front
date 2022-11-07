@@ -2,7 +2,7 @@
   <div class="shadow shadow-md shadow-[#00000070] w-full border-zinc-200 p-3">
     <img
       v-if="data.image"
-      :src="`http://za-halyavoi.ru/api/static/${data.image}`"
+      :src="`https://za-halyavoi.ru/api/static/${data.image}`"
       alt=""
       class="mx-auto w-max-[100%]"
     />
@@ -17,6 +17,7 @@
 
     <button
       class="text-center rounded w-full mt-3 py-1.5 bg-zinc-200 text-second hover:text-primary transition-all duration-300 hover:transition-all hover:duration-300"
+      @click="$router.push(`/shop/add/${data.uin}`)"
     >
       <fa icon="circle-chevron-down" />
       Предложить купон
