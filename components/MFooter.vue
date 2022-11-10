@@ -69,10 +69,13 @@
               <nuxt-link to="/alphabet" class="text-zinc-300 hover:text-primary hover:underline">Магазины</nuxt-link>
             </li>
             <li>
-              <nuxt-link to="/" class="text-zinc-300 hover:text-primary hover:underline">Купоны</nuxt-link>
+              <nuxt-link to="#" class="text-zinc-300 hover:text-primary hover:underline">Купоны</nuxt-link>
             </li>
             <li>
-              <a href="/categories" class="text-zinc-300 hover:text-primary hover:underline">Категории</a>
+              <nuxt-link to="/categories" class="text-zinc-300 hover:text-primary hover:underline">Категории</nuxt-link>
+            </li>
+            <li>
+              <nuxt-link to="/tags" class="text-zinc-300 hover:text-primary hover:underline">Сезонные скидки</nuxt-link>
             </li>
           </ul>
         </div>

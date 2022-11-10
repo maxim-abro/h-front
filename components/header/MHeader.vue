@@ -1,6 +1,6 @@
 <template>
   <div class="relative">
-    <header class="mb-3 py-2 shadow shadow-xl relative md:shadow-none">
+    <header class="mb-3 pt-2 md:py-2 shadow shadow-xl relative md:shadow-none">
       <div class="container flex justify-between items-center">
         <button class="text-primary bg-zinc-100 w-10 h-10 block md:hidden" @click="$store.commit('popup/toggleMenu', true)"><fa icon="bars"/></button>
         <nuxt-link
@@ -29,6 +29,11 @@
       </div>
       <m-header-search-mobile v-if="openSearchMobile" @close="openSearchMobile = false"/>
       <mobile-menu />
+
+      <nuxt-link class="p-3 inline-block md:hidden bg-second text-white w-full" to="/tags/1">
+        <fa class="text-red-600" icon="fire-flame-curved" />
+        Чёрная пятница!
+      </nuxt-link>
     </header>
 
     <nav class="bg-second text-primary hidden md:block">
@@ -58,11 +63,11 @@
               Блог
             </nuxt-link>
           </li>
-          <li v-if="$store.getters['auth/isAuth']">
-            <nuxt-link to="/admin" class="p-3 inline-block bg-second hover:bg-zinc-700">админ панель</nuxt-link>
-          </li>
-          <li v-if="$store.getters['auth/isAuth']">
-            <button class="p-3 inline-block bg-second hover:bg-zinc-700" @click="$store.commit('auth/logout')">выйти</button>
+          <li>
+            <nuxt-link class="p-3 inline-block bg-second text-white hover:bg-zinc-700" to="/tags/1">
+              <fa icon="fire-flame-curved" class="text-red-600"/>
+              Чёрная пятница!
+            </nuxt-link>
           </li>
         </ul>
       </div>
