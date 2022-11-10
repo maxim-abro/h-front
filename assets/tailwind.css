@@ -55,3 +55,35 @@
   font-weight: 900;
   src: url("fonts/Roboto-Black.woff2") format('woff2');
 }
+
+/* width */
+::-webkit-scrollbar {
+  width: 16px;
+  height: 16px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #edf2f7;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #fdb13c;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #FDCB7D;
+}
+
+.thin-scrollbar::-webkit-scrollbar {
+  width: 7px;
+  height: 16px;
+}
+
+/* Mozilla scrollbar */
+* {
+  scrollbar-color: #fdb13c #edf2f7;
+  scrollbar-width: 16px;
+}
