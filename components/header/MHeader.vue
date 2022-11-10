@@ -31,7 +31,10 @@
       <mobile-menu />
 
       <nuxt-link class="p-3 inline-block md:hidden bg-second text-white w-full" to="/tags/1">
-        <fa class="text-red-600" icon="fire-flame-curved" />
+        <div class="inline-block">
+          <fa icon="fire-flame-curved" class="text-red-600 animate-ping absolute"/>
+          <fa icon="fire-flame-curved" class="text-red-600"/>
+        </div>
         Чёрная пятница!
       </nuxt-link>
     </header>
@@ -65,7 +68,10 @@
           </li>
           <li>
             <nuxt-link class="p-3 inline-block bg-second text-white hover:bg-zinc-700" to="/tags/1">
-              <fa icon="fire-flame-curved" class="text-red-600"/>
+              <div class="inline-block">
+                <fa icon="fire-flame-curved" class="text-red-600 animate-ping absolute"/>
+                <fa icon="fire-flame-curved" class="text-red-600"/>
+              </div>
               Чёрная пятница!
             </nuxt-link>
           </li>
