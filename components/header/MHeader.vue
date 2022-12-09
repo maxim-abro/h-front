@@ -30,9 +30,12 @@
       <m-header-search-mobile v-if="openSearchMobile" @close="openSearchMobile = false"/>
       <mobile-menu />
 
-      <nuxt-link class="p-3 inline-block md:hidden bg-second text-white w-full" to="/tags/1">
-        <fa class="text-red-600" icon="fire-flame-curved" />
-        Чёрная пятница!
+      <nuxt-link class="p-3 inline-block md:hidden bg-second text-white w-full" to="/tags/2">
+        <div class="inline-block">
+          <!--                <fa icon="snowflake" class="text-blue-300 animate-ping absolute"/>-->
+          <fa icon="snowflake" class="text-blue-300 animate-spin-slow"/>
+        </div>
+        С Новым годом
       </nuxt-link>
     </header>
 
@@ -64,9 +67,12 @@
             </nuxt-link>
           </li>
           <li>
-            <nuxt-link class="p-3 inline-block bg-second text-white hover:bg-zinc-700" to="/tags/1">
-              <fa icon="fire-flame-curved" class="text-red-600"/>
-              Чёрная пятница!
+            <nuxt-link class="p-3 inline-block bg-second text-white hover:bg-zinc-700" to="/tags/2">
+              <div class="inline-block">
+<!--                <fa icon="snowflake" class="text-blue-300 animate-ping absolute"/>-->
+                <fa icon="snowflake" class="text-blue-300 animate-spin-slow"/>
+              </div>
+              С Новым годом
             </nuxt-link>
           </li>
         </ul>

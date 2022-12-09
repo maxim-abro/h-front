@@ -46,6 +46,9 @@ module.exports = {
       }
     },
     extend: {
+      animation: {
+        "spin-slow": "spin 4s linear infinite"
+      },
       fontFamily: {
         sans: ["Roboto", "normal"],
         display: ["Roboto", "normal"],

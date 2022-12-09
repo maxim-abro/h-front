@@ -74,7 +74,7 @@ export default {
         // @ts-ignore
         this.$cookies.set('likes', [uin])
         // @ts-ignore
-        this.holidays.posts.forEach((i) => {
+        this.holiday.posts.forEach((i) => {
           if (i.uin === uin) {
             i.rating = i.rating + 1
           }
@@ -88,7 +88,7 @@ export default {
           // @ts-ignore
           this.$cookies.set('likes', likes)
           // @ts-ignore
-          this.holidays.posts.forEach((i) => {
+          this.holiday.posts.forEach((i) => {
             if (i.uin === uin) {
               i.rating = i.rating + 1
             }
