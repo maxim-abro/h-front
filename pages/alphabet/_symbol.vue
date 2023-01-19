@@ -1,7 +1,7 @@
 <template>
   <div class="">
-    <h2 class="text-2xl font-bold mb-2">Магазины по алфавиту</h2>
-    <h3 class="text-xl font-bold mb-4">Найдите интересующий вас магазин по первой букве:</h3>
+    <h1 class="text-2xl font-bold mb-2">Магазины по алфавиту на символ {{ $route.params.symbol.toLowerCase() }}</h1>
+    <h2 class="text-xl font-bold mb-4">Найдите интересующий вас магазин по первой букве:</h2>
 
     <div class="flex gap-2 mb-8">
       <nuxt-link
