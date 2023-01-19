@@ -4,9 +4,9 @@
       <m-bread-crumbs
         :crumbs="breadCrumbs"
       />
-      <h2 class="text-2xl font-bold mb-8">
+      <h1 class="text-2xl font-bold mb-8">
         Промокоды и скидки {{ shopData.title }}
-      </h2>
+      </h1>
 
       <div class="mb-40">
         <m-horizontal-card
