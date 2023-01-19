@@ -102,7 +102,7 @@
     </div>
 
     <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.2);">
-      © 2022 Copyright:
+      © 2023 Copyright:
       <a class="text-white underline hover:text-primary hover:no-underline" href="mailto:support@za-halyavoi.ru">support@za-halyavoi.ru</a>
     </div>
     <div class="" v-html="code">
