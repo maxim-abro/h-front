@@ -117,6 +117,13 @@ export default {
           name: 'keywords',
           content: 'сайты, алфавит, промокоды, скидки, акции, магазины, акция, промокод, скидка'
         }
+      ],
+      link: [
+        {
+          rel: 'canonical',
+          // @ts-ignore
+          href: 'https://za-halyavoi.ru/alphabet'
+        }
       ]
     }
   },

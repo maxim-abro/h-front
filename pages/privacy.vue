@@ -532,6 +532,13 @@ export default {
           name: 'keywords',
           content: 'сайты, политика, алфавит, промокоды, скидки, акции, магазины, акция, промокод, скидка'
         }
+      ],
+      link: [
+        {
+          rel: 'canonical',
+          // @ts-ignore
+          href: 'https://za-halyavoi.ru/privacy'
+        }
       ]
     }
   },

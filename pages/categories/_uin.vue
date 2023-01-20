@@ -33,20 +33,27 @@ export default {
   },
   head():any {
     return {
-      //@ts-ignore
+      // @ts-ignore
       title: `${this.category.title} по скидкам с купонами и промокодами на ${this.$store.state.seo.month} ${this.$store.state.seo.year} год`,
       meta: [
         {
           hid: 'description',
           name: 'description',
-          //@ts-ignore
+          // @ts-ignore
           content: this.category.description
         },
         {
           hid: 'keywords',
           name: 'keywords',
-          //@ts-ignore
+          // @ts-ignore
           content: `сайты, категории, промокоды, скидки, акции, магазины, акция, промокод, скидка, ${this.category.title}, ${this.$store.state.seo.month}`
+        }
+      ],
+      link: [
+        {
+          rel: 'canonical',
+          // @ts-ignore
+          href: 'https://za-halyavoi.ru/categories/' + this.$route.params.uin
         }
       ]
     }

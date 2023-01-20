@@ -61,6 +61,13 @@ export default {
           name: "keywords",
           content: `сайты, промокоды, скидки, акции, магазины, акция, промокод, скидка, ${this.holiday.title}`,
         },
+      ],
+      link: [
+        {
+          rel: 'canonical',
+          // @ts-ignore
+          href: 'https://za-halyavoi.ru/tags/' + this.$route.params.id
+        }
       ]
     }
   },
