@@ -96,6 +96,13 @@ export default {
           // @ts-ignore
           content: `сайты, промокоды, скидки, акции, магазины, акция, промокод, скидка, ${this.$store.state.seo.month}`
         }
+      ],
+      link: [
+        {
+          rel: 'canonical',
+          // @ts-ignore
+          href: 'https://za-halyavoi.ru/'
+        }
       ]
     }
   },

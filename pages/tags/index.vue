@@ -38,6 +38,13 @@ export default {
           // @ts-ignore
           content: `сезонные скидки, сезонная скидка, сайты, промокоды, скидки, акции, магазины, акция, промокод, скидка, ${this.$store.state.seo.month}`
         }
+      ],
+      link: [
+        {
+          rel: 'canonical',
+          // @ts-ignore
+          href: 'https://za-halyavoi.ru/tags'
+        }
       ]
     }
   },

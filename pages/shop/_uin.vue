@@ -34,22 +34,29 @@ export default {
   layout: 'shop',
   head():any {
     return {
-      //@ts-ignore
+      // @ts-ignore
       title: `Промокоды акции и скидки из магазина ${this.seo.title} на ${this.$store.state.seo.month} ${this.$store.state.seo.year} год.`,
       meta: [
         {
           hid: 'description',
           name: 'description',
-          //@ts-ignore
+          // @ts-ignore
           content: this.seo.description
         },
         {
           hid: 'keywords',
           name: 'keywords',
-          //@ts-ignore
+          // @ts-ignore
           content: `сайты, алфавит, промокоды, скидки, акции, магазины, акция, промокод, скидка, ${this.seo.title}, ${this.$store.state.seo.month}, ${this.$store.state.seo.year}`
         }
       ],
+      link: [
+        {
+          rel: 'canonical',
+          // @ts-ignore
+          href: 'https://za-halyavoi.ru/shop/' + this.$route.params.uin
+        }
+      ]
     }
   },
   data():any {

@@ -59,6 +59,13 @@ export default {
           src: "https://captcha-api.yandex.ru/captcha.js",
           defer: true,
         }
+      ],
+      link: [
+        {
+          rel: 'canonical',
+          // @ts-ignore
+          href: 'https://za-halyavoi.ru/shop/add/' + this.$route.params.uin
+        }
       ]
     }
   },

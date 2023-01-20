@@ -47,6 +47,13 @@ export default {
           name: 'keywords',
           content: 'сайты, категории, алфавит, промокоды, скидки, акции, магазины, акция, промокод, скидка'
         }
+      ],
+      link: [
+        {
+          rel: 'canonical',
+          // @ts-ignore
+          href: 'https://za-halyavoi.ru/categories'
+        }
       ]
     }
   },
