@@ -47,13 +47,48 @@ export default {
           hid: 'description',
           name: 'description',
           // @ts-ignore
-          content: `Свежие промокоды, скидки и акции на ${this.$store.state.seo.month} ${this.$store.state.seo.year} год, а также эксклюзивные купоны. го za халявой!`
+          content: `Свежие промокоды, скидки и акции на ${this.$store.state.seo.month} ${this.$store.state.seo.year} год, а также эксклюзивные купоны. Бегом za халявой!`
         },
         {
           hid: 'keywords',
           name: 'keywords',
           content: 'сайты, промокоды, скидки, акции, магазины, акция, промокод, скидка'
-        }
+        },
+        {
+          hid: "og:title",
+          name: 'og:title',
+          content: `Промокоды, скидки и акции для сайтов и интернет-магазинов на ${this.$store.state.seo.month} ${this.$store.state.seo.year} год поиск по магазинам ${this.dataq}`
+        },
+        {
+          hid: "og:description",
+          name: "og:description",
+          content: `Свежие промокоды, скидки и акции на ${this.$store.state.seo.month} ${this.$store.state.seo.year} год, а также эксклюзивные купоны. Бегом za халявой!`
+        },
+        {
+          hid: "og:url",
+          name: 'og:url',
+          content: `https://za-halyavoi.ru${this.$route.fullPath}`
+        },
+        {
+          hid: "og:image",
+          name: 'og:image',
+          content: "https://za-halyavoi.ru/logo.png"
+        },
+        {
+          hid: "og:type",
+          name: 'og:type',
+          content: "article"
+        },
+        {
+          hid: "og:site_name",
+          name: 'og:site_name',
+          content: "за халявой"
+        },
+        {
+          hid: "og:image:url",
+          name: 'og:image:url',
+          content: "https://za-halyavoi.ru/logo.png"
+        },
       ],
       link: [
         {
