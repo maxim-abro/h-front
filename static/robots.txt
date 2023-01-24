@@ -1,13 +1,6 @@
 User-agent: *
 Crawl-delay: 1
 Host: https://za-halyavoi.ru/
-Disallow: /auth
-Disallow: /admin
-Disallow: /admin/edit_shop
-Disallow: /admin/add_post
-Disallow: /admin/app_shop
-Disallow: /admin/gde_slon
-Disallow: /admin/adv_cake
 Disallow: /*?*
 Disallow: /search
 Sitemap: https://za-halyavoi.ru/sitemap.xml
