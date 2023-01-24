@@ -54,12 +54,47 @@ export default {
         {
           hid: "description",
           name: "description",
-          content: this.holiday.description,
+          content: this.holiday.description.slice(0, 346),
         },
         {
           hid: "keywords",
           name: "keywords",
           content: `сайты, промокоды, скидки, акции, магазины, акция, промокод, скидка, ${this.holiday.title}`,
+        },
+        {
+          hid: "og:title",
+          name: 'og:title',
+          content: `${this.holiday.title}. Промокоды, скидки и акции для сайтов и интернет-магазинов`
+        },
+        {
+          hid: "og:description",
+          name: "og:description",
+          content: this.holiday.description
+        },
+        {
+          hid: "og:url",
+          name: 'og:url',
+          content: `https://za-halyavoi.ru${this.$route.fullPath}`
+        },
+        {
+          hid: "og:image",
+          name: 'og:image',
+          content: "https://za-halyavoi.ru/logo.png"
+        },
+        {
+          hid: "og:type",
+          name: 'og:type',
+          content: "article"
+        },
+        {
+          hid: "og:site_name",
+          name: 'og:site_name',
+          content: "за халявой"
+        },
+        {
+          hid: "og:image:url",
+          name: 'og:image:url',
+          content: "https://za-halyavoi.ru/logo.png"
         },
       ],
       link: [

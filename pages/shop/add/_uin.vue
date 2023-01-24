@@ -41,17 +41,52 @@
 export default {
   head() {
     return {
-      title: `Промокоды акции и скидки из магазина ${this.seo.title} на ${this.$store.state.seo.month} ${this.$store.state.seo.year} год.`,
+      title: `Добавить промокод для магазина ${this.seo.title} на ${this.$store.state.seo.month} ${this.$store.state.seo.year} год.`,
       meta: [
         {
           hid: "description",
           name: "description",
-          content: this.seo.description,
+          content: this.seo.description.slice(0, 300) + "..." + " добавление промокода.",
         },
         {
           hid: "keywords",
           name: "keywords",
           content: `сайты, алфавит, промокоды, скидки, акции, магазины, акция, промокод, скидка, ${this.seo.title}, ${this.$store.state.seo.month}, ${this.$store.state.seo.year}`,
+        },
+        {
+          hid: "og:title",
+          name: 'og:title',
+          content: `Добавить промокод для магазина ${this.seo.title} на ${this.$store.state.seo.month} ${this.$store.state.seo.year} год.`
+        },
+        {
+          hid: "og:description",
+          name: "og:description",
+          content: this.seo.description
+        },
+        {
+          hid: "og:url",
+          name: 'og:url',
+          content: `https://za-halyavoi.ru${this.$route.fullPath}`
+        },
+        {
+          hid: "og:image",
+          name: 'og:image',
+          content: "https://za-halyavoi.ru/logo.png"
+        },
+        {
+          hid: "og:type",
+          name: 'og:type',
+          content: "article"
+        },
+        {
+          hid: "og:site_name",
+          name: 'og:site_name',
+          content: "за халявой"
+        },
+        {
+          hid: "og:image:url",
+          name: 'og:image:url',
+          content: "https://za-halyavoi.ru/logo.png"
         },
       ],
       script: [

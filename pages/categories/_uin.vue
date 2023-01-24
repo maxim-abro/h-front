@@ -40,14 +40,49 @@ export default {
           hid: 'description',
           name: 'description',
           // @ts-ignore
-          content: this.category.description
+          content: this.category.description.slice(0, 346) + "..."
         },
         {
           hid: 'keywords',
           name: 'keywords',
           // @ts-ignore
           content: `сайты, категории, промокоды, скидки, акции, магазины, акция, промокод, скидка, ${this.category.title}, ${this.$store.state.seo.month}`
-        }
+        },
+        {
+          hid: "og:title",
+          name: 'og:title',
+          content: `${this.category.title} по скидкам с купонами и промокодами на ${this.$store.state.seo.month} ${this.$store.state.seo.year} год`
+        },
+        {
+          hid: "og:description",
+          name: "og:description",
+          content: this.category.description
+        },
+        {
+          hid: "og:url",
+          name: 'og:url',
+          content: `https://za-halyavoi.ru${this.$route.fullPath}`
+        },
+        {
+          hid: "og:image",
+          name: 'og:image',
+          content: "https://za-halyavoi.ru/logo.png"
+        },
+        {
+          hid: "og:type",
+          name: 'og:type',
+          content: "article"
+        },
+        {
+          hid: "og:site_name",
+          name: 'og:site_name',
+          content: "за халявой"
+        },
+        {
+          hid: "og:image:url",
+          name: 'og:image:url',
+          content: "https://za-halyavoi.ru/logo.png"
+        },
       ],
       link: [
         {
