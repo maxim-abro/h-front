@@ -8,9 +8,23 @@
         Промокоды и скидки {{ shopData.title }}
       </h1>
 
-      <div class="mb-40">
+      <div v-if="posts.length" class="mb-20">
         <m-horizontal-card
           v-for="post in posts"
+          :key="post.uin"
+          :post="post"
+          @like="likePost($event)"
+        />
+      </div>
+      <div v-if='!posts.length' class="mb-20">
+        <h2 class="text-3xl font-bold">К сожалению промокодов не найдено, но мы можем предложить промокоды <nuxt-link class='text-primary underline hover:no-underline' to='/alphabite'>других магазинов</nuxt-link></h2>
+      </div>
+
+      <h2 class='text-2xl font-bold mb-8'>Промокоды, похожие на {{ shopData.title }}</h2>
+
+      <div class='mb-20'>
+        <m-horizontal-card
+          v-for="post of recommended"
           :key="post.uin"
           :post="post"
           @like="likePost($event)"
@@ -103,6 +117,7 @@ export default {
       posts: [] as PostModel[],
       page: 1 as number,
       count: 0 as number,
+      recommended: [] as PostModel[],
       seo: {
         title: '',
         description: '',
@@ -115,6 +130,10 @@ export default {
 
     const shop = await $api.get(`/shop/${route.params.uin}`)
     const posts = await $api.get(`/post/?shop=${route.params.uin}&page=${page}`)
+    const recommended = await $api.post('/post/recommended', {
+      categories: shop.data.categories,
+      shop: shop.data.uin
+    });
 
 
     const breadCrumbs = [
@@ -132,7 +151,8 @@ export default {
         title: shop.data.title,
         description: shop.data.description
       },
-      breadCrumbs
+      breadCrumbs,
+      recommended: recommended.data,
     }
   },
   methods: {

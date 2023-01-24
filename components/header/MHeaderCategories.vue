@@ -9,10 +9,10 @@
   >
     <div class="bg-zinc-50 shadow shadow-xl p-8 absolute top-full left-1/2 -translate-x-1/2 z-50" v-if="$store.state.popup.openCats">
       <div class="grid grid-cols-3">
-        <nuxt-link class="w-full pl-1 text-xl font-light py-1 hover:bg-zinc-700 hover:text-primary duration-75 whitespace-nowrap
-        overflow-ellipsis overflow-hidden" v-for="cat in getCategories" :to="`/categories/${cat.uin}`" :key="cat.uin" @click="clickCat(`/${cat.uin}`)"><fa :icon="cat.icon" class="mr-3 w-4"/>{{ cat.title }}</nuxt-link>
-        <nuxt-link class="w-full pl-1 text-xl font-light py-1 hover:bg-zinc-700 hover:text-primary duration-75 whitespace-nowrap
-        overflow-ellipsis overflow-hidden" to="/categories" @click.prevent="clickCat('')"><fa icon="ellipsis-h"/> Все категории</nuxt-link>
+        <a class="w-full pl-1 text-xl font-light py-1 hover:bg-zinc-700 hover:text-primary duration-75 whitespace-nowrap
+        overflow-ellipsis overflow-hidden" v-for="cat in getCategories" :href="`/categories/${cat.uin}`" :key="cat.uin" @click.prevent="clickCat(`/categories/${cat.uin}`)"><fa :icon="cat.icon" class="mr-3 w-4"/>{{ cat.title }}</a>
+        <a class="w-full pl-1 text-xl font-light py-1 hover:bg-zinc-700 hover:text-primary duration-75 whitespace-nowrap
+        overflow-ellipsis overflow-hidden" href="/categories" @click.prevent="clickCat('/categories')"><fa icon="ellipsis-h"/> Все категории</a>
       </div>
     </div>
   </transition>
@@ -41,11 +41,11 @@ export default {
     }
   },
   methods: {
-    clickCat(uin?:string):void {
+    clickCat(url?:string):void {
       // @ts-ignore
       this.$store.commit('popup/toggleCats')
       // @ts-ignore
-      this.$router.push(`/categories${uin}`)
+      this.$router.push(url)
     }
   }
 }
