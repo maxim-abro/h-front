@@ -88,6 +88,7 @@ export default {
         {
           hid: "og:url",
           name: 'og:url',
+          // @ts-ignore
           content: `https://za-halyavoi.ru${this.$route.fullPath}`
         },
         {

@@ -50,16 +50,19 @@ export default {
         {
           hid: "og:title",
           name: 'og:title',
+          // @ts-ignore
           content: `Промокоды, скидки акции по категориям на ${this.$store.state.seo.month} ${this.$store.state.seo.month} год.`
         },
         {
           hid: "og:description",
           name: "og:description",
+          // @ts-ignore
           content: `Промокоды и скидки по категориям - Свежие промокоды, скидки и акции на ${this.$store.state.seo.month} ${this.$store.state.seo.year} год, а также эксклюзивные купоны. Бегом za халявой!`
         },
         {
           hid: "og:url",
           name: 'og:url',
+          // @ts-ignore
           content: `https://za-halyavoi.ru${this.$route.fullPath}`
         },
         {

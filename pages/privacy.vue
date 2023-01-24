@@ -540,11 +540,13 @@ export default {
         {
           hid: "og:description",
           name: "og:description",
+          // @ts-ignore
           content: `Политика в отношении обработки персональных данных. Свежие промокоды, скидки и акции на ${this.$store.state.seo.month} 2022 год, а также эксклюзивные купоны. Бегом za халявой!`
         },
         {
           hid: "og:url",
           name: 'og:url',
+          // @ts-ignore
           content: `https://za-halyavoi.ru${this.$route.fullPath}`
         },
         {

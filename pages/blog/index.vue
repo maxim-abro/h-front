@@ -24,16 +24,19 @@ export default {
         {
           hid: "og:title",
           name: 'og:title',
+          // @ts-ignore
           content: `Блог про шоппинг, промокоды, акции, купоны на ${this.$store.state.seo.month} ${this.$store.state.seo.year} год.`
         },
         {
           hid: "og:description",
           name: "og:description",
+          // @ts-ignore
           content: `Блог про шоппинг, промокоды, акции, купоны - Свежие промокоды, скидки и акции на ${this.$store.state.seo.month} ${this.$store.state.seo.year} год, а также эксклюзивные купоны. Бегом za халявой!`
         },
         {
           hid: "og:url",
           name: 'og:url',
+          // @ts-ignore
           content: `https://za-halyavoi.ru${this.$route.fullPath}`
         },
         {
