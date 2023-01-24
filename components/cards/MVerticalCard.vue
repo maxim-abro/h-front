@@ -4,7 +4,7 @@
       v-if="post.shop"
       :src="`https://za-halyavoi.ru/api/static/${post.shop.image}`"
       class="mx-auto h-[59px] cursor-pointer"
-      alt=""
+      :alt="post.shop.title"
       @click="openLink"
     />
 
@@ -22,7 +22,7 @@
 
     <hr class="-mx-8 border-t-[2px]" />
 
-    <div class="mx-auto mt-1 text-center text-xl h-[112px] font-medium hover:text-primary cursor-pointer" @click="openLink">
+    <div class="mx-auto mt-1 text-center text-xl h-[112px] overflow-hidden font-medium hover:text-primary cursor-pointer" @click="openLink">
       {{ post.title }}
     </div>
 
