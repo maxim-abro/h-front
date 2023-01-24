@@ -114,11 +114,13 @@ export default {
         {
           hid: "og:description",
           name: "og:description",
+          // @ts-ignore
           content: `Пользовательское Соглашение. Свежие промокоды, скидки и акции на ${this.$store.state.seo.month} ${this.$store.state.seo.year} год, а также эксклюзивные купоны. Бегом za халявой!`
         },
         {
           hid: "og:url",
           name: 'og:url',
+          // @ts-ignore
           content: `https://za-halyavoi.ru${this.$route.fullPath}`
         },
         {

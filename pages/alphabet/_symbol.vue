@@ -80,7 +80,7 @@ export default {
         {
           hid: 'description',
           name: 'description',
-          //@ts-ignore
+          // @ts-ignore
           content: `Все магазины на ${this.$route.params.symbol.toLowerCase()}. Свежие промокоды, скидки и акции на ${this.$store.state.seo.month} ${this.$store.state.seo.year} год, а также эксклюзивные купоны. Бегом za халявой!`
         },
         {
@@ -91,16 +91,19 @@ export default {
         {
           hid: "og:title",
           name: 'og:title',
+          // @ts-ignore
           content: `Все магазины на ${this.$route.params.symbol.toLowerCase()}. Промокоды, скидки акции на ${this.$store.state.seo.month} ${this.$store.state.seo.year} год`
         },
         {
           hid: "og:description",
           name: "og:description",
+          // @ts-ignore
           content: `Все магазины на ${this.$route.params.symbol.toLowerCase()}. Свежие промокоды, скидки и акции на ${this.$store.state.seo.month} ${this.$store.state.seo.year} год, а также эксклюзивные купоны. Бегом za халявой!`
         },
         {
           hid: "og:url",
           name: 'og:url',
+          // @ts-ignore
           content: `https://za-halyavoi.ru${this.$route.fullPath}`
         },
         {

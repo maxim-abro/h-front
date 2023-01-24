@@ -51,16 +51,19 @@ export default {
         {
           hid: "og:title",
           name: 'og:title',
+          // @ts-ignore
           content: `${this.category.title} по скидкам с купонами и промокодами на ${this.$store.state.seo.month} ${this.$store.state.seo.year} год`
         },
         {
           hid: "og:description",
           name: "og:description",
+          // @ts-ignore
           content: this.category.description
         },
         {
           hid: "og:url",
           name: 'og:url',
+          // @ts-ignore
           content: `https://za-halyavoi.ru${this.$route.fullPath}`
         },
         {
