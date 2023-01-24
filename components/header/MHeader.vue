@@ -7,7 +7,7 @@
           to="/"
           class="text-2xl font-black flex items-center text-primary drop-shadow"
         >
-          <img src="/logo.png" class="h-16 mr-1 xs:h-20 w-auto" alt="логотип">
+          <img src="/logo-min.png" class="h-16 mr-1 xs:h-20 w-auto" alt="логотип">
         </nuxt-link>
         <button class="text-primary bg-zinc-100 w-10 h-10 block md:hidden" @click="openSearchMobile = !openSearchMobile"><fa icon="magnifying-glass"/></button>
         <form @submit.prevent="submitSearch" class="w-5/12 relative hidden md:block">
