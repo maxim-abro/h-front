@@ -3,7 +3,7 @@
     <img
       v-if="data.image"
       :src="`https://za-halyavoi.ru/api/static/${data.image}`"
-      alt=""
+      :alt="data.title"
       class="mx-auto w-max-[100%]"
     />
     <a

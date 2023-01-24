@@ -20,7 +20,7 @@
               'http://za-halyavoi.ru/api/static/' +
               $store.state.popup.popupData.shop.image
             "
-            alt=""
+            :alt="$store.state.popup.popupData.shop.title"
             @click="$router.push(`/to/${$store.state.popup.popupData.uin}`)"
           />
 
