@@ -4,7 +4,7 @@
       v-if="data.image"
       :src="`https://za-halyavoi.ru/api/static/${data.image}`"
       :alt="data.title"
-      class="mx-auto w-max-[100%]"
+      class="mx-auto w-max-[100%] mb-3"
     />
     <a
       :href="data.url"
