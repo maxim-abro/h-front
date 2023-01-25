@@ -64,41 +64,34 @@ export default {
           content: `сайты, алфавит, промокоды, скидки, акции, магазины, акция, промокод, скидка, ${this.seo.title}, ${this.$store.state.seo.month}, ${this.$store.state.seo.year}`
         },
         {
-          hid: "og:title",
-          name: 'og:title',
+          property: "og:title",
           // @ts-ignore
           content: `Промокоды акции и скидки из магазина ${this.seo.title} на ${this.$store.state.seo.month} ${this.$store.state.seo.year} год.`
         },
         {
-          hid: "og:description",
-          name: "og:description",
+          property: "og:description",
           // @ts-ignore
           content: this.seo.description
         },
         {
-          hid: "og:url",
-          name: 'og:url',
+          property: "og:url",
           // @ts-ignore
           content: `https://za-halyavoi.ru${this.$route.fullPath}`
         },
         {
-          hid: "og:image",
-          name: 'og:image',
+          property: "og:image",
           content: "https://za-halyavoi.ru/logo.png"
         },
         {
-          hid: "og:type",
-          name: 'og:type',
+          property: "og:type",
           content: "article"
         },
         {
-          hid: "og:site_name",
-          name: 'og:site_name',
+          property: "og:site_name",
           content: "за халявой"
         },
         {
-          hid: "og:image:url",
-          name: 'og:image:url',
+          property: "og:image:url",
           content: "https://za-halyavoi.ru/logo.png"
         },
       ],
