@@ -2,7 +2,7 @@
   <div class="">
     <m-bread-crumbs :crumbs="breadCrumbs"/>
     <h1 class="text-2xl lg:text-3xl font-bold mb-4"><fa :icon="category.icon" class="text-primary mr-3"/>Промокоды на скидку в категории {{ category.title.toLowerCase() }}</h1>
-    <h2 class="text-gray-900 mb-3">{{ category.description }}</h2>
+    <h2 class="text-gray-900 dark:text-zinc-200 mb-3">{{ category.description }}</h2>
 
     <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-1">
       <nuxt-link

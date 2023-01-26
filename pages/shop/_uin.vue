@@ -4,7 +4,7 @@
       <m-bread-crumbs
         :crumbs="breadCrumbs"
       />
-      <h1 class="text-2xl font-bold mb-8">
+      <h1 class="text-2xl font-bold mb-8 dark:text-zinc-200">
         Промокоды и скидки {{ shopData.title }}
       </h1>
 

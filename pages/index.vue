@@ -1,5 +1,5 @@
 <template>
-  <div class="">
+  <div class="dark:bg-zinc-900">
     <h1 class="text-2xl font-bold mb-8" ref="hot">
       <fa icon="fire" class="text-primary" />
       Горячие скидки
@@ -18,7 +18,7 @@
       :pageCount="pagination.total_pages"
        class="flex justify-center mb-10"
     />
-    <div class="prose lg:prose-xl prose-stone mb-10 max-w-none">
+    <div class="prose lg:prose-xl prose-stone dark:prose-invert mb-10 max-w-none">
       <h2>Сайты с промокодами – экономить легко!</h2>
       <p>
         Возможность сэкономить и найти товар или услугу по скидке – это отличный способ спасти бюджет от лишних расходов. Купонные распродажи появились не так давно – в 2008 году появился первый сайт с горячими скидками, и сервис тут же приобрел популярность.

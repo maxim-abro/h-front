@@ -8,7 +8,7 @@
 <!--      class="absolute left-1/2 w-full lg:w-9/12 xl:w-auto xl:max-w-[750px] -translate-x-1/2 -translate-y-1/2 top-1/2 bg-white p-5 shadow shadow-2xl"-->
 <!--    >-->
     <div
-      class="bg-white mx-auto w-full md:translate-y-1/2 lg:w-9/12 xl:w-auto xl:max-w-[750px]"
+      class="bg-white dark:bg-zinc-800 mx-auto w-full md:translate-y-1/2 lg:w-9/12 xl:w-auto xl:max-w-[750px]"
     >
       <!-------------Топ----------------------------->
       <div class="flex items-center justify-between mb-5 relative p-4">
@@ -45,19 +45,19 @@
 
 
       <!-------------Центр--------------------------->
-      <div class="bg-zinc-100 p-3 sm:px-5 sm:py-5 ">
+      <div class="bg-zinc-100 dark:bg-zinc-900 p-3 sm:px-5 sm:py-5 ">
         <div
-          class="text-zinc-700 text-center mb-5"
+          class="text-zinc-700 dark:text-zinc-200 text-center mb-5"
           v-if="$store.state.popup.popupData.shop"
         >
-          Перейдите на сайт
+          Переходите на сайт
           <a
             target="_blank"
             class="text-primary hover:text-second transition-all duration-300"
             :href="$store.state.popup.popupData.url"
           >{{ $store.state.popup.popupData.shop.title }}</a
           >
-          и используйте промокод
+          {{ $store.state.popup.popupData.type === 'promoCode' ? "и используйте промокод" : "" }}
         </div>
 
         <div class="relative mb-5" v-if="$store.state.popup.popupData.type === 'promoCode'">
@@ -92,7 +92,7 @@
           </button>
         </div>
 
-        <div class="sm:px-10 text-zinc-700 mb-8 text-sm sm:text-base">
+        <div class="sm:px-10 text-zinc-700 dark:text-zinc-200 mb-8 text-sm sm:text-base">
           {{ $store.state.popup.popupData.description }}
         </div>
 
@@ -109,7 +109,7 @@
           }}
         </a>
 
-        <div class="text-zinc-700 mx-auto w-max flex items-center cursor-pointer"><fa icon="share" class="text-primary mr-2"/> <span class="text-xs">Поделиться</span></div>
+        <div class="text-zinc-700 dark:text-zinc-200 mx-auto w-max flex items-center cursor-pointer"><fa icon="share" class="text-primary mr-2"/> <span class="text-xs">Поделиться</span></div>
       </div>
       <!-------------Центр-конец--------------------->
 

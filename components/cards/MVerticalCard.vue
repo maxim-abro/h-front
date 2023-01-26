@@ -1,5 +1,5 @@
 <template>
-  <div class="shadow shadow-md shadow-[#00000070] rounded w-full py-4 px-8 border border-2">
+  <div class="shadow shadow-md shadow-[#00000070] rounded w-full py-4 px-8 border border-2 dark:border-zinc-700">
     <img
       v-if="post.shop"
       :src="`https://za-halyavoi.ru/api/static/${post.shop.image}`"
@@ -8,7 +8,7 @@
       @click="openLink"
     />
 
-    <div class="mx-auto text-xl w-max px-3 bg-zinc-100 mb-3">
+    <div class="mx-auto text-xl w-max px-3 bg-zinc-100 dark:bg-zinc-800 mb-3">
       <button class="group p-0.5">
         <fa
           class="group-hover:text-primary transition-all duration-300 hover:transition-all hover:duration-300"
@@ -20,7 +20,7 @@
       {{ post.rating || 0 }}
     </div>
 
-    <hr class="-mx-8 border-t-[2px]" />
+    <hr class="-mx-8 border-t-[2px] dark:border-zinc-800" />
 
     <div class="mx-auto mt-1 text-center text-xl h-[112px] overflow-hidden font-medium hover:text-primary cursor-pointer" @click="openLink">
       {{ post.title }}

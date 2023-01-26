@@ -1,16 +1,16 @@
 <template>
-  <div class="">
+  <div class="dark:text-zinc-200">
     <m-bread-crumbs
       :crumbs="breadCrumbs"
     />
     <h1 class="text-2xl font-bold mb-8">Контакты</h1>
 
-    <div class="text-second mb-4">Если у вас возникли вопросы или есть предложения и пожелания по сайту, то напишите нам и мы вам обязательно ответим.</div>
+    <div class="text-second dark:text-zinc-200 mb-4">Если у вас возникли вопросы или есть предложения и пожелания по сайту, то напишите нам и мы вам обязательно ответим.</div>
 
     <form @submit.prevent="fetchForm">
       <div class="flex gap-8 mb-4">
         <div class="w-1/2">
-          <label for="name" class="text-second font-medium mb-2">Имя</label>
+          <label for="name" class="text-second dark:text-zinc-200 font-medium mb-2">Имя</label>
           <m-input
             placeholder="Введите имя"
             class="w-full"
@@ -19,7 +19,7 @@
           />
         </div>
         <div class="w-1/2">
-          <label for="email" class="text-second font-medium mb-2">Электронная почта</label>
+          <label for="email" class="text-second dark:text-zinc-200 font-medium mb-2">Электронная почта</label>
           <m-input
             placeholder="Введите вашу почту"
             class="w-full"
@@ -31,7 +31,7 @@
       </div>
 
       <div class="mb-4 relative">
-        <label for="message" class="text-second font-medium mb-2">Сообщение</label>
+        <label for="message" class="text-second dark:text-zinc-200 font-medium mb-2">Сообщение</label>
         <textarea
           name="message"
           placeholder="Введите ваше сообщение"
@@ -43,7 +43,7 @@
         <div class="absolute right-3 bottom-1">{{ formData.message.length }} / 2000</div>
       </div>
 
-      <div class="text-second text-sm">
+      <div class="text-second dark:text-zinc-200 text-sm">
         Нажимая на кнопку "Отправить", я даю согласие на <nuxt-link to="/privacy" class="underline hover:text-primary">обработку персональных данных</nuxt-link>
       </div>
 

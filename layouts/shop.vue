@@ -1,5 +1,5 @@
 <template>
-<div class="">
+<div class="bg-zinc-900">
   <m-header />
   <Nuxt />
   <m-footer />

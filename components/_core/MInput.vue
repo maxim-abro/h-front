@@ -7,7 +7,7 @@
     :type="type"
     :placeholder="placeholder"
     :name="name"
-    class="focus:outline-0 rounded p-2 box-border w-full focus:outline-0 focus:ring focus:ring-primary"
+    class="focus:outline-0 dark:bg-zinc-700 dark:text-white dark:placeholder:text-zinc-200 rounded p-2 box-border w-full focus:outline-0 focus:ring focus:ring-primary"
     :class="dark ? 'bg-zinc-700 text-zinc-300' : 'placeholder-zinc-800 text-zinc-900 bg-gray-200'"
   >
 </template>

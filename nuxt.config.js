@@ -90,7 +90,8 @@ export default {
     '@nuxt/typescript-build',
     // https://go.nuxtjs.dev/tailwindcss
     '@nuxtjs/tailwindcss',
-    '@nuxtjs/fontawesome'
+    '@nuxtjs/fontawesome',
+    '@nuxtjs/color-mode'
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
@@ -107,6 +108,12 @@ export default {
       regular: true,
       solid: true,
     }
+  },
+
+  colorMode: {
+    preference: "light",
+    fallback: "light",
+    classSuffix: ""
   },
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
