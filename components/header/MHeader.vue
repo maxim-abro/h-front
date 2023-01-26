@@ -2,16 +2,16 @@
   <div class="relative dark:bg-zinc-900">
     <header class="mb-3 pt-2 md:py-2 shadow shadow-xl relative md:shadow-none dark:bg-zinc-900">
       <div class="container flex justify-between items-center">
-        <button class="text-primary bg-zinc-100 w-10 h-10 block md:hidden" @click="$store.commit('popup/toggleMenu', true)"><fa icon="bars"/></button>
+        <button class="text-primary bg-zinc-100 dark:bg-zinc-800 w-10 h-10 block md:hidden" @click="$store.commit('popup/toggleMenu', true)"><fa icon="bars"/></button>
         <nuxt-link
           to="/"
           class="text-2xl font-black flex items-center text-primary drop-shadow"
         >
           <img src="/logo-min.png" class="h-16 mr-1 xs:h-20 w-auto" alt="логотип">
         </nuxt-link>
-        <button class="text-primary bg-zinc-100 w-10 h-10 block md:hidden" @click="openSearchMobile = !openSearchMobile"><fa icon="magnifying-glass"/></button>
-        <div class='w-5/12'>
-          <form @submit.prevent="submitSearch" class="relative hidden md:block">
+        <button class="text-primary bg-zinc-100 dark:bg-zinc-800 w-10 h-10 block md:hidden" @click="openSearchMobile = !openSearchMobile"><fa icon="magnifying-glass"/></button>
+        <div class='w-5/12 hidden md:flex items-center justify-end'>
+          <form @submit.prevent="submitSearch" class="relative w-9/12">
             <m-input
               type="search"
               placeholder="поиск товара или сайт"
@@ -27,9 +27,9 @@
             </m-button>
             <m-header-search v-if="searchShops.length" :shops="searchShops"/>
           </form>
-          <button @click='changeColorMode'>
-            <fa v-if='$colorMode.preference === "light"' icon='moon' class='text-primary'/>
-            <fa v-if='$colorMode.preference === "dark"' icon='sun' class='text-primary'/>
+          <button class="h-8 ml-4 w-8 rounded hidden sm:block bg-zinc-100 hover:bg-zinc-200 dark:bg-zinc-800 block dark:hover:bg-zinc-700" @click='changeColorMode'>
+            <fa v-if='$colorMode.preference === "dark"' icon='moon' class='text-primary'/>
+            <fa v-if='$colorMode.preference === "light"' icon='sun' class='text-primary'/>
           </button>
         </div>
       </div>
