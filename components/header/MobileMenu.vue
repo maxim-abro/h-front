@@ -1,6 +1,6 @@
 <template>
   <div class="flex fixed top-0 left-0 w-full h-full z-50" v-if="$store.state.popup.openMobileMenu">
-    <div class="w-9/12 h-full bg-white overflow-auto z-50 p-3">
+    <div class="w-9/12 h-full bg-white dark:bg-zinc-800 overflow-auto z-50 p-3">
       <ul>
         <li>
           <nuxt-link to="/" class="mb-2 block" @click.prevent="clickLink('/')"><fa class="text-primary mr-1" icon="house" /> Главная</nuxt-link>
@@ -36,6 +36,13 @@
             </template>
           </m-collapse>
         </li>
+        <li>
+          <button class="" @click='changeColorMode'>
+            <fa v-if='$colorMode.preference === "dark"' icon='moon' class='text-primary mr-1'/>
+            <fa v-if='$colorMode.preference === "light"' icon='sun' class='text-primary mr-1'/>
+            цветовая схема
+          </button>
+        </li>
       </ul>
     </div>
 
@@ -59,7 +66,10 @@ export default {
       this.$store.commit('popup/toggleMenu')
       // @ts-ignore
       this.$router.push(url)
-
+    },
+    changeColorMode() {
+      // @ts-ignore
+      this.$colorMode.preference === "dark" ? this.$colorMode.preference = "light" : this.$colorMode.preference = "dark"
     }
   },
   async mounted() {

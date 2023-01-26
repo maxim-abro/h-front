@@ -41,7 +41,7 @@
       </nuxt-link>
     </div>
 
-    <h3 class="text-second text-xl mb-1">Сайты и магазины на "<span class="font-bold uppercase">{{ $route.params.symbol }}</span>"</h3>
+    <h3 class="text-second dark:text-zinc-200 text-xl mb-1">Сайты и магазины на "<span class="font-bold uppercase">{{ $route.params.symbol }}</span>"</h3>
 
     <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 mb-3" v-if="shops.length">
       <nuxt-link :to="`/shop/${shop.uin}`" class="w-full pl-1 text-xl font-light py-1 hover:bg-zinc-700 hover:text-primary duration-75 whitespace-nowrap

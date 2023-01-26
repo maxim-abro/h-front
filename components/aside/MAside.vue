@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-second rounded text-white p-5 w-full shadow shadow-md shadow-[#00000070]">
+  <div class="bg-second dark:bg-zinc-800 rounded text-white p-5 w-full shadow shadow-md shadow-[#00000070]">
     <div class="font-bold text-xl text-center mb-3">
       Узнавайте первыми про скидки!
     </div>

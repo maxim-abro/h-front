@@ -1,5 +1,5 @@
 <template>
-  <div class="shadow shadow-md shadow-[#00000070] w-full border-zinc-200 p-3">
+  <div class="shadow shadow-md shadow-[#00000070] w-full border-zinc-200 p-3 dark:text-zinc-200">
     <img
       v-if="data.image"
       :src="`https://za-halyavoi.ru/api/static/${data.image}`"
@@ -9,14 +9,14 @@
     <a
       :href="data.url"
       target="_blank"
-      class="w-full rounded border bg-white inline-block text-lg text-center border-primary text-primary py-1.5 hover:bg-primary hover:text-white transition-all duration-300 hover:transition-all hover:duration-300"
+      class="w-full rounded border bg-white inline-block text-lg text-center dark:bg-zinc-800 dark:hover:bg-primary border-primary text-primary py-1.5 hover:bg-primary hover:text-white transition-all duration-300 hover:transition-all hover:duration-300"
     >
       <fa icon="up-right-from-square" />
       Перейти на сайт
     </a>
 
     <button
-      class="text-center rounded w-full mt-3 py-1.5 bg-zinc-200 text-second hover:text-primary transition-all duration-300 hover:transition-all hover:duration-300"
+      class="text-center rounded w-full mt-3 py-1.5 bg-zinc-200 dark:bg-zinc-800 dark:text-zinc-200 text-second dark:hover:text-primary hover:text-primary transition-all duration-300 hover:transition-all hover:duration-300"
       @click="$router.push(`/shop/add/${data.uin}`)"
     >
       <fa icon="circle-chevron-down" />

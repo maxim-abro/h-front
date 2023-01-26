@@ -64,7 +64,12 @@
 
 /* Track */
 ::-webkit-scrollbar-track {
+  cursor: pointer;
   background: #edf2f7;
+}
+
+.dark>::-webkit-scrollbar-track {
+  background: #262632;
 }
 
 /* Handle */

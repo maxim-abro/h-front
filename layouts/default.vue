@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class='dark:bg-zinc-900 dark:text-zinc-200'>
     <m-header />
 
     <div class="container flex flex-col lg:flex-row mt-3 sm:mt-10">

@@ -1,6 +1,6 @@
 <template>
-  <div class="shadow shadow-md rounded shadow-[#00000070] border">
-    <div class="p-4 text-second font-bold text-center bg-zinc-100">
+  <div class="shadow shadow-md rounded shadow-[#00000070] border dark:border-zinc-700">
+    <div class="p-4 text-second font-bold text-center bg-zinc-100 dark:bg-zinc-800 dark:text-zinc-200">
       <fa icon="star" class="text-primary mr-2"/>
       Популярные Категории
     </div>
@@ -17,7 +17,7 @@
       </nuxt-link>
     </div>
 
-    <nuxt-link to="/categories" class="text-center bg-zinc-100 text-second font-bold block w-full p-4 hover:text-primary">Все предложения</nuxt-link>
+    <nuxt-link to="/categories" class="text-center bg-zinc-100 dark:bg-zinc-700 text-second dark:text-zinc-200 font-bold block w-full p-4 hover:text-primary">Все предложения</nuxt-link>
   </div>
 </template>
 

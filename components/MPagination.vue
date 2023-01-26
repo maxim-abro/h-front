@@ -5,7 +5,7 @@
 
       <a v-if="!(firstPageSelected() && hidePrevNext)" :class="[firstPageSelected() ? disabledClass : '']"
          @click="prevPage()" @keyup.enter="prevPage()" :tabindex="firstPageSelected() ? -1 : 0"
-         class="relative rounded inline-flex items-center text-xs lg:text-base px-1 md:px-4 py-0 md:py-2 mx-0.5 xl:mx-2 border border-gray-300">
+         class="relative rounded inline-flex items-center text-xs lg:text-base px-1 md:px-4 py-0 md:py-2 mx-0.5 xl:mx-2 border border-gray-300 dark:border-zinc-700">
         <span class="sr-only">Previous</span>
         <svg width="8" height="14" viewBox="0 0 10 16" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M8 2L2 8L8 14" stroke="#4D4D4D" stroke-width="2" stroke-linecap="square"/>
@@ -14,12 +14,12 @@
 
       <template v-for="page in pages">
 
-        <a :key="page.index" v-if="page.breakView" class="relative rounded inline-flex items-center text-xs lg:text-base px-1 md:px-4 py-0 md:py-2 mx-0.5 xl:mx-2" :class="[defaultClass]"
+        <a :key="page.index" v-if="page.breakView" class="relative rounded inline-flex items-center text-xs lg:text-base px-1 md:px-4 py-0 md:py-2 mx-0.5 xl:mx-2 dark:bg-zinc-800 dark:border-zinc-700" :class="[defaultClass]"
            tabindex="0">
           <slot name="breakViewContent">{{ breakViewText }}</slot>
         </a>
 
-        <a :key="page.index" v-else-if="page.disabled" class="relative rounded inline-flex items-center text-xs lg:text-base px-1 md:px-4 py-0 md:py-2 mx-0.5 xl:mx-2" :class="[activeClass, disabledClass]"
+        <a :key="page.index" v-else-if="page.disabled" class="relative rounded inline-flex items-center text-xs lg:text-base px-1 md:px-4 py-0 md:py-2 mx-0.5 xl:mx-2 dark:bg-zinc-800 dark:border-zinc-700" :class="[activeClass, disabledClass]"
            tabindex="0">{{ page.content }}</a>
 
         <a :key="page.index" v-else @click="handlePageSelected(page.index + 1)" @keyup.enter="handlePageSelected(page.index + 1)"
@@ -31,7 +31,7 @@
 
       <a v-if="!(lastPageSelected() && hidePrevNext)" :class="[lastPageSelected() ? disabledClass : '']"
          @click="nextPage()" @keyup.enter="nextPage()" :tabindex="lastPageSelected() ? -1 : 0"
-         class="relative rounded inline-flex items-center text-xs lg:text-base px-1 md:px-4 py-0 md:py-2 mx-0.5 xl:mx-2 border border-gray-300">
+         class="relative rounded inline-flex items-center text-xs lg:text-base px-1 md:px-4 py-0 md:py-2 mx-0.5 xl:mx-2 border border-gray-300 dark:bg-zinc-800 dark:border-zinc-700">
         <span class="sr-only">Next</span>
         <svg width="8" height="14" viewBox="0 0 10 16" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M2 14L8 8L2 2" stroke="#4D4D4D" stroke-width="2" stroke-linecap="square"/>
@@ -77,11 +77,11 @@ export default {
     },
     defaultClass: {
       type: String,
-      default: 'border border-gray-300 text-gray-500 hover:bg-gray-50 cursor-pointer'
+      default: 'border border-gray-300 text-gray-500 hover:bg-gray-50 cursor-pointer dark:border-zinc-700'
     },
     activeClass: {
       type: String,
-      default: 'bg-primary border border-primary text-second'
+      default: 'bg-primary border border-primary text-second dark:border-zinc-700'
     },
     disabledClass: {
       type: String,

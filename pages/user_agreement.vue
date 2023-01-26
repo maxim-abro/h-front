@@ -1,5 +1,5 @@
 <template>
-  <div class="">
+  <div class="mb-10">
     <m-bread-crumbs
       :crumbs="breadCrumbs"
     />

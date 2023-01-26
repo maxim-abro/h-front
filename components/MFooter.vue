@@ -1,5 +1,5 @@
 <template>
-  <footer class="text-center bg-second text-white">
+  <footer class="text-center bg-second dark:bg-zinc-800 text-white">
     <div class="container px-6 pt-6">
       <div class="flex justify-center mb-6">
         <a href="https://vk.com/za_halyavoi" type="button" target="_blank" class="rounded-full p-1 group border-2 border-white hover:border-primary text-white leading-normal uppercase hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0 transition duration-150 ease-in-out w-9 h-9 m-1">
