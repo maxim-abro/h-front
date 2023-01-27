@@ -17,7 +17,7 @@
         />
       </div>
       <div v-if='!posts.length' class="mb-20">
-        <h2 class="text-3xl font-bold">К сожалению промокодов не найдено, но мы можем предложить промокоды <nuxt-link class='text-primary underline hover:no-underline' to='/alphabet'>других магазинов</nuxt-link></h2>
+        <h2 class="text-3xl dark:text-zinc-200 font-bold">К сожалению промокодов не найдено, но мы можем предложить промокоды <nuxt-link class='text-primary underline hover:no-underline' to='/alphabet'>других магазинов</nuxt-link></h2>
       </div>
 
       <h2 class='text-2xl dark:text-zinc-200 font-bold mb-8'>Промокоды, похожие на {{ shopData.title }}</h2>
