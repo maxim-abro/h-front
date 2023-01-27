@@ -50,13 +50,13 @@
 
           <ul class="list-none mb-0">
             <li>
-              <nuxt-link to="#" class="text-zinc-300 hover:text-primary hover:underline">О проекте</nuxt-link>
+              <nuxt-link to="/faq" class="text-zinc-300 hover:text-primary hover:underline">Популярные вопросы</nuxt-link>
             </li>
             <li>
-              <nuxt-link to="#" class="text-zinc-300 hover:text-primary hover:underline">Сотрудничество</nuxt-link>
+              <nuxt-link to="/contacts" class="text-zinc-300 hover:text-primary hover:underline">Сотрудничество</nuxt-link>
             </li>
             <li>
-              <nuxt-link to="#" class="text-zinc-300 hover:text-primary hover:underline">Блог</nuxt-link>
+              <nuxt-link to="/blog" class="text-zinc-300 hover:text-primary hover:underline">Блог</nuxt-link>
             </li>
           </ul>
         </div>
