@@ -36,12 +36,8 @@
       <m-header-search-mobile v-if="openSearchMobile" @close="openSearchMobile = false"/>
       <mobile-menu />
 
-      <nuxt-link class="p-3 inline-block md:hidden bg-second text-white w-full" to="/tags/2">
-        <div class="inline-block">
-          <!--                <fa icon="snowflake" class="text-blue-300 animate-ping absolute"/>-->
-          <fa icon="snowflake" class="text-blue-300 animate-spin-slow"/>
-        </div>
-        С Новым годом
+      <nuxt-link class="p-3 inline-block md:hidden bg-second text-white w-full sign-wrap-3" to="/tags/kiberponedelnik">
+        <span class='logo-1'>Киберпонедельник</span>
       </nuxt-link>
     </header>
 
@@ -73,12 +69,8 @@
             </nuxt-link>
           </li>
           <li>
-            <nuxt-link class="p-3 inline-block bg-second dark:bg-zinc-800 text-white hover:bg-zinc-700 dark:hover:bg-zinc-700" to="/tags/2">
-              <div class="inline-block">
-<!--                <fa icon="snowflake" class="text-blue-300 animate-ping absolute"/>-->
-                <fa icon="snowflake" class="text-blue-300 animate-spin-slow"/>
-              </div>
-              С Новым годом
+            <nuxt-link class="p-3 inline-block bg-second dark:bg-zinc-800 text-white hover:bg-zinc-700 dark:hover:bg-zinc-700" to="/tags/kiberponedelnik">
+              <span class="logo-1">Киберпонедельник</span>
             </nuxt-link>
           </li>
         </ul>
@@ -126,3 +118,17 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+.logo-1 {
+  /*   text-shadow: 0 0 5px #f562ff, 0 0 15px #f562ff, 0 0 25px #f562ff,
+      0 0 20px #f562ff, 0 0 30px #890092, 0 0 80px #890092, 0 0 80px #890092;
+    color: #fccaff; */
+  text-shadow: 0 0 5px #ffa500, 0 0 15px #ffa500, 0 0 20px #ffa500, 0 0 40px #ffa500, 0 0 60px #ff0000, 0 0 10px #ff8d00, 0 0 98px #ff0000;
+  color: #fff6a9;
+  font-family: "Sacramento", cursive;
+  text-align: center;
+  animation: blink 12s infinite;
+  -webkit-animation: blink 12s infinite;
+}
+</style>

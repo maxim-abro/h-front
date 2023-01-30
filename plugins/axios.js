@@ -3,6 +3,7 @@ export default function ({ $axios, redirect }, inject) {
 
   const api = $axios.create({
     baseURL: 'https://za-halyavoi.ru/api'
+    // baseURL: "http://localhost:4000"
   })
 
   api.onError(error => {

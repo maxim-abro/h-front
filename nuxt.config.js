@@ -62,6 +62,11 @@ export default {
     {src: '~/plugins/calendar.ts'}
   ],
 
+  serverMiddleware: [
+    '~/middleware/redirect.js'
+  ],
+
+
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: {
     dirs: [

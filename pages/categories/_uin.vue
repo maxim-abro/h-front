@@ -92,7 +92,7 @@ export default {
   },
   async asyncData({$api, route}:any) {
     const category = await $api.get(`/category/by/${route.params.uin}`)
-    const shops = await $api.get(`/shop/category/${route.params.uin}`)
+    const shops = await $api.get(`/shop/category/${category.data.uin}`)
 
     const breadCrumbs = [
       {link: '/categories', title: 'Категории сайтов'},

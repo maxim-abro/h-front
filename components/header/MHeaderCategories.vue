@@ -10,7 +10,7 @@
     <div class="bg-zinc-50 dark:bg-zinc-900 shadow shadow-xl p-8 absolute top-full left-1/2 -translate-x-1/2 z-50" v-if="$store.state.popup.openCats">
       <div class="grid grid-cols-3">
         <a class="w-full pl-1 text-xl font-light py-1 hover:bg-zinc-700 hover:text-primary duration-75 whitespace-nowrap
-        overflow-ellipsis overflow-hidden" v-for="cat in getCategories" :href="`/categories/${cat.uin}`" :key="cat.uin" @click.prevent="clickCat(`/categories/${cat.uin}`)"><fa :icon="cat.icon" class="mr-3 w-4"/>{{ cat.title }}</a>
+        overflow-ellipsis overflow-hidden" v-for="cat in getCategories" :href="`/categories/${cat.lat_title}`" :key="cat.uin" @click.prevent="clickCat(`/categories/${cat.lat_title}`)"><fa :icon="cat.icon" class="mr-3 w-4"/>{{ cat.title }}</a>
         <a class="w-full pl-1 text-xl font-light py-1 hover:bg-zinc-700 hover:text-primary duration-75 whitespace-nowrap
         overflow-ellipsis overflow-hidden" href="/categories" @click.prevent="clickCat('/categories')"><fa icon="ellipsis-h"/> Все категории</a>
       </div>
