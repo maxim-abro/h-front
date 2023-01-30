@@ -4,6 +4,8 @@ type CategoryModel = {
   title: string;
   description: string;
   icon: string;
+
+  lat_title: string;
 };
 
 export type { CategoryModel };

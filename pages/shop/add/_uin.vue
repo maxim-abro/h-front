@@ -5,7 +5,7 @@
   />
   <h1 class="text-2xl font-bold mb-8">Добавление вашего купона для "{{ seo.title }}"</h1>
 
-  <img :src="`https://za-halyavoi.ru/api/static/${shop.image}`" :alt="seo.title">
+  <img loading='lazy' :src="`https://za-halyavoi.ru/api/static/${shop.image}`" :alt="seo.title">
 
   <form action="">
     <div class="grid grid-cols-2 gap-8 mb-8">

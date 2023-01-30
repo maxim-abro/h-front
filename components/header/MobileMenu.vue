@@ -13,7 +13,7 @@
             </template>
             <template #content>
               <div class="">
-                <a class="ml-4 block my-1" v-for="category in $store.state.aside.popularCategories" @click.prevent="clickLink(`/categories/${category.uin}`)" :key="category.uin" :href="`/categories/${category.uin}`"><fa :icon="category.icon" class="text-second mr-1"/> {{ category.title }}</a>
+                <a class="ml-4 block my-1" v-for="category in $store.state.aside.popularCategories" @click.prevent="clickLink(`/categories/${category.lat_title}`)" :key="category.uin" :href="`/categories/${category.lat_title}`"><fa :icon="category.icon" class="text-second mr-1"/> {{ category.title }}</a>
                 <a @click.prevent="clickLink('/categories')" href="/categories" class="ml-4 block my-1"><fa class="text-second mr-1" icon="ellipsis-h"/> Все категории</a>
               </div>
             </template>
@@ -30,7 +30,7 @@
             <template #content>
               <div class="grid grid-cols-2">
                 <a v-for="shop of $store.state.aside.popular" :key="shop.shop.uin" :href="`/shop/${shop.shop.uin}`" @click.prevent="clickLink(`/shop/${shop.shop.uin}`)" class="block">
-                  <img :src="`https://za-halyavoi.ru/api/static/${shop.shop.image}`" :alt="shop.shop.title">
+                  <img loading='lazy' :src="`https://za-halyavoi.ru/api/static/${shop.shop.image}`" :alt="shop.shop.title">
                 </a>
               </div>
             </template>

@@ -2,6 +2,7 @@
   <div class="shadow shadow-md shadow-[#00000070] rounded w-full py-4 px-8 border border-2 dark:border-zinc-700">
     <img
       v-if="post.shop"
+      loading='lazy'
       :src="`https://za-halyavoi.ru/api/static/${post.shop.image}`"
       class="mx-auto h-[59px] cursor-pointer"
       :alt="post.shop.title"

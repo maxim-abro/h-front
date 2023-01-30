@@ -5,7 +5,7 @@
     />
     <h1 class="text-3xl font-bold">Все теги</h1>
     <div class="flex flex-wrap gap-2">
-      <nuxt-link v-for="h of holidays" :key="h.id_holiday" :to="`/tags/${h.id_holiday}`" class="bg-zinc-200 hover:bg-zinc-100 dark:bg-zinc-800 dark:hover:bg-zinc-700 px-2 py-1">{{ h.title }}</nuxt-link>
+      <nuxt-link v-for="h of holidays" :key="h.id_holiday" :to="`/tags/${h.lat_title}`" class="bg-zinc-200 hover:bg-zinc-100 dark:bg-zinc-800 dark:hover:bg-zinc-700 px-2 py-1">{{ h.title }}</nuxt-link>
     </div>
   </div>
 </template>

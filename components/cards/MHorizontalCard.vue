@@ -2,7 +2,7 @@
 <div class="shadow shadow-md shadow-[#00000070] rounded flex flex-col sm:flex-row px-8 shadow-md justify-between w-full py-4 border border-2 dark:border-zinc-700 mb-10">
   <div class="flex items-center mx-auto sm:mx-0 flex-col w-full sm:w-2/3 sm:flex-row">
     <div class="w-full mb-3 sm:mb-0 sm:w-1/3">
-      <img :src="`https://za-halyavoi.ru/api/static/${post.shop.image}`" alt="логотип магазина" class="mx-auto w-2/3 sm:w-full cursor-pointer" @click="openLink">
+      <img loading='lazy' :src="`https://za-halyavoi.ru/api/static/${post.shop.image}`" alt="логотип магазина" class="mx-auto w-2/3 sm:w-full cursor-pointer" @click="openLink">
       <div class="mx-auto text-xl w-max px-3 bg-zinc-100 dark:bg-zinc-800 mt-3 dark:text-zinc-200">
         <button class="group p-0.5" @click="$emit('like', post.uin)">
           <fa
