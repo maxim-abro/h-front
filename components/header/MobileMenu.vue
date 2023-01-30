@@ -30,7 +30,7 @@
             <template #content>
               <div class="grid grid-cols-2">
                 <a v-for="shop of $store.state.aside.popular" :key="shop.shop.uin" :href="`/shop/${shop.shop.uin}`" @click.prevent="clickLink(`/shop/${shop.shop.uin}`)" class="block">
-                  <img :src="`https://za-halyavoi.ru/api/static/${shop.shop.image}`" :alt="shop.shop.title">
+                  <img loading='lazy' :src="`https://za-halyavoi.ru/api/static/${shop.shop.image}`" :alt="shop.shop.title">
                 </a>
               </div>
             </template>

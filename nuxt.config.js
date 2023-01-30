@@ -141,7 +141,7 @@ export default {
       const categoryData = await axios.get("https://za-halyavoi.ru/api/admin/sitemap/category")
       const shopData = await axios.get("https://za-halyavoi.ru/api/admin/sitemap/shop")
 
-      categoryData.data.forEach(i => result.push(`/categories/${i.uin}`))
+      categoryData.data.forEach(i => result.push(`/categories/${i.lat_title}`))
       shopData.data.forEach(i => result.push(`/shop/${i.uin}`))
 
       return result
