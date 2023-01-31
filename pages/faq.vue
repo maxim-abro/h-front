@@ -140,7 +140,7 @@ export default {
         {
           rel: 'canonical',
           // @ts-ignore
-          href: 'https://za-halyavoi.ru/'
+          href: 'https://za-halyavoi.ru/faq'
         }
       ]
     }
