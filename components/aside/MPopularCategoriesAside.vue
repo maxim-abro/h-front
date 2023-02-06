@@ -9,7 +9,7 @@
       <nuxt-link
         v-for="i in popularCategories"
         :key="i.uin"
-        :to="`/categories/${i.uin}`"
+        :to="`/categories/${i.lat_title}`"
         class="cursor-pointer mb-2 py-1 group decoration-primary hover:underline hover:underline-offset-2 flex items-center"
       >
         <fa :icon="i.icon" class="text-primary mr-3 group-hover:rotate-[360deg]"/>
