@@ -1,13 +1,15 @@
 <template>
   <div class=''>
     <m-bread-crumbs :crumbs="breadCrumbs"/>
-    <h1 class="text-2xl lg:text-3xl font-bold mb-4">Блог</h1>
+    <h1 class="text-2xl lg:text-3xl font-bold mb-8">Блог</h1>
 
     <div class='grid gird-cols-1 xl:grid-cols-2 gap-1'>
       <div v-for='blog of blogs' :key='blog.id' class='rounded shadow shadow-md shadow-[#00000070]'>
         <img class='mb-4 rounded-t' :src='`https://za-halyavoi.ru/api/static${blog.preview}`' alt=''>
         <div class='p-2'>
-          <h2 class='font-bold text-xl mb-2'>{{ blog.title }}</h2>
+          <h2 class='font-bold text-xl mb-4'>
+            <nuxt-link :to="`/blog/${blog.lat_title}`" class="hover:text-primary">{{ blog.title }}</nuxt-link>
+          </h2>
           <p>{{ blog.description }}</p>
 
           <div class='flex justify-between items-center mt-4'>
