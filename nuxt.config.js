@@ -141,10 +141,12 @@ export default {
       const categoryData = await axios.get("https://za-halyavoi.ru/api/admin/sitemap/category")
       const shopData = await axios.get("https://za-halyavoi.ru/api/admin/sitemap/shop")
       const holidayData = await axios.get("https://za-halyavoi.ru/api/admin/sitemap/holidays")
+      const blogData = await axios.get("https://za-halyavoi.ru/api/admin/sitemap/blog")
 
       categoryData.data.forEach(i => result.push(`/categories/${i.lat_title}`))
       shopData.data.forEach(i => result.push(`/shop/${i.uin}`))
       holidayData.data.forEach(i => result.push(`/tags/${i.lat_title}`))
+      blogData.data.forEach(i => result.push(`/blog/${i.lat_title}`))
 
       return result
     },
