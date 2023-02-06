@@ -20,6 +20,12 @@
           </m-collapse>
         </li>
         <li>
+          <a href="/blog" class="mb-2 block">
+            <fa icon="newspaper" class="text-primary" />
+            Блог
+          </a>
+        </li>
+        <li>
           <a href="/alphabet" class="mb-2 block" @click.prevent="clickLink('/alphabet')"><fa class="text-primary mr-1" icon="arrow-down-a-z" /> Сайты по алфавиту</a>
         </li>
         <li>
