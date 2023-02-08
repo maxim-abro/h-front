@@ -54,17 +54,17 @@ export default {
         {
           hid: 'keywords',
           name: 'keywords',
-          content: 'блог, новости, промокоды, скидки, акции, магазины, акция, промокод, скидка'
+          content: this.tagsList
         },
         {
           property: "og:title",
           // @ts-ignore
-          content: `Блог про шоппинг, промокоды, акции, купоны на ${this.$store.state.seo.month} ${this.$store.state.seo.year} год.`
+          content: this.title
         },
         {
           property: "og:description",
           // @ts-ignore
-          content: `Блог про шоппинг, промокоды, акции, купоны - Свежие промокоды, скидки и акции на ${this.$store.state.seo.month} ${this.$store.state.seo.year} год, а также эксклюзивные купоны. Бегом za халявой!`
+          content: this.description
         },
         {
           property: "og:url",
