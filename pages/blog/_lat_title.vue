@@ -5,9 +5,9 @@
       <div class="">{{ new Date(date).toLocaleDateString('ru-RU', { day: 'numeric', month: 'long', year: 'numeric' }) }} </div>
 
       <div class="flex items-center">
-        <div class="mr-4">
-          <fa icon="heart" class="mr-2"/>{{ likes }}
-        </div>
+        <button @click='likeBlog(lat_title)' class="mr-4">
+          <fa icon="heart" class="mr-2 hover:text-primary"/>{{ likes }}
+        </button>
         <div>
           <fa icon="eye" class="mr-2"/>{{ counter }}
         </div>
@@ -108,6 +108,24 @@ export default {
     return {
       ...blog.data,
       breadCrumbs,
+    }
+  },
+  methods: {
+    async likeBlog(lat_title) {
+      const likes = this.$cookies.get('likes-blog')
+      if (!likes) {
+        await this.$api.get(`/blog/like/${lat_title}`)
+        this.$cookies.set('likes-blog',[lat_title])
+        this.likes = this.likes + 1
+      } else {
+        const findLike = likes.find(i => i === lat_title)
+        if (!findLike) {
+          likes.push(lat_title)
+          await this.$api.get(`/blog/like/${lat_title}`)
+          this.$cookies.set('likes-blog',likes)
+          this.likes = this.likes + 1
+        }
+      }
     }
   },
   computed: {

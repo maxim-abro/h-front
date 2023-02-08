@@ -5,7 +5,7 @@
 
     <div class='grid gird-cols-1 xl:grid-cols-2 gap-1'>
       <div v-for='blog of blogs' :key='blog.id' class='rounded shadow shadow-md shadow-[#00000070]'>
-        <img class='mb-4 rounded-t' :src='`https://za-halyavoi.ru/api/static${blog.preview}`' alt=''>
+        <nuxt-link :to='`/blog/${blog.lat_title}`'><img class='mb-4 rounded-t cursor-pointer' :src='`https://za-halyavoi.ru/api/static${blog.preview}`' alt=''></nuxt-link>
         <div class='p-2'>
           <h2 class='font-bold text-xl mb-4'>
             <nuxt-link :to="`/blog/${blog.lat_title}`" class="hover:text-primary">{{ blog.title }}</nuxt-link>
