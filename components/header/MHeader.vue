@@ -36,8 +36,12 @@
       <m-header-search-mobile v-if="openSearchMobile" @close="openSearchMobile = false"/>
       <mobile-menu />
 
-      <nuxt-link class="p-3 inline-block md:hidden bg-second text-white w-full sign-wrap-3" to="/tags/kiberponedelnik">
-        <span class='logo-1'>Киберпонедельник</span>
+      <nuxt-link class="p-3 inline-block md:hidden bg-second text-white w-full sign-wrap-3" to="/tags/14-fevralya">
+        <div class='inline-block'>
+          <fa class='text-red-500 text-red-600 animate-ping absolute' icon='heart'/>
+          <fa class='text-red-500' icon='heart'/>
+        </div>
+        <span>День влюблённых</span>
       </nuxt-link>
     </header>
 
@@ -69,8 +73,12 @@
             </nuxt-link>
           </li>
           <li>
-            <nuxt-link class="p-3 inline-block bg-second dark:bg-zinc-800 text-white hover:bg-zinc-700 dark:hover:bg-zinc-700" to="/tags/kiberponedelnik">
-              <span class="logo-1">Киберпонедельник</span>
+            <nuxt-link class="p-3 inline-block bg-second dark:bg-zinc-800 text-white hover:bg-zinc-700 dark:hover:bg-zinc-700" to="/tags/14-fevralya">
+              <div class='inline-block'>
+                <fa class='text-red-500 text-red-600 animate-ping absolute' icon='heart'/>
+                <fa class='text-red-500' icon='heart'/>
+              </div>
+              <span>День влюблённых</span>
             </nuxt-link>
           </li>
         </ul>
