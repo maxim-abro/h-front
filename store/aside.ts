@@ -37,6 +37,16 @@ export const actions = {
       console.log(e)
     }
   },
+  async getBuild({commit}:any):Promise<void> {
+    try {
+      // @ts-ignore
+      const resData = await this.$api.get('/build/site')
+      commit("setPopularCategories", resData.data.categories)
+      commit("setPopular", resData.data.shops)
+    } catch (e) {
+      console.log(e)
+    }
+  },
   async nuxtServerInit({ dispatch }:any) {
     await dispatch('getPopularPosts')
   }

@@ -41,6 +41,9 @@
 import {PostModel} from "~/models/post.model";
 
 export default {
+  components: {
+    MButton: () => import('~/components/_core/MButton.vue'),
+  },
   props: {
     post: [] as PostModel[],
   },

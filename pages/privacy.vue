@@ -506,8 +506,9 @@
 <script lang="ts">
 
 export default {
-  components: {},
-
+  components: {
+    MBreadCrumbs: () => import('~/components/MBreadCrumbs.vue'),
+  },
   data() {
     return {
       breadCrumbs: [

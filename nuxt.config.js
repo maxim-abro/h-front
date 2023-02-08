@@ -6,7 +6,7 @@ export default {
     title: '',
     titleTemplate: '%s - za-halyavoi.ru',
     htmlAttrs: {
-      lang: 'ru',
+      lang: 'ru'
     },
     meta: [
       {charset: 'utf-8'},
@@ -28,24 +28,20 @@ export default {
     ],
     script: [
       {
-        src: "/js/yacontext.js",
+        src: "/js/yacontext.js"
       },
       {
         src: "https://yandex.ru/ads/system/context.js",
         async: true
       },
       {
-        src: "/js/mobileAd.js",
+        src: "/js/mobileAd.js"
       },
       {
         src: '/js/yndx.js',
-        body: true,
-      },
-      {
-        src: '/js/google.js',
-        body: true,
-      },
-    ],
+        body: true
+      }
+    ]
   },
 
   loading: {
@@ -68,17 +64,7 @@ export default {
 
 
   // Auto import components: https://go.nuxtjs.dev/config-components
-  components: {
-    dirs: [
-      '~/components',
-      '~/components/header',
-      '~/components/cards',
-      '~/components/aside',
-      '~/components/popups',
-      '~/components/ad',
-      '~/components/_core',
-    ]
-  },
+  components: false,
 
   tailwindcss: {
     cssPath: '~/assets/tailwind.css',
@@ -110,8 +96,12 @@ export default {
   fontawesome: {
     component: 'fa',
     icons: {
-      regular: true,
-      solid: true,
+      solid: ['faHouse', 'faHeart', 'faBraille', 'faNewspaper', 'faArrowDownAZ', 'faMoon', 'faSun', 'faCrown',
+        'faMagnifyingGlass', 'faFire', 'faCheck', 'faDog', 'faGamepad', 'faShirt', 'faSpa', 'faCar', 'faStore',
+        'faPlaneArrival', 'faClockRotateLeft', 'faMobileScreenButton', 'faBriefcase', 'faDrumstickBite', 'faFutbol',
+        'faBaby', 'faComputer', 'faChair', 'faSackDollar', 'faGifts', 'faBook', 'faSmileBeam', 'faBars', 'faChevronUp',
+        'faEye', 'faStar', 'faEllipsisH', 'faShareAlt', 'faCircleChevronDown', 'faUpRightFromSquare', 'faCircleInfo',
+        'faShare', 'faXmark']
     }
   },
 
@@ -124,7 +114,7 @@ export default {
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {
     // Workaround to avoid enforcing hard-coded localhost:3000: https://github.com/nuxt-community/axios-module/issues/308
-    baseURL: '',
+    baseURL: ''
   },
 
   sitemap: {
@@ -152,8 +142,8 @@ export default {
     },
     exclude: [
       '/go',
-      '/search',
-    ],
+      '/search'
+    ]
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build

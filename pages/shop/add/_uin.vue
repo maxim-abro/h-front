@@ -39,6 +39,10 @@
 <script>
 
 export default {
+  components: {
+    MBreadCrumbs: () => import('~/components/MBreadCrumbs.vue'),
+    MInput: () => import('~/components/_core/MInput.vue'),
+  },
   head() {
     return {
       title: `Добавить промокод для магазина ${this.seo.title} на ${this.$store.state.seo.month} ${this.$store.state.seo.year} год.`,

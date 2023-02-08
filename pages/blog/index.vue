@@ -27,6 +27,10 @@
 <script>
 
 export default {
+  components: {
+    MBreadCrumbs: () => import('~/components/MBreadCrumbs.vue'),
+    MButton: () => import('~/components/_core/MButton.vue'),
+  },
   data() {
     return {
       blogs: [],

@@ -92,6 +92,9 @@
 <script>
 
 export default {
+  components: {
+    MBreadCrumbs: () => import('~/components/MBreadCrumbs.vue'),
+  },
   head() {
     return {
       title: `Популярные вопросы по пользованию сайтом`,

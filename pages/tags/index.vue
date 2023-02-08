@@ -14,6 +14,9 @@
 <script>
 
 export default {
+  components: {
+    MBreadCrumbs: () => import('~/components/MBreadCrumbs.vue'),
+  },
   data() {
     return {
       holidays: [],

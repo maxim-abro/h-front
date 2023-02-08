@@ -26,7 +26,10 @@
 <script>
 
 export default {
-  components: {},
+  components: {
+    MBreadCrumbs: () => import('~/components/MBreadCrumbs.vue'),
+    MVerticalCard: () => import('~/components/cards/MVerticalCard.vue'),
+  },
   async asyncData({$api, route}) {
     const holiday = await $api.get("/holiday/id/" + route.params.id);
 

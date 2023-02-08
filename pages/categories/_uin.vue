@@ -24,6 +24,9 @@ import {CategoryModel} from "~/models/category.model";
 import {ShopModel} from "~/models/shop.model";
 
 export default {
+  components: {
+    MBreadCrumbs: () => import('~/components/MBreadCrumbs.vue'),
+  },
   data() {
     return {
       category: {} as CategoryModel,

@@ -59,6 +59,11 @@
 import * as yup from 'yup'
 
 export default {
+  components: {
+    MBreadCrumbs: () => import('~/components/MBreadCrumbs.vue'),
+    MButton: () => import('~/components/_core/MButton.vue'),
+    MInput: () => import('~/components/_core/MInput.vue'),
+  },
   head() {
     return {
       // @ts-ignore

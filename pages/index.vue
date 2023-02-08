@@ -71,6 +71,10 @@ import {PostModel} from "~/models/post.model";
 
 export default {
   layout: 'default',
+  components: {
+    MPagination: () => import('~/components/MPagination.vue'),
+    MVerticalCard: () => import('~/components/cards/MVerticalCard.vue'),
+  },
   data() {
     return {
       posts: [] as PostModel[],

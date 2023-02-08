@@ -19,6 +19,10 @@
 import _ from "lodash";
 
 export default {
+  components: {
+    MInput: () => import('~/components/_core/MInput.vue'),
+    MHeaderSearch: () => import('~/components/header/MHeaderSearch.vue'),
+  },
   data() {
     return {
       searchQuery: '',

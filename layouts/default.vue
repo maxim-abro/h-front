@@ -51,10 +51,13 @@ import MPopupCoupon from "~/components/popups/MPopupCoupon.vue";
 import MPopularAside from "~/components/aside/MPopularAside.vue";
 
 export default {
-  components:{MPopularAside, MPopupCoupon},
-  async created() {
-    //@ts-ignore
-    // await this.$store.dispatch('aside/getPopularPosts')
-  }
+  components: {
+    MPopularAside: () => import('~/components/aside/MPopularAside.vue'),
+    MPopupCoupon: () => import('~/components/popups/MPopupCoupon.vue'),
+    MPopularCategoriesAside: () => import('~/components/aside/MPopularCategoriesAside.vue'),
+    MFooter: () => import('~/components/MFooter.vue'),
+    MHeader: () => import('~/components/header/MHeader.vue'),
+    MAside: () => import('~/components/aside/MAside.vue'),
+  },
 }
 </script>

@@ -55,6 +55,10 @@ import * as yup from 'yup'
 // todo - add popup
 
 export default {
+  components: {
+    MInput: () => import('~/components/_core/MInput.vue'),
+    MButton: () => import('~/components/_core/MButton.vue'),
+  },
   data() {
     return {
       form: {

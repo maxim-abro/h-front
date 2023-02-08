@@ -23,8 +23,9 @@
 <script lang="ts">
 
 export default {
-  components: {},
-
+  components: {
+    MBreadCrumbs: () => import('~/components/MBreadCrumbs.vue'),
+  },
   layout: 'default',
   data():any {
     return {

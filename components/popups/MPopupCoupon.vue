@@ -18,7 +18,7 @@
             class="md:mr-3  h-[59px]"
             v-if="$store.state.popup.popupData.shop"
             :src="
-              'http://za-halyavoi.ru/api/static/' +
+              'https://za-halyavoi.ru/api/static/' +
               $store.state.popup.popupData.shop.image
             "
             :alt="$store.state.popup.popupData.shop.title"

@@ -25,7 +25,7 @@
             >
               <fa icon="magnifying-glass" />
             </m-button>
-            <m-header-search v-if="searchShops.length" :shops="searchShops"/>
+            <m-header-search v-show="searchShops.length" :shops="searchShops"/>
           </form>
           <button class="h-8 ml-4 w-8 rounded hidden sm:block bg-zinc-100 hover:bg-zinc-200 dark:bg-zinc-800 block dark:hover:bg-zinc-700" @click='changeColorMode'>
             <fa v-if='$colorMode.preference === "dark"' icon='moon' class='text-primary'/>
@@ -33,7 +33,7 @@
           </button>
         </div>
       </div>
-      <m-header-search-mobile v-if="openSearchMobile" @close="openSearchMobile = false"/>
+      <m-header-search-mobile v-show="openSearchMobile" @close="openSearchMobile = false"/>
       <mobile-menu />
 
       <nuxt-link class="p-3 inline-block md:hidden bg-second text-white w-full sign-wrap-3" to="/tags/14-fevralya">
@@ -90,9 +90,18 @@
 </template>
 
 <script>
-import _ from "lodash";
+
+import debounce from "lodash/debounce";
 
 export default {
+  components: {
+    MInput: () => import('~/components/_core/MInput.vue'),
+    MHeaderSearch: () => import('~/components/header/MHeaderSearch.vue'),
+    MHeaderSearchMobile: () => import('~/components/header/MHeaderSearchMobile.vue'),
+    MButton: () => import('~/components/_core/MButton.vue'),
+    MHeaderCategories: () => import('~/components/header/MHeaderCategories.vue'),
+    MobileMenu: () => import('~/components/header/MobileMenu.vue'),
+  },
   data() {
     return {
       searchQuery: '',
@@ -116,7 +125,7 @@ export default {
     }
   },
   watch: {
-    searchQuery: _.debounce(async function() {
+    searchQuery: debounce(async function() {
       if (this.searchQuery.length > 2) {
         const response = await this.$api.get(`/search?q=${encodeURI(this.searchQuery.toLowerCase())}`)
 

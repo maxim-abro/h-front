@@ -1,5 +1,5 @@
 <template>
-  <div class="flex fixed top-0 left-0 w-full h-full z-50" v-if="$store.state.popup.openMobileMenu">
+  <div class="flex fixed top-0 left-0 w-full h-full z-50" v-show="$store.state.popup.openMobileMenu">
     <div class="w-9/12 h-full bg-white dark:bg-zinc-800 overflow-auto z-50 p-3">
       <ul>
         <li>
@@ -61,6 +61,9 @@
 import {CategoryModel} from "~/models/category.model";
 
 export default {
+  components: {
+    MCollapse: () => import('~/components/_core/MCollapse.vue'),
+  },
   data() {
     return {
       categories: [] as CategoryModel[]

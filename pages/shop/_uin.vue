@@ -46,6 +46,12 @@ import {PostModel} from "~/models/post.model";
 
 export default {
   layout: 'shop',
+  components: {
+    MPopularAside: () => import('~/components/aside/MPopularAside.vue'),
+    ShopAside: () => import('~/components/aside/ShopAside.vue'),
+    MHorizontalCard: () => import('~/components/cards/MHorizontalCard.vue'),
+    MBreadCrumbs: () => import('~/components/MBreadCrumbs.vue'),
+  },
   head():any {
     return {
       // @ts-ignore

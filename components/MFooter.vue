@@ -114,6 +114,10 @@
 <script>
 
 export default {
+  components: {
+    MInput: () => import('~/components/_core/MInput.vue'),
+    MButton: () => import('~/components/_core/MButton.vue'),
+  },
   data() {
     return {
       code: '<!--3a9f6b4e--> <!--3a9f6b4e-->'
