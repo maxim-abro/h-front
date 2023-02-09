@@ -19,12 +19,12 @@
 </template>
 
 <script lang="ts">
-
+import MBreadCrumbs from '~/components/MBreadCrumbs.vue'
 import {CategoryModel} from "~/models/category.model";
 
 export default {
   components: {
-    MBreadCrumbs: () => import('~/components/MBreadCrumbs.vue'),
+    MBreadCrumbs,
   },
   data() {
     return {

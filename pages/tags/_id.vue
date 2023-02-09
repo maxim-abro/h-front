@@ -24,11 +24,12 @@
 
 
 <script>
-
+import MBreadCrumbs from '~/components/MBreadCrumbs.vue';
+import MVerticalCard from '~/components/cards/MVerticalCard.vue';
 export default {
   components: {
-    MBreadCrumbs: () => import('~/components/MBreadCrumbs.vue'),
-    MVerticalCard: () => import('~/components/cards/MVerticalCard.vue'),
+    MBreadCrumbs,
+    MVerticalCard,
   },
   async asyncData({$api, route}) {
     const holiday = await $api.get("/holiday/id/" + route.params.id);

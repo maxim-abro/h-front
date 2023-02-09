@@ -1,12 +1,11 @@
 <template>
-  <div class="flex fixed top-0 left-0 w-full h-full z-50" v-show="$store.state.popup.openMobileMenu">
+  <div class="flex fixed top-0 left-0 w-full h-full z-50" v-if="$store.state.popup.openMobileMenu">
     <div class="w-9/12 h-full bg-white dark:bg-zinc-800 overflow-auto z-50 p-3">
       <ul>
         <li>
           <nuxt-link to="/" class="mb-2 block" @click.prevent="clickLink('/')"><fa class="text-primary mr-1" icon="house" /> Главная</nuxt-link>
         </li>
         <li>
-<!--          <a href="/categories" class="mb-2 block" @click.prevent="clickLink('/categories')"><fa class="text-primary mr-1" icon="braille" /> Категории</a>-->
           <m-collapse animation>
             <template #trigger>
               <div class="mb-2 block"><fa class="text-primary mr-1" icon="braille" /> Категории <fa icon="chevron-up" class="arrow"/></div>
@@ -57,12 +56,12 @@
 </template>
 
 <script lang="ts">
-
 import {CategoryModel} from "~/models/category.model";
+import MCollapse from '~/components/_core/MCollapse.vue';
 
 export default {
   components: {
-    MCollapse: () => import('~/components/_core/MCollapse.vue'),
+    MCollapse,
   },
   data() {
     return {
@@ -81,12 +80,5 @@ export default {
       this.$colorMode.preference === "dark" ? this.$colorMode.preference = "light" : this.$colorMode.preference = "dark"
     }
   },
-  async mounted() {
-    // // @ts-ignore
-    // const categories = await this.$api.get('/category')
-    //
-    // // @ts-ignore
-    // this.categories = categories.data
-  }
 }
 </script>

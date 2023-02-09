@@ -37,11 +37,12 @@
 </template>
 
 <script>
-
+import MBreadCrumbs from '~/components/MBreadCrumbs.vue'
+import MInput from '~/components/_core/MInput.vue';
 export default {
   components: {
-    MBreadCrumbs: () => import('~/components/MBreadCrumbs.vue'),
-    MInput: () => import('~/components/_core/MInput.vue'),
+    MBreadCrumbs,
+    MInput,
   },
   head() {
     return {

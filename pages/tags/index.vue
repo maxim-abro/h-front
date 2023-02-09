@@ -12,10 +12,10 @@
 
 
 <script>
-
+import MBreadCrumbs from '~/components/MBreadCrumbs.vue'
 export default {
   components: {
-    MBreadCrumbs: () => import('~/components/MBreadCrumbs.vue'),
+    MBreadCrumbs
   },
   data() {
     return {

@@ -25,11 +25,12 @@
 </template>
 
 <script>
-
+import MBreadCrumbs from '~/components/MBreadCrumbs.vue'
+import MButton from '~/components/_core/MButton.vue'
 export default {
   components: {
-    MBreadCrumbs: () => import('~/components/MBreadCrumbs.vue'),
-    MButton: () => import('~/components/_core/MButton.vue'),
+    MBreadCrumbs,
+    MButton
   },
   data() {
     return {

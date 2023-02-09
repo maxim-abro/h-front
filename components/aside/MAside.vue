@@ -51,13 +51,14 @@
 
 <script>
 import * as yup from 'yup'
-
+import MInput from '~/components/_core/MInput.vue';
+import MButton from '~/components/_core/MButton.vue';
 // todo - add popup
 
 export default {
   components: {
-    MInput: () => import('~/components/_core/MInput.vue'),
-    MButton: () => import('~/components/_core/MButton.vue'),
+    MInput,
+    MButton,
   },
   data() {
     return {
@@ -83,7 +84,7 @@ export default {
     },
     async fetchForm() {
       // @ts-ignore
-      this.disabledFOrm = true
+      this.disabledForm = true
       const validate = await this.validateForm()
       if (!validate) {
         // @ts-ignore

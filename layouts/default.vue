@@ -4,10 +4,6 @@
 
     <div class="container flex flex-col lg:flex-row mt-3 sm:mt-10">
       <main class="w-full lg:w-9/12 mr-0 lg:mr-4 mb-10 lg:mb-0">
-<!--        <horizontal-ad-->
-<!--          url="/shop/23c470a9-aeae-4d38-a526-ba3f3a9a243c"-->
-<!--          img="https://za-halyavoi.ru/api/static/1c798e24-569f-497b-87ff-20ad5433a611.jpg"-->
-<!--        />-->
 
         <div id="yandex_rtb_R-A-1753947-2" class="mb-2 sm:mb-5"></div>
         <script>window.yaContextCb.push(function(){
@@ -24,11 +20,6 @@
         <m-aside class="mb-8"/>
         <m-popular-aside :popular="$store.state.aside.popular"  class="mb-8"/>
         <m-popular-categories-aside :popularCategories="$store.state.aside.popularCategories" class="mb-8"/>
-
-<!--        <aside-ad-->
-<!--          img="https://za-halyavoi.ru/api/static/aside.png"-->
-<!--          url="/shop/22a4cc24-f0b1-4334-8181-c206a4180c96"-->
-<!--        />-->
 
         <!-- Yandex.RTB R-A-1753947-1 -->
         <div id="yandex_rtb_R-A-1753947-1"></div>
@@ -49,15 +40,19 @@
 <script lang="ts">
 import MPopupCoupon from "~/components/popups/MPopupCoupon.vue";
 import MPopularAside from "~/components/aside/MPopularAside.vue";
+import MPopularCategoriesAside from '~/components/aside/MPopularCategoriesAside.vue';
+import MFooter from '~/components/MFooter.vue';
+import MHeader from '~/components/header/MHeader.vue';
+import MAside from '~/components/aside/MAside.vue';
 
 export default {
   components: {
-    MPopularAside: () => import('~/components/aside/MPopularAside.vue'),
-    MPopupCoupon: () => import('~/components/popups/MPopupCoupon.vue'),
-    MPopularCategoriesAside: () => import('~/components/aside/MPopularCategoriesAside.vue'),
-    MFooter: () => import('~/components/MFooter.vue'),
-    MHeader: () => import('~/components/header/MHeader.vue'),
-    MAside: () => import('~/components/aside/MAside.vue'),
+    MPopularAside,
+    MPopupCoupon,
+    MPopularCategoriesAside,
+    MFooter,
+    MHeader,
+    MAside,
   },
 }
 </script>

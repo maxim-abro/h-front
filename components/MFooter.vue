@@ -112,11 +112,12 @@
 </template>
 
 <script>
-
+import MInput from '~/components/_core/MInput.vue';
+import MButton from '~/components/_core/MButton.vue';
 export default {
   components: {
-    MInput: () => import('~/components/_core/MInput.vue'),
-    MButton: () => import('~/components/_core/MButton.vue'),
+    MInput,
+    MButton,
   },
   data() {
     return {
