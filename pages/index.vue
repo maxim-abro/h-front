@@ -68,9 +68,15 @@
 
 <script lang="ts">
 import {PostModel} from "~/models/post.model";
+import MVerticalCard from '~/components/cards/MVerticalCard.vue';
+import MPagination from '~/components/MPagination.vue';
 
 export default {
   layout: 'default',
+  components: {
+    MPagination,
+    MVerticalCard,
+  },
   data() {
     return {
       posts: [] as PostModel[],
@@ -151,19 +157,6 @@ export default {
     return { pagination, page, posts: postRes.data.rows, count: postRes.data.count }
   },
   methods: {
-    async fetchPosts(page=0 as number) {
-      // @ts-ignore
-      const postRes = await this.$api.get(`/post?page=${page}`)
-
-      // @ts-ignore
-      this.posts = postRes.data.rows
-      // @ts-ignore
-      this.pagination = {
-        current_page: page || 1,
-        total_elements: postRes.data.count,
-        total_pages: postRes.data.count / 15
-      }
-    },
     async likePost(uin:string) {
       // @ts-ignore
       const likes = this.$cookies.get('likes')

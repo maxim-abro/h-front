@@ -17,8 +17,13 @@
 
 <script>
 import _ from "lodash";
-
+import MInput from '~/components/_core/MInput.vue';
+import MHeaderSearch from '~/components/header/MHeaderSearch.vue';
 export default {
+  components: {
+    MInput,
+    MHeaderSearch,
+  },
   data() {
     return {
       searchQuery: '',

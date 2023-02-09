@@ -36,10 +36,7 @@
         <svg width="8" height="14" viewBox="0 0 10 16" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M2 14L8 8L2 2" stroke="#4D4D4D" stroke-width="2" stroke-linecap="square"/>
         </svg>
-
       </a>
-
-
     </nav>
   </div>
 

@@ -43,9 +43,19 @@
 <script lang="ts">
 import {ShopModel} from "~/models/shop.model";
 import {PostModel} from "~/models/post.model";
+import MBreadCrumbs from '~/components/MBreadCrumbs.vue';
+import MPopularAside from '~/components/aside/MPopularAside.vue';
+import MHorizontalCard from '~/components/cards/MHorizontalCard.vue';
+import ShopAside from '~/components/aside/ShopAside.vue';
 
 export default {
   layout: 'shop',
+  components: {
+    MPopularAside,
+    ShopAside,
+    MHorizontalCard,
+    MBreadCrumbs,
+  },
   head():any {
     return {
       // @ts-ignore

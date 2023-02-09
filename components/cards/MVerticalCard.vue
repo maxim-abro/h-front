@@ -43,15 +43,19 @@
     </m-button>
 
     <div class="text-sm" v-if="post.endDate">
-      Действителен до: {{ $calendar(post.endDate) }}
+      Действителен до: {{ new Date(post.endDate).toLocaleDateString('ru-RU', { day: 'numeric', month: 'long', year: 'numeric' }) }}
     </div>
   </div>
 </template>
 
 <script lang="ts">
 import {PostModel} from "~/models/post.model";
+import MButton from '~/components/_core/MButton.vue';
 
 export default {
+  components: {
+    MButton,
+  },
   props: {
     post: [] as PostModel[],
   },

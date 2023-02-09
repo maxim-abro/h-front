@@ -7,8 +7,13 @@
 </template>
 
 <script lang="ts">
+import MHeader from '~/components/header/MHeader.vue';
+import MFooter from '~/components/MFooter.vue';
 
 export default {
-
+  components: {
+    MHeader,
+    MFooter,
+  }
 }
 </script>

@@ -4,9 +4,6 @@
     @click.self="$store.state.popup.openPopup = false"
     v-if="$store.state.popup.openPopup"
   >
-<!--    <div-->
-<!--      class="absolute left-1/2 w-full lg:w-9/12 xl:w-auto xl:max-w-[750px] -translate-x-1/2 -translate-y-1/2 top-1/2 bg-white p-5 shadow shadow-2xl"-->
-<!--    >-->
     <div
       class="bg-white dark:bg-zinc-800 mx-auto w-full md:translate-y-1/2 lg:w-9/12 xl:w-auto xl:max-w-[750px]"
     >
@@ -18,7 +15,7 @@
             class="md:mr-3  h-[59px]"
             v-if="$store.state.popup.popupData.shop"
             :src="
-              'http://za-halyavoi.ru/api/static/' +
+              'https://za-halyavoi.ru/api/static/' +
               $store.state.popup.popupData.shop.image
             "
             :alt="$store.state.popup.popupData.shop.title"
@@ -132,7 +129,6 @@ export default {
   },
   methods: {
     copyBuffer():void {
-
       // @ts-ignore
       navigator.clipboard.writeText(this.$store.state.popup.popupData.code)
       // @ts-ignore

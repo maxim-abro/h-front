@@ -6,7 +6,6 @@
           <nuxt-link to="/" class="mb-2 block" @click.prevent="clickLink('/')"><fa class="text-primary mr-1" icon="house" /> Главная</nuxt-link>
         </li>
         <li>
-<!--          <a href="/categories" class="mb-2 block" @click.prevent="clickLink('/categories')"><fa class="text-primary mr-1" icon="braille" /> Категории</a>-->
           <m-collapse animation>
             <template #trigger>
               <div class="mb-2 block"><fa class="text-primary mr-1" icon="braille" /> Категории <fa icon="chevron-up" class="arrow"/></div>
@@ -57,10 +56,13 @@
 </template>
 
 <script lang="ts">
-
 import {CategoryModel} from "~/models/category.model";
+import MCollapse from '~/components/_core/MCollapse.vue';
 
 export default {
+  components: {
+    MCollapse,
+  },
   data() {
     return {
       categories: [] as CategoryModel[]
@@ -78,12 +80,5 @@ export default {
       this.$colorMode.preference === "dark" ? this.$colorMode.preference = "light" : this.$colorMode.preference = "dark"
     }
   },
-  async mounted() {
-    // // @ts-ignore
-    // const categories = await this.$api.get('/category')
-    //
-    // // @ts-ignore
-    // this.categories = categories.data
-  }
 }
 </script>

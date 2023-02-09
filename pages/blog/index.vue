@@ -25,8 +25,13 @@
 </template>
 
 <script>
-
+import MBreadCrumbs from '~/components/MBreadCrumbs.vue'
+import MButton from '~/components/_core/MButton.vue'
 export default {
+  components: {
+    MBreadCrumbs,
+    MButton
+  },
   data() {
     return {
       blogs: [],

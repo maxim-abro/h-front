@@ -25,8 +25,11 @@
 </template>
 
 <script>
-
+import MBreadCrumbs from '~/components/MBreadCrumbs.vue'
 export default {
+  components: {
+    MBreadCrumbs,
+  },
   data() {
     return {
       title: "",

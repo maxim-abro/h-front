@@ -90,8 +90,11 @@
 </template>
 
 <script>
-
+import MBreadCrumbs from '~/components/MBreadCrumbs.vue'
 export default {
+  components: {
+    MBreadCrumbs,
+  },
   head() {
     return {
       title: `Популярные вопросы по пользованию сайтом`,

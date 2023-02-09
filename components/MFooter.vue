@@ -112,8 +112,13 @@
 </template>
 
 <script>
-
+import MInput from '~/components/_core/MInput.vue';
+import MButton from '~/components/_core/MButton.vue';
 export default {
+  components: {
+    MInput,
+    MButton,
+  },
   data() {
     return {
       code: '<!--3a9f6b4e--> <!--3a9f6b4e-->'

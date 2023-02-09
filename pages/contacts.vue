@@ -56,9 +56,16 @@
 </template>
 
 <script>
-import * as yup from 'yup'
-
+import * as yup from 'yup';
+import MBreadCrumbs from '~/components/MBreadCrumbs.vue';
+import MButton from '~/components/_core/MButton.vue';
+import MInput from '~/components/_core/MInput.vue';
 export default {
+  components: {
+    MBreadCrumbs,
+    MButton,
+    MInput,
+  },
   head() {
     return {
       // @ts-ignore

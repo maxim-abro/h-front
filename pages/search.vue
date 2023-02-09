@@ -21,10 +21,11 @@
 </template>
 
 <script lang="ts">
-
+import MBreadCrumbs from '~/components/MBreadCrumbs.vue'
 export default {
-  components: {},
-
+  components: {
+    MBreadCrumbs,
+  },
   layout: 'default',
   data():any {
     return {

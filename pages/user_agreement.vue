@@ -78,10 +78,11 @@
 </template>
 
 <script lang="ts">
-
+import MBreadCrumbs from '~/components/MBreadCrumbs.vue'
 export default {
-  components: {},
-
+  components: {
+    MBreadCrumbs,
+  },
   data():any {
     return {
       breadCrumbs: [

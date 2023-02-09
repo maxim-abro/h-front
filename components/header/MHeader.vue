@@ -90,9 +90,23 @@
 </template>
 
 <script>
-import _ from "lodash";
+import debounce from "lodash/debounce";
+import MInput from '~/components/_core/MInput.vue';
+import MHeaderSearch from '~/components/header/MHeaderSearch.vue';
+import MHeaderSearchMobile from '~/components/header/MHeaderSearchMobile.vue';
+import MButton from '~/components/_core/MButton.vue';
+import MHeaderCategories from '~/components/header/MHeaderCategories.vue';
+import MobileMenu from '~/components/header/MobileMenu.vue';
 
 export default {
+  components: {
+    MInput,
+    MHeaderSearch,
+    MHeaderSearchMobile,
+    MButton,
+    MHeaderCategories,
+    MobileMenu,
+  },
   data() {
     return {
       searchQuery: '',
@@ -116,7 +130,7 @@ export default {
     }
   },
   watch: {
-    searchQuery: _.debounce(async function() {
+    searchQuery: debounce(async function() {
       if (this.searchQuery.length > 2) {
         const response = await this.$api.get(`/search?q=${encodeURI(this.searchQuery.toLowerCase())}`)
 
@@ -126,16 +140,3 @@ export default {
   }
 }
 </script>
-
-<style scoped>
-.logo-1 {
-  /*   text-shadow: 0 0 5px #f562ff, 0 0 15px #f562ff, 0 0 25px #f562ff,
-      0 0 20px #f562ff, 0 0 30px #890092, 0 0 80px #890092, 0 0 80px #890092;
-    color: #fccaff; */
-  text-shadow: 0 0 5px #ffa500, 0 0 15px #ffa500, 0 0 20px #ffa500, 0 0 40px #ffa500, 0 0 60px #ff0000, 0 0 10px #ff8d00, 0 0 98px #ff0000;
-  color: #fff6a9;
-  text-align: center;
-  animation: blink 12s infinite;
-  -webkit-animation: blink 12s infinite;
-}
-</style>
