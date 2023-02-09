@@ -27,7 +27,7 @@
               {{ $store.state.popup.popupData.title }}
             </div>
             <div class="text-xs text-zinc-500">
-              {{ `Действует до ${$calendar($store.state.popup.popupData.endDate)}` }}
+              {{ `Действует до ${new Date($store.state.popup.popupData.endDate).toLocaleDateString('ru-RU', { day: 'numeric', month: 'long', year: 'numeric' })}` }}
             </div>
           </div>
         </div>
