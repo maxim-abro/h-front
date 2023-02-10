@@ -1,5 +1,5 @@
 <template>
-  <div class="shadow shadow-md shadow-[#00000070] rounded w-full py-4 px-8 border border-2 dark:border-zinc-700">
+  <div class="shadow shadow-md shadow-[#00000070] rounded w-full py-4 px-8 border border-2 dark:border-zinc-700 relative" :class="post.recomended ? 'shadow-primary' : ''">
     <img
       :title='post.shop.title'
       v-if="post.shop"
