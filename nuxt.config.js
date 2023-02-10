@@ -4,7 +4,7 @@ export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     title: '',
-    titleTemplate: '%s - za-halyavoi.ru',
+    titleTemplate: '%s',
     htmlAttrs: {
       lang: 'ru'
     },
