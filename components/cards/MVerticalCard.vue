@@ -1,6 +1,7 @@
 <template>
   <div class="shadow shadow-md shadow-[#00000070] rounded w-full py-4 px-8 border border-2 dark:border-zinc-700">
     <img
+      :title='post.shop.title'
       v-if="post.shop"
       loading='lazy'
       :src="`https://za-halyavoi.ru/api/static/${post.shop.image}`"

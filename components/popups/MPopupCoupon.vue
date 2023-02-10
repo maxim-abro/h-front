@@ -11,6 +11,7 @@
       <div class="flex items-center justify-between mb-5 relative p-4">
         <div class="flex items-center w-full sm:justify-start justify-center flex-col md:flex-row">
           <img
+            :title='$store.state.popup.popupData.shop.title'
             loading='lazy'
             class="md:mr-3  h-[59px]"
             v-if="$store.state.popup.popupData.shop"

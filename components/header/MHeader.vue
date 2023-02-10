@@ -7,7 +7,7 @@
           to="/"
           class="text-2xl font-black flex items-center text-primary drop-shadow"
         >
-          <img loading='lazy' src="/logo-min.png" class="h-16 mr-1 xs:h-20 w-auto" alt="логотип">
+          <img title='за халявой' loading='lazy' src="/logo-min.png" class="h-16 mr-1 xs:h-20 w-auto" alt="логотип">
         </nuxt-link>
         <button class="text-primary bg-zinc-100 dark:bg-zinc-800 w-10 h-10 block md:hidden" @click="openSearchMobile = !openSearchMobile"><fa icon="magnifying-glass"/></button>
         <div class='w-5/12 hidden md:flex items-center justify-end'>

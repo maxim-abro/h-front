@@ -10,7 +10,7 @@
 
     <div class="grid grid-cols-2 sm:grid-cols-3 xl:grid-cols-5 gap-3" v-if="searchData.length">
       <nuxt-link :to="`/shop/${shop.uin}`" class="" v-for="shop of searchData" :key="shop.uin">
-        <img loading='lazy' :src="`https://za-halyavoi.ru/api/static/${shop.image}`" :alt="shop.title" class="w-full h-auto">
+        <img :title='shop.title' loading='lazy' :src="`https://za-halyavoi.ru/api/static/${shop.image}`" :alt="shop.title" class="w-full h-auto">
         <h2 class="text-center">{{ shop.title }}</h2>
       </nuxt-link>
     </div>
