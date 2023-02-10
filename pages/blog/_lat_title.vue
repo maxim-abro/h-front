@@ -13,7 +13,7 @@
         </div>
       </div>
     </div>
-    <img :src="`https://za-halyavoi.ru/api/static${preview}`" alt="" class="mb-8">
+    <img :title='title' :src="`https://za-halyavoi.ru/api/static${preview}`" alt="" class="mb-8">
     <div v-html='body' class='prose lg:prose-xl prose-stone dark:prose-invert mb-10 max-w-none prose-a:bg-[#fdb13c60] prose-a:rounded prose-a:px-1 prose-a:no-underline'>
       <h1>{{ title }}</h1>
     </div>

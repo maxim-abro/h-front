@@ -4,7 +4,7 @@ export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     title: '',
-    titleTemplate: '%s - za-halyavoi.ru',
+    titleTemplate: '%s',
     htmlAttrs: {
       lang: 'ru'
     },
@@ -100,7 +100,7 @@ export default {
         'faPlaneArrival', 'faClockRotateLeft', 'faMobileScreenButton', 'faBriefcase', 'faDrumstickBite', 'faFutbol',
         'faBaby', 'faComputer', 'faChair', 'faSackDollar', 'faGifts', 'faBook', 'faSmileBeam', 'faBars', 'faChevronUp',
         'faEye', 'faStar', 'faEllipsisH', 'faShareAlt', 'faCircleChevronDown', 'faUpRightFromSquare', 'faCircleInfo',
-        'faShare', 'faXmark']
+        'faShare', 'faXmark', 'faClone']
     }
   },
 
