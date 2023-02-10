@@ -1,7 +1,7 @@
 <template>
   <div
     class="bg-[#00000050] w-full h-full fixed left-0 top-0 overflow-auto p-8 z-50"
-    @click.self="$store.state.popup.openPopup = false"
+    @click.self="$store.commit('popup/closePopup')"
     v-if="$store.state.popup.openPopup"
   >
     <div
@@ -59,7 +59,7 @@
         </div>
 
         <div class="relative mb-5" v-if="$store.state.popup.popupData.type === 'promoCode'">
-          <div class="bg-white text-center py-2 font-bold text-2xl">
+          <div class="bg-white dark:bg-zinc-800 text-center py-2 font-bold text-2xl">
             {{ $store.state.popup.popupData.code }}
           </div>
           <button
