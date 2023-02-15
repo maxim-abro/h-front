@@ -1,6 +1,11 @@
 <template>
   <div class=''>
     <m-bread-crumbs :crumbs="breadCrumbs" class="mb-4"/>
+
+    <div class='prose lg:prose-xl prose-stone dark:prose-invert mb-10 max-w-none prose-a:bg-[#fdb13c60]'>
+      <h1>{{ title }}</h1>
+    </div>
+
     <div class="text-sm mb-5 flex justify-between">
       <div class="">{{ new Date(date).toLocaleDateString('ru-RU', { day: 'numeric', month: 'long', year: 'numeric' }) }} </div>
 
@@ -14,12 +19,10 @@
       </div>
     </div>
     <img :title='title' :src="`https://za-halyavoi.ru/api/static${preview}`" alt="" class="mb-8">
-    <div v-html='body' class='prose lg:prose-xl prose-stone dark:prose-invert mb-10 max-w-none prose-a:bg-[#fdb13c60] prose-a:rounded prose-a:px-1 prose-a:no-underline'>
-      <h1>{{ title }}</h1>
-    </div>
+    <div v-html='body' class='prose lg:prose-xl prose-stone dark:prose-invert mb-10 max-w-none prose-a:bg-[#fdb13c60] prose-a:rounded prose-a:px-1 prose-a:no-underline'></div>
 
     <div class="border-t pt-5 mb-12">
-      <span class="mr-2" v-for="tag of blog_tags">#{{ tag.title }}</span>
+      <span class="mr-2" v-for="tag of blog_tags" :key='tag.title'>#{{ tag.title }}</span>
     </div>
   </div>
 </template>
