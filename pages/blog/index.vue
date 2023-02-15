@@ -3,7 +3,7 @@
     <m-bread-crumbs :crumbs="breadCrumbs"/>
     <h1 class="text-2xl lg:text-3xl font-bold mb-8">Блог</h1>
 
-    <div class='grid gird-cols-1 xl:grid-cols-2 gap-1'>
+    <div class='grid gird-cols-1 xl:grid-cols-2 sm:gap-8 gap-4'>
       <div v-for='blog of blogs' :key='blog.id' class='rounded shadow shadow-md shadow-[#00000070]'>
         <nuxt-link :to='`/blog/${blog.lat_title}`'><img class='mb-4 rounded-t cursor-pointer' :src='`https://za-halyavoi.ru/api/static${blog.preview}`' alt=''></nuxt-link>
         <div class='p-2'>
