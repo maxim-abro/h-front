@@ -19,7 +19,7 @@
       <aside class="w-full lg:w-3/12 mr-0 lg:ml-3">
         <m-aside class="mb-8"/>
         <m-popular-aside :popular="$store.state.aside.popular"  class="mb-8"/>
-        <m-popular-categories-aside :popularCategories="$store.state.aside.popularCategories" class="mb-8"/>
+        <m-popular-categories-aside :popular-categories="$store.state.aside.popularCategories" class="mb-8"/>
 
         <!-- Yandex.RTB R-A-1753947-1 -->
         <div id="yandex_rtb_R-A-1753947-1"></div>
@@ -34,6 +34,11 @@
 
     <m-footer />
     <m-popup-coupon />
+    <noscript>
+      <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MWZ6V8X"
+                      height="0" width="0" style="display:none;visibility:hidden">
+      </iframe>
+    </noscript>
   </div>
 </template>
 
