@@ -40,6 +40,9 @@ export default {
       {
         src: '/js/yndx.js',
         body: true
+      },
+      {
+        src: '/js/google.js'
       }
     ]
   },
@@ -81,8 +84,13 @@ export default {
     // https://go.nuxtjs.dev/tailwindcss
     '@nuxtjs/tailwindcss',
     '@nuxtjs/fontawesome',
-    '@nuxtjs/color-mode'
+    '@nuxtjs/color-mode',
+    '@nuxtjs/google-gtag'
   ],
+
+  'google-gtag': {
+    id: 'G-V6ZSLDKYV2'
+  },
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
