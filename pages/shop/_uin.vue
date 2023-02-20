@@ -33,9 +33,11 @@
     </main>
 
     <aside class="lg:w-3/12 mb-10 lg:mb-0 lg:ml-4">
-      <shop-aside :data="shopData" class="mb-10"/>
+      <div class='lg:sticky lg:top-4'>
+        <shop-aside :data="shopData" class="mb-10"/>
 
-      <m-popular-aside :popular="$store.state.aside.popular"/>
+        <m-popular-aside :popular="$store.state.aside.popular"/>
+      </div>
     </aside>
   </div>
 </template>
