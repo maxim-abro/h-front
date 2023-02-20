@@ -1,5 +1,5 @@
 <template>
-  <div class="shadow shadow-md shadow-[#00000070] w-full border-zinc-200 p-3 dark:text-zinc-200">
+  <div class="shadow shadow-md shadow-[#00000070] w-full border-zinc-200 p-3 dark:text-zinc-200 bg-white dark:bg-zinc-900">
     <img
       :title='data.title'
       loading='lazy'
