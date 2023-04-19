@@ -36,9 +36,9 @@
       <m-header-search-mobile v-if="openSearchMobile" @close="openSearchMobile = false"/>
       <mobile-menu />
 
-      <nuxt-link class="p-3 inline-block md:hidden bg-second text-white w-full sign-wrap-3" to="/tags/23-fevralya">
-        <span>23 февраля</span>
-      </nuxt-link>
+<!--      <nuxt-link class="p-3 inline-block md:hidden bg-second text-white w-full sign-wrap-3" to="/tags/23-fevralya">-->
+<!--        <span>23 февраля</span>-->
+<!--      </nuxt-link>-->
     </header>
 
     <nav class="bg-second dark:bg-zinc-800 text-primary hidden md:block">
@@ -68,11 +68,11 @@
               Блог
             </nuxt-link>
           </li>
-          <li>
-            <nuxt-link class="p-3 inline-block bg-second dark:bg-zinc-800 text-white hover:bg-zinc-700 dark:hover:bg-zinc-700" to="/tags/23-fevralya">
-              <span>23 февраля</span>
-            </nuxt-link>
-          </li>
+<!--          <li>-->
+<!--            <nuxt-link class="p-3 inline-block bg-second dark:bg-zinc-800 text-white hover:bg-zinc-700 dark:hover:bg-zinc-700" to="/tags/23-fevralya">-->
+<!--              <span>23 февраля</span>-->
+<!--            </nuxt-link>-->
+<!--          </li>-->
         </ul>
       </div>
     </nav>
