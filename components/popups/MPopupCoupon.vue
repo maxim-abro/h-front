@@ -91,8 +91,7 @@
           </button>
         </div>
 
-        <div class="sm:px-10 text-zinc-700 dark:text-zinc-200 mb-8 text-sm sm:text-base">
-          {{ $store.state.popup.popupData.description }}
+        <div class="sm:px-10 text-zinc-700 dark:text-zinc-200 mb-8 text-sm sm:text-base" v-html="$store.state.popup.popupData.description">
         </div>
 
         <a
