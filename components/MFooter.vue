@@ -101,9 +101,13 @@
       </div>
     </div>
 
-    <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.2);">
+    <div class="text-center pt-4 pb-1" style="background-color: rgba(0, 0, 0, 0.2);">
       © 2023 Copyright:
       <a class="text-white underline hover:text-primary hover:no-underline" href="mailto:support@za-halyavoi.ru">support@za-halyavoi.ru</a>
+    </div>
+
+    <div class="text-center text-xs pb-4" style="background-color: rgba(0, 0, 0, 0.2);">
+      Вся информация, опубликованная на сайте za-halyavoi.ru, не является публичной офертой, определяемой положениями Статьи 437 Гражданского кодекса РФ, и носит исключительно справочный характер.
     </div>
     <div class="" v-html="code">
 
