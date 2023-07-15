@@ -165,27 +165,27 @@ export default {
   },
   methods: {
     filterByAlphabet(symbol:string):ShopModel[] {
-      //@ts-ignore
+      // @ts-ignore
       return this.shops.filter(i => {
         return i.title[0].toLowerCase() === symbol.toLowerCase()
       })
     },
+  },
+  computed: {
     filterBySymbol():ShopModel[] {
-      const reg = /[^A-Za-z0-9]/gi
-      //@ts-ignore
+      const reg = /[^A-Za-z0-9А-Яа-яЁё]+/gi
+      // @ts-ignore
       return this.shops.filter(i => {
         return reg.test(i.title[0])
       })
     },
     filterByNumber():ShopModel[] {
-      const reg = /^[0-9]/
-
-      //@ts-ignore
+      const reg = /^[0-9]+/gi
+      // @ts-ignore
       return this.shops.filter(i => {
-        return reg.test(i.title[0])
+        return reg.test(i.title)
       })
     }
-  },
-  computed: {}
+  }
 }
 </script>
