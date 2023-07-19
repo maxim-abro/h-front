@@ -8,7 +8,7 @@
       <nuxt-link
         v-for="shop in shops"
         :key="shop.uin"
-        :to="`/shop/${shop.uin}`"
+        :to="`/shop/${shop.lat_title}`"
         class="w-full pl-1 text-xl font-light py-1 hover:bg-zinc-700 hover:text-primary duration-75 whitespace-nowrap
         overflow-ellipsis overflow-hidden"
       >

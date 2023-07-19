@@ -44,7 +44,7 @@
     <h3 class="mt-10 text-second dark:text-zinc-200 text-xl mb-1">Сайты по цифрам "<span class="font-bold">0-9</span>"</h3>
 
     <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 mb-3" v-if="filterByNumber.length">
-      <nuxt-link :to="`/shop/${shop.uin}`" v-for="shop in filterByNumber" :key="shop.uin" class="w-full pl-1 text-xl font-light py-1 hover:bg-zinc-700 hover:text-primary duration-75 whitespace-nowrap
+      <nuxt-link :to="`/shop/${shop.lat_title}`" v-for="shop in filterByNumber" :key="shop.uin" class="w-full pl-1 text-xl font-light py-1 hover:bg-zinc-700 hover:text-primary duration-75 whitespace-nowrap
         overflow-ellipsis overflow-hidden">{{ shop.title }}
       </nuxt-link>
     </div>
@@ -53,7 +53,7 @@
     <h3 class="text-second dark:text-zinc-200 text-xl mb-1">Сайты по символам</h3>
 
     <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 mb-3" v-if="filterBySymbol.length">
-      <nuxt-link :to="`/shop/${shop.uin}`" v-for="shop in filterBySymbol" :key="shop.uin" class="w-full pl-1 text-xl font-light py-1 hover:bg-zinc-700 hover:text-primary duration-75 whitespace-nowrap
+      <nuxt-link :to="`/shop/${shop.lat_title}`" v-for="shop in filterBySymbol" :key="shop.uin" class="w-full pl-1 text-xl font-light py-1 hover:bg-zinc-700 hover:text-primary duration-75 whitespace-nowrap
         overflow-ellipsis overflow-hidden">{{ shop.title }}
       </nuxt-link>
     </div>
@@ -64,7 +64,7 @@
       <h3 class="text-second dark:text-zinc-200 text-xl mb-1">Сайты на букву "<span class="font-bold uppercase">{{ symbol }}</span>"</h3>
 
       <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 mb-3" v-if="filterByAlphabet(symbol).length">
-        <nuxt-link :to="`/shop/${shop.uin}`" class="w-full pl-1 text-xl font-light py-1 hover:bg-zinc-700 hover:text-primary duration-75 whitespace-nowrap
+        <nuxt-link :to="`/shop/${shop.lat_title}`" class="w-full pl-1 text-xl font-light py-1 hover:bg-zinc-700 hover:text-primary duration-75 whitespace-nowrap
         overflow-ellipsis overflow-hidden" v-for="shop in filterByAlphabet(symbol)" :key="shop.uin">{{ shop.title }}</nuxt-link>
       </div>
       <div class="font-bold" v-else>Магазины скоро появятся</div>
@@ -73,7 +73,7 @@
       <h3 class="text-second dark:text-zinc-200 text-xl mb-1">Сайты на букву "<span class="font-bold uppercase">{{ symbol }}</span>"</h3>
 
       <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3" v-if="filterByAlphabet(symbol).length">
-        <nuxt-link :to="`/shop/${shop.uin}`" class="w-full pl-1 text-xl font-light py-1 hover:bg-zinc-700 hover:text-primary duration-75 whitespace-nowrap
+        <nuxt-link :to="`/shop/${shop.lat_title}`" class="w-full pl-1 text-xl font-light py-1 hover:bg-zinc-700 hover:text-primary duration-75 whitespace-nowrap
         overflow-ellipsis overflow-hidden" v-for="shop in filterByAlphabet(symbol)" :key="shop.uin">{{ shop.title }}</nuxt-link>
       </div>
       <div class="font-bold" v-else>Магазины скоро появятся</div>

@@ -6,7 +6,7 @@
     </div>
 
     <div class="grid grid-cols-2 gap-2 p-4">
-      <nuxt-link :to="`/shop/${i.shop.uin}`" class="cursor-pointer hover:shadow hover:shadow-lg hover:-translate-y-1 flex items-center" v-for="i in popular" :key="i.shop.uin">
+      <nuxt-link :to="`/shop/${i.shop.lat_title}`" class="cursor-pointer hover:shadow hover:shadow-lg hover:-translate-y-1 flex items-center" v-for="i in popular" :key="i.shop.uin">
         <img :title='i.shop.title' loading='lazy' :src="`https://za-halyavoi.ru/api/static/${i.shop.image}`" :alt="i.shop.title" class="w-full">
       </nuxt-link>
     </div>

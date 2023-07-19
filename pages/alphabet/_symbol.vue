@@ -44,7 +44,7 @@
     <h3 class="text-second dark:text-zinc-200 text-xl mb-1">Сайты и магазины на "<span class="font-bold uppercase">{{ titlePage }}</span>"</h3>
 
     <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 mb-3" v-if="shops.length">
-      <nuxt-link :to="`/shop/${shop.uin}`" class="w-full pl-1 text-xl font-light py-1 hover:bg-zinc-700 hover:text-primary duration-75 whitespace-nowrap
+      <nuxt-link :to="`/shop/${shop.lat_title}`" class="w-full pl-1 text-xl font-light py-1 hover:bg-zinc-700 hover:text-primary duration-75 whitespace-nowrap
         overflow-ellipsis overflow-hidden" v-for="shop in shops" :key="shop.uin">{{ shop.title }}</nuxt-link>
     </div>
     <div class="font-bold" v-else>Магазины скоро появятся</div>

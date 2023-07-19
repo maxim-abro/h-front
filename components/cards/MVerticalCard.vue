@@ -30,7 +30,7 @@
 
     <router-link
       v-if="post.shop"
-      :to="`/shop/${post.shop.uin}`"
+      :to="`/shop/${post.shop.lat_title}`"
       class="text-sm block mb-3 text-zinc-400 hover:text-primary transition-all duration-300 hover:transition-all hover:duration-300"
     >
       <fa icon="check" class="text-primary" /> Все промокоды

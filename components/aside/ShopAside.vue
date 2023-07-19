@@ -19,7 +19,7 @@
 
     <button
       class="text-center rounded w-full mt-3 py-1.5 bg-zinc-200 dark:bg-zinc-800 dark:text-zinc-200 text-second dark:hover:text-primary hover:text-primary transition-all duration-300 hover:transition-all hover:duration-300"
-      @click="$router.push(`/shop/add/${data.uin}`)"
+      @click="$router.push(`/shop/add/${data.lat_title}`)"
     >
       <fa icon="circle-chevron-down" />
       Предложить купон
