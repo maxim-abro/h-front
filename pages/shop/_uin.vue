@@ -134,7 +134,7 @@ export default {
     const page = route.query.page || 1
 
     const shop = await $api.get(`/shop/${route.params.uin}`)
-    const posts = await $api.get(`/post/?shop=${route.params.uin}&page=${page}`)
+    const posts = await $api.get(`/post/?shop=${shop.data.uin}&page=${page}`)
     const recommended = await $api.post('/post/recommended', {
       categories: shop.data.categories,
       shop: shop.data.uin
