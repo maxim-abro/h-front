@@ -10,7 +10,7 @@ export default {
     },
     meta: [
       {charset: 'utf-8'},
-      {name: 'viewport', content: 'width=device-width, initial-scale=1'},
+      {name: 'viewport', content: 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no'},
       {hid: 'description', name: 'description', content: ''},
       {name: 'format-detection', content: 'telephone=no'},
       {name: 'yandex-verification', content: '8f923e168571864e'},
@@ -97,8 +97,27 @@ export default {
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
     ['cookie-universal-nuxt', {alias: 'cookies'}],
-    '@nuxtjs/sitemap'
+    '@nuxtjs/sitemap',
+    '@nuxtjs/pwa'
   ],
+
+  pwa: {
+    meta: {
+      title: 'za halyavoi',
+      author: 'za-halyavoi',
+      viewport: 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no'
+    },
+    manifest: {
+      name: 'za-halyavoi',
+      short_name: 'halyava',
+      lang: 'ru'
+    },
+    icon: {
+      source: 'static/za-halyavoi.png',
+      filename: 'za-halyavoi.png',
+      purpose: 'maskable'
+    }
+  },
 
   fontawesome: {
     component: 'fa',
