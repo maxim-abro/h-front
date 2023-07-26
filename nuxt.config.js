@@ -160,7 +160,7 @@ export default {
       const blogData = await axios.get("https://za-halyavoi.ru/api/admin/sitemap/blog")
 
       categoryData.data.forEach(i => result.push(`/categories/${i.lat_title}`))
-      shopData.data.forEach(i => result.push(`/shop/${i.uin}`))
+      shopData.data.forEach(i => result.push(`/shop/${i.lat_title}`))
       holidayData.data.forEach(i => result.push(`/tags/${i.lat_title}`))
       blogData.data.forEach(i => result.push(`/blog/${i.lat_title}`))
 
