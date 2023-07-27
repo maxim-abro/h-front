@@ -6,7 +6,7 @@
     <h1 class="text-2xl font-bold mb-8">Промокоды и акции на тему {{ holiday.title }}</h1>
     <img :title='holiday.title' loading='lazy' class="w-full mb-8 rounded" :src="`https://za-halyavoi.ru/api/static/holidays/${holiday.image}`" :alt="holiday.title">
 
-    <p class="mb-8">{{ holiday.description }}</p>
+    <p class="mb-8" v-html='holiday.description'></p>
 
     <h2 class="font-bold text-lg mb-4"> <fa icon="fire" class="text-primary" /> {{ holiday.title }} - лучшие промокоды и акции</h2>
 
