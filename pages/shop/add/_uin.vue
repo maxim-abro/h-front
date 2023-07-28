@@ -120,7 +120,7 @@ export default {
 
     const breadCrumbs = [
       {link: '/categories', title: 'Категории сайтов'},
-      {link: `/categories/${shop.data.category.uin}`, title: shop.data.category.title},
+      {link: `/categories/${shop.data.category.lat_title}`, title: shop.data.category.title},
       {link: `/shop/${route.params.uin}`, title: shop.data.title},
       {title: "Добавление купона"},
     ];
