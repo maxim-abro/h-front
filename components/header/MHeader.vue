@@ -68,11 +68,11 @@
               Блог
             </nuxt-link>
           </li>
-<!--          <li>-->
-<!--            <nuxt-link class="p-3 inline-block bg-second dark:bg-zinc-800 text-white hover:bg-zinc-700 dark:hover:bg-zinc-700" to="/tags/23-fevralya">-->
-<!--              <span>23 февраля</span>-->
-<!--            </nuxt-link>-->
-<!--          </li>-->
+          <li>
+            <nuxt-link class="p-3 inline-block bg-second dark:bg-zinc-800 text-white hover:bg-zinc-700 dark:hover:bg-zinc-700" :to="`/tags/${holiday.lat_title}`">
+              <span>{{ holiday.title }}</span>
+            </nuxt-link>
+          </li>
         </ul>
       </div>
     </nav>
@@ -98,6 +98,9 @@ export default {
     MButton,
     MHeaderCategories,
     MobileMenu,
+  },
+  props: {
+    holiday: Object
   },
   data() {
     return {

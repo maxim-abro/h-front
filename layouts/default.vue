@@ -1,6 +1,6 @@
 <template>
   <div class='dark:bg-zinc-900 dark:text-zinc-200'>
-    <m-header />
+    <m-header :holiday="$store.state.header.holiday"/>
 
     <div class="container flex flex-col lg:flex-row mt-3 sm:mt-10">
       <main class="w-full lg:w-9/12 mr-0 lg:mr-4 mb-10 lg:mb-0">
