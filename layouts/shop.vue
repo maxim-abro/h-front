@@ -1,6 +1,6 @@
 <template>
 <div class="dark:bg-zinc-900">
-  <m-header />
+  <m-header :holiday="$store.state.header.holiday"/>
   <Nuxt />
   <m-footer />
   <noscript>
