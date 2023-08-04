@@ -27,16 +27,16 @@ export default {
       {rel: 'icon', type: 'image/x-icon', sizes: '120x120', href: '/favicon-120x120.ico'}
     ],
     script: [
-      {
-        src: "/js/yacontext.js"
-      },
-      {
-        src: "https://yandex.ru/ads/system/context.js",
-        async: true
-      },
-      {
-        src: "/js/mobileAd.js"
-      },
+      // {
+      //   src: "/js/yacontext.js"
+      // },
+      // {
+      //   src: "https://yandex.ru/ads/system/context.js",
+      //   async: true
+      // },
+      // {
+      //   src: "/js/mobileAd.js"
+      // },
       {
         src: '/js/yndx.js',
         body: true

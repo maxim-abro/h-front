@@ -5,13 +5,13 @@
     <div class="container flex flex-col lg:flex-row mt-3 sm:mt-10">
       <main class="w-full lg:w-9/12 mr-0 lg:mr-4 mb-10 lg:mb-0">
 
-        <div id="yandex_rtb_R-A-1753947-2" class="mb-2 sm:mb-5"></div>
-        <script>window.yaContextCb.push(function(){
-          return Ya.Context.AdvManager.render({
-            renderTo: 'yandex_rtb_R-A-1753947-2',
-            blockId: 'R-A-1753947-2'
-          })
-        })</script>
+<!--        <div id="yandex_rtb_R-A-1753947-2" class="mb-2 sm:mb-5"></div>-->
+<!--        <script>window.yaContextCb.push(function(){-->
+<!--          return Ya.Context.AdvManager.render({-->
+<!--            renderTo: 'yandex_rtb_R-A-1753947-2',-->
+<!--            blockId: 'R-A-1753947-2'-->
+<!--          })-->
+<!--        })</script>-->
 
         <Nuxt/>
       </main>
@@ -21,14 +21,14 @@
         <m-popular-aside :popular="$store.state.aside.popular"  class="mb-8"/>
         <m-popular-categories-aside :popular-categories="$store.state.aside.popularCategories" class="mb-8"/>
 
-        <!-- Yandex.RTB R-A-1753947-1 -->
-        <div id="yandex_rtb_R-A-1753947-1"></div>
-        <script>window.yaContextCb.push(function(){
-          Ya.Context.AdvManager.render({
-            renderTo: 'yandex_rtb_R-A-1753947-1',
-            blockId: 'R-A-1753947-1'
-          })
-        })</script>
+<!--        &lt;!&ndash; Yandex.RTB R-A-1753947-1 &ndash;&gt;-->
+<!--        <div id="yandex_rtb_R-A-1753947-1"></div>-->
+<!--        <script>window.yaContextCb.push(function(){-->
+<!--          Ya.Context.AdvManager.render({-->
+<!--            renderTo: 'yandex_rtb_R-A-1753947-1',-->
+<!--            blockId: 'R-A-1753947-1'-->
+<!--          })-->
+<!--        })</script>-->
       </aside>
     </div>
 
