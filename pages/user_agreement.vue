@@ -121,7 +121,7 @@ export default {
   },
   head(): any {
     return {
-      title: 'Пользовательское Соглашение',
+      title: 'Пользовательское Соглашение za-halyavoi.ru',
       meta: [
         {
           hid: 'description',

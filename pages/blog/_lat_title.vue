@@ -80,7 +80,7 @@ export default {
   head() {
     return {
       // @ts-ignore
-      title: this.title,
+      title: this.title + ' - za-halyavoi.ru',
       meta: [
         {
           hid: 'description',

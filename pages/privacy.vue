@@ -526,7 +526,7 @@ export default {
   },
   head(): any {
     return {
-      title: 'Политика в отношении обработки персональных данных',
+      title: 'Политика в отношении обработки персональных данных сайта za-halyavoi.ru',
       meta: [
         {
           hid: 'description',
