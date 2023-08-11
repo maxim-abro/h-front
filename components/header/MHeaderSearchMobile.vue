@@ -1,24 +1,25 @@
 <template>
   <form
-      @submit.prevent="submitSearch"
-      class="w-full absolute p-3 left-0 w-full bg-second z-50">
+    class="w-full absolute p-3 left-0 w-full bg-second z-50"
+    @submit.prevent="submitSearch"
+  >
     <div class="relative">
       <m-input
+        v-model="searchQuery"
         class="p-2 w-full"
         placeholder="поиск товара или сайт"
         type="search"
-        v-model="searchQuery"
       />
 
-      <m-header-search v-if="searchShops.length" :shops="searchShops"/>
+      <m-header-search v-if="searchShops.length" :shops="searchShops" />
     </div>
   </form>
 </template>
 
 <script>
-import _ from "lodash";
-import MInput from '~/components/_core/MInput.vue';
-import MHeaderSearch from '~/components/header/MHeaderSearch.vue';
+import _ from 'lodash'
+import MInput from '~/components/_core/MInput.vue'
+import MHeaderSearch from '~/components/header/MHeaderSearch.vue'
 export default {
   components: {
     MInput,
@@ -27,7 +28,7 @@ export default {
   data() {
     return {
       searchQuery: '',
-      searchShops: []
+      searchShops: [],
     }
   },
   methods: {
@@ -44,13 +45,15 @@ export default {
     },
   },
   watch: {
-    searchQuery: _.debounce(async function() {
+    searchQuery: _.debounce(async function () {
       if (this.searchQuery.length > 2) {
-        const response = await this.$api.get(`/search?q=${encodeURI(this.searchQuery.toLowerCase())}`)
+        const response = await this.$api.get(
+          `/search?q=${encodeURI(this.searchQuery.toLowerCase())}`
+        )
 
         this.searchShops = response.data
       }
-    }, 1000)
-  }
+    }, 1000),
+  },
 }
 </script>

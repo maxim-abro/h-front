@@ -1,20 +1,32 @@
 <template>
   <div class="">
-    <m-bread-crumbs
-      :crumbs="breadCrumbs"
-    />
+    <m-bread-crumbs :crumbs="breadCrumbs" />
     <h1 class="text-lg xl:text-3xl font-bold my-8">
-      <fa icon="magnifying-glass" class="text-primary"/>
+      <fa icon="magnifying-glass" class="text-primary" />
       Результаты поиска по запросу: "{{ dataq }}"
     </h1>
 
-    <div class="grid grid-cols-2 sm:grid-cols-3 xl:grid-cols-5 gap-3" v-if="searchData.length">
-      <nuxt-link :to="`/shop/${shop.lat_title}`" class="" v-for="shop of searchData" :key="shop.uin">
-        <img :title='shop.title' loading='lazy' :src="`https://za-halyavoi.ru/api/static/${shop.image}`" :alt="shop.title" class="w-full h-auto">
+    <div
+      v-if="searchData.length"
+      class="grid grid-cols-2 sm:grid-cols-3 xl:grid-cols-5 gap-3"
+    >
+      <nuxt-link
+        v-for="shop of searchData"
+        :key="shop.uin"
+        :to="`/shop/${shop.lat_title}`"
+        class=""
+      >
+        <img
+          :title="shop.title"
+          loading="lazy"
+          :src="`https://za-halyavoi.ru/api/static/${shop.image}`"
+          :alt="shop.title"
+          class="w-full h-auto"
+        />
         <h2 class="text-center">{{ shop.title }}</h2>
       </nuxt-link>
     </div>
-    <div class="font-medium text-lg" v-if="!searchData.length">
+    <div v-if="!searchData.length" class="font-medium text-lg">
       Ничего не найдено по запросу "{{ dataq }}"
     </div>
   </div>
@@ -27,82 +39,83 @@ export default {
     MBreadCrumbs,
   },
   layout: 'default',
-  data():any {
+  async asyncData({ $api, route }: any) {
+    const response = await $api.get(`/search?q=${encodeURI(route.query.q)}`)
+
+    return {
+      searchData: response.data,
+      dataq: route.query.q,
+    }
+  },
+  data(): any {
     return {
       searchData: [] as string[],
       dataq: '',
       breadCrumbs: [
         {
           // @ts-ignore
-          title: `Результаты поиска "${this.$route.query.q}"`
-        }
-      ]
+          title: `Результаты поиска "${this.$route.query.q}"`,
+        },
+      ],
     }
   },
-  head():object {
+  head(): object {
     return {
-      //@ts-ignore
+      // @ts-ignore
       title: `Промокоды, скидки и акции для сайтов и интернет-магазинов на ${this.$store.state.seo.month} ${this.$store.state.seo.year} год поиск по магазинам ${this.dataq}`,
       meta: [
         {
           hid: 'description',
           name: 'description',
           // @ts-ignore
-          content: `Свежие промокоды, скидки и акции на ${this.$store.state.seo.month} ${this.$store.state.seo.year} год, а также эксклюзивные купоны. Бегом za халявой!`
+          content: `Свежие промокоды, скидки и акции на ${this.$store.state.seo.month} ${this.$store.state.seo.year} год, а также эксклюзивные купоны. Бегом za халявой!`,
         },
         {
           hid: 'keywords',
           name: 'keywords',
-          content: 'сайты, промокоды, скидки, акции, магазины, акция, промокод, скидка'
+          content:
+            'сайты, промокоды, скидки, акции, магазины, акция, промокод, скидка',
         },
         {
-          property: "og:title",
+          property: 'og:title',
           // @ts-ignore
-          content: `Промокоды, скидки и акции для сайтов и интернет-магазинов на ${this.$store.state.seo.month} ${this.$store.state.seo.year} год поиск по магазинам ${this.dataq}`
+          content: `Промокоды, скидки и акции для сайтов и интернет-магазинов на ${this.$store.state.seo.month} ${this.$store.state.seo.year} год поиск по магазинам ${this.dataq}`,
         },
         {
-          property: "og:description",
+          property: 'og:description',
           // @ts-ignore
-          content: `Свежие промокоды, скидки и акции на ${this.$store.state.seo.month} ${this.$store.state.seo.year} год, а также эксклюзивные купоны. Бегом za халявой!`
+          content: `Свежие промокоды, скидки и акции на ${this.$store.state.seo.month} ${this.$store.state.seo.year} год, а также эксклюзивные купоны. Бегом za халявой!`,
         },
         {
-          property: "og:url",
+          property: 'og:url',
           // @ts-ignore
-          content: `https://za-halyavoi.ru${this.$route.fullPath}`
+          content: `https://za-halyavoi.ru${this.$route.fullPath}`,
         },
         {
-          property: "og:image",
-          content: "https://za-halyavoi.ru/logo.png"
+          property: 'og:image',
+          content: 'https://za-halyavoi.ru/logo.png',
         },
         {
-          property: "og:type",
-          content: "article"
+          property: 'og:type',
+          content: 'article',
         },
         {
-          property: "og:site_name",
-          content: "за халявой"
+          property: 'og:site_name',
+          content: 'за халявой',
         },
         {
-          property: "og:image:url",
-          content: "https://za-halyavoi.ru/logo.png"
+          property: 'og:image:url',
+          content: 'https://za-halyavoi.ru/logo.png',
         },
       ],
       link: [
         {
           rel: 'canonical',
           // @ts-ignore
-          href: 'https://za-halyavoi.ru/search'
-        }
-      ]
+          href: 'https://za-halyavoi.ru/search',
+        },
+      ],
     }
   },
-  async asyncData({ $api, route }:any) {
-    const response = await $api.get(`/search?q=${encodeURI(route.query.q)}`)
-
-    return {
-      searchData: response.data,
-      dataq: route.query.q
-    }
-  }
 }
 </script>

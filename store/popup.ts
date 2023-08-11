@@ -1,4 +1,4 @@
-import {PostModel} from "~/models/post.model";
+import { PostModel } from '~/models/post.model'
 
 export const state = () => ({
   openPopup: false as boolean,
@@ -7,27 +7,25 @@ export const state = () => ({
   openMobileMenu: false as boolean,
 })
 
-export const getters = {
-
-}
+export const getters = {}
 
 export const mutations = {
-  setPopupData(state:any, popupData: PostModel) {
+  setPopupData(state: any, popupData: PostModel) {
     state.popupData = popupData
   },
-  closePopup(state:any) {
+  closePopup(state: any) {
     state.openPopup = false
   },
-  toggleCats(state:any) {
+  toggleCats(state: any) {
     state.openCats = !state.openCats
   },
-  toggleMenu(state:any) {
+  toggleMenu(state: any) {
     state.openMobileMenu = !state.openMobileMenu
-  }
+  },
 }
 
 export const actions = {
-  async getPost({ commit, state }:any, uin: string): Promise<PostModel | any> {
+  async getPost({ commit, state }: any, uin: string): Promise<PostModel | any> {
     try {
       // @ts-ignore
       const resData = await this.$api.get(`/post/${uin}`)
@@ -35,8 +33,8 @@ export const actions = {
       state.openPopup = true
       return resData.data
     } catch (e) {
-      console.log(e);
-      return e;
+      console.log(e)
+      return e
     }
-  }
+  },
 }

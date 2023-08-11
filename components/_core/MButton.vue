@@ -1,23 +1,17 @@
 <template>
   <button
-    @click="$emit('click', $event)"
     :type="type"
     :disabled="disabled"
     :class="getColor"
     class="rounded text-second block p-2"
+    @click="$emit('click', $event)"
   >
-    <slot/>
+    <slot />
   </button>
 </template>
 
 <script lang="ts">
-
 export default {
-  data() {
-    return {
-      primary: ''
-    }
-  },
   props: {
     color: {
       default: 'primary',
@@ -32,11 +26,16 @@ export default {
       type: Boolean,
     },
   },
+  data() {
+    return {
+      primary: '',
+    }
+  },
   computed: {
-    getColor():string {
-      //@ts-ignore
+    getColor(): string {
+      // @ts-ignore
       if (this.color === 'primary') {
-        //@ts-ignore
+        // @ts-ignore
         if (!this.disabled) {
           return 'bg-primary hover:bg-primary-300 focus:bg-primary-700'
         } else {
@@ -45,7 +44,7 @@ export default {
       } else {
         return 'bg-primary'
       }
-    }
-  }
+    },
+  },
 }
 </script>

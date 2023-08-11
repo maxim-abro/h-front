@@ -1,9 +1,11 @@
 <template>
-  <div class="shadow shadow-md shadow-[#00000070] w-full border-zinc-200 p-3 dark:text-zinc-200 bg-white dark:bg-zinc-900">
+  <div
+    class="shadow shadow-md shadow-[#00000070] w-full border-zinc-200 p-3 dark:text-zinc-200 bg-white dark:bg-zinc-900"
+  >
     <img
-      :title='data.title'
-      loading='lazy'
       v-if="data.image"
+      :title="data.title"
+      loading="lazy"
       :src="`https://za-halyavoi.ru/api/static/${data.image}`"
       :alt="data.title"
       class="mx-auto w-max-[100%] mb-3"
@@ -40,13 +42,13 @@
       Информация о магазине "{{ data.title }}"
     </button>
 
-    <div class="mt-3" v-if="openInfo">
+    <div v-if="openInfo" class="mt-3">
       <div class="mb-1.5">
         <b>Контакты {{ data.title }}: </b>
         {{ data.contacts }}
       </div>
 
-      <div class="mb-1.5" v-if="data.dostavka">
+      <div v-if="data.dostavka" class="mb-1.5">
         <b>{{ data.title }} доставка: </b>
         {{ data.dostavka }}
       </div>
@@ -55,7 +57,7 @@
 </template>
 
 <script lang="ts">
-import { ShopModel } from "~/models/shop.model";
+import { ShopModel } from '~/models/shop.model'
 
 export default {
   data() {
@@ -65,6 +67,6 @@ export default {
   },
   props: {
     data: {} as ShopModel,
-  }
+  },
 }
 </script>

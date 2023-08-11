@@ -1,14 +1,12 @@
 export default function ({ $axios, redirect }, inject) {
-
-
   const api = $axios.create({
-    baseURL: 'https://za-halyavoi.ru/api'
+    baseURL: 'https://za-halyavoi.ru/api',
     // baseURL: "http://localhost:4000"
   })
 
-  api.onError(error => {
+  api.onError((error) => {
     if (error.response.status === 404) {
-      redirect("/404")
+      redirect('/404')
     }
   })
 
